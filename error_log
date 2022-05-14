@@ -1,0 +1,132 @@
+[26-Mar-2022 08:12:29 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:12:29 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:12:29 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:12:29 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:12:29 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:12:29 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:12:29 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:12:29 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:12:29 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 231
+[26-Mar-2022 08:12:29 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:12:29 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:12:29 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:13:37 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:13:37 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:13:37 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:13:37 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:13:37 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:13:37 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:13:37 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:13:37 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:13:37 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 231
+[26-Mar-2022 08:13:37 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:13:37 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:13:37 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:17:56 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:17:56 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:17:56 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:17:56 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:17:56 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:17:56 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:17:56 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:17:56 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:17:56 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 231
+[26-Mar-2022 08:17:56 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:17:56 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:17:56 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:18:36 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:18:36 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:18:36 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:18:36 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:18:36 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:18:36 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:18:36 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:18:36 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:18:36 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 231
+[26-Mar-2022 08:18:36 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:18:36 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:18:36 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:18:56 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:18:56 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:18:56 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:18:56 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:18:56 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:18:56 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:18:56 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:18:56 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:18:56 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 231
+[26-Mar-2022 08:18:56 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:18:56 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:18:56 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:19:07 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:19:07 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:19:07 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:19:07 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:19:07 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:19:07 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:19:07 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:19:07 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:19:07 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:19:07 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:19:07 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 231
+[26-Mar-2022 08:19:07 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:19:07 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:19:07 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:30:15 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:30:15 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:30:15 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:30:15 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:30:15 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:30:15 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:30:15 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:30:15 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:30:15 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:30:15 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:30:15 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 231
+[26-Mar-2022 08:30:15 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:30:15 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:30:15 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:30:28 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:30:28 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:30:28 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:30:28 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:30:28 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:30:28 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:30:28 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:30:28 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:30:28 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:30:28 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:30:28 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 231
+[26-Mar-2022 08:30:28 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:30:28 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:30:28 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:30:48 UTC] PHP Notice:  Undefined variable: user in /home/hlw885grukdy/public_html/Demo/Social/myData.php on line 96
+[26-Mar-2022 08:30:48 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/myData.php on line 96
+[26-Mar-2022 08:38:11 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:38:11 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:38:11 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:38:11 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:38:11 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:38:11 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:38:11 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:38:11 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:38:11 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:38:11 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:38:11 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 231
+[26-Mar-2022 08:38:11 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:38:11 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:38:11 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:38:43 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:38:43 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:38:43 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:38:43 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:38:43 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:38:43 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:38:43 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:38:43 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:38:43 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 87
+[26-Mar-2022 08:38:43 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/database/getMsgNotif.php on line 88
+[26-Mar-2022 08:38:43 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 231
+[26-Mar-2022 08:38:43 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:38:43 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
+[26-Mar-2022 08:38:43 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/home.php on line 233
