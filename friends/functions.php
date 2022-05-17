@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("../database/connection.php");
-$database="socialplexus";
+$database="posigraph_socialplexus";
 mysqli_select_db($conn,$database);
 
 if(isset($_POST['buttonName']) && isset($_POST['userId']))

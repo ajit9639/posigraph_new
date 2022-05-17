@@ -1,41 +1,54 @@
+<style>
+    .user-detail{
+    padding: 30px;
+    position: relative;
+    display: block;
+    background: #fff;
+    color: #000;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+    margin: 40px 0;
+    }
+.name-tilte{
+    font-size: 16px;
+    font-weight: 700;
+    color: #0a69ed;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+</style>
+
 <?php
 //session_start();
-include("../database/connection.php");
-$database="plexus";
+include("./database/connection.php");
+$database="posigraph_socialplexus";
 mysqli_select_db($conn,$database);
 
 $me=$_SESSION['id'];
-    
-
 function newUsers()
 {     global $conn,$me;
       $i=0;
       $friendId[]=0;
-// 
- 
- $id="select senderId from friend_request where receiverId=$me";//when someone sent rqst to me get Id from userTwo
+ //when someone sent rqst to me get Id from userTwo
+ $id="select senderId from friend_request where receiverId=$me";
      $sender=mysqli_query($conn,$id);
     if($sender)
     {
      if(mysqli_num_rows($sender)>= 1)
      {  
            while($row=mysqli_fetch_array($sender))
-           {
-               
-                     $friendId[$i]=$row['senderId'];
-               
+           {               
+                     $friendId[$i]=$row['senderId'];               
                      $i++;  
-           }
-        
-     
+           }             
      }
-
     }
  else
       mysqli_error($conn);
  
- 
- $id="select receiverId from friend_request where senderId=$me";//when someone sent rqst to me get Id from userTwo
+ //when someone sent rqst to me get Id from userTwo
+ $id="select receiverId from friend_request where senderId=$me";
      $receiver=mysqli_query($conn,$id);
     if($receiver)
     {
@@ -48,10 +61,8 @@ function newUsers()
                
                      $i++;  
            }
-        
-     
+             
      }
-
     }
  else
       mysqli_error($conn);
@@ -146,7 +157,7 @@ $strr=implode(',', $strr);
     else
         mysqli_error($conn);
     
- echo"<script>window.alert('{$str},{$strr}')</script>";
+//  echo"<script>window.alert('{$str},{$strr}')</script>";
   
 }
 function rqstdAndRqstng($me)
@@ -184,22 +195,15 @@ function rqstdAndRqstng($me)
      if(mysqli_num_rows($receiver)>= 1)
      {  
            while($row=mysqli_fetch_array($receiver))
-           {
-               
+           {               
                      $friendId[$i]=$row['receiverId'];
                
                      $i++;  
-           }
-        
-     
+           }             
      }
-
     }
  else
       mysqli_error($conn);
- 
- 
- 
  
 return $friendId;
   }
@@ -228,7 +232,7 @@ function meToUsers()
                         <div class='col-sm-7 user-name-buttons'> 
                         
                              <div class=' row name'>
-                                  <a href='http://localhost/plexus/profile/profile.php?id={$row['receiverId']}'><p style='margin:10px 10px;'>{$receiverNameDp['firstName']}</p>
+                                  <a href='http://localhost/posigraph_new/profile/profile.php?id={$row['receiverId']}'><p style='margin:10px 10px;'>{$receiverNameDp['firstName']}</p>
                                   </a>
                              </div>
                              
@@ -277,7 +281,7 @@ function usersToMe()
                             <div class='col-sm-7 user-name-buttons'>
                        
                                     <div class='row name'>
-                                      <a href='http://localhost/plexus/profile/profile.php?id={$row['senderId']}'><p style='margin:10px 10px;'>{$senderNameDp['firstName']}</p>
+                                      <a href='http://localhost/posigraph_new/profile/profile.php?id={$row['senderId']}'><p style='margin:10px 10px;'>{$senderNameDp['firstName']}</p>
                                        </a>
                                     </div>
 
@@ -344,7 +348,7 @@ function myFriends()
                                  </div>
 
                                 <div class='col-sm-7 user-name-buttons'> 
-                                    <div class='row name'><a href='http://localhost/plexus/profile/profile.php?id={$friend['userId']}'><p style='color:white;margin:10px 10px;'>{$friend['firstName']}</p></a></div>
+                                    <div class='row name'><a href='http://localhost/posigraph_new/profile/profile.php?id={$friend['userId']}'><p style='color:white;margin:10px 10px;'>{$friend['firstName']}</p></a></div>
                                    <div class='row btn'> <a href='#'>
                                     <button data-id='{$friend['userId']}'                           data-name='{$friend['firstName']}' class='unfriend-btn'>Unfriend</button></a>
                                     </div>
@@ -372,7 +376,7 @@ function myFriends()
                                  </div>
 
                                 <div class='col-sm-7 user-name-buttons'> 
-                                    <div class='row name'><a href='http://localhost/plexus/profile/profile.php?id={$friend['userId']}'><p style='color:white;margin:10px 10px;'>{$friend['firstName']}</p></a></div>
+                                    <div class='row name'><a href='http://localhost/posigraph_new/profile/profile.php?id={$friend['userId']}'><p style='color:white;margin:10px 10px;'>{$friend['firstName']}</p></a></div>
                                    <div class='row btn'> <a href='#'>
                                    <button data-id='{$friend['userId']}'                         data-name='{$friend['firstName']}' class='unfriend-btn'>Unfriend</button></a>
                                    </div>
@@ -524,7 +528,7 @@ $strr=implode(',', $strr);
                         <div class='col-sm-7 user-name-buttons'> 
                         
                              <div class=' row name'>
-                                  <a href='http://localhost/plexus/profile/profile.php?id={$row['userId']}'><p style='margin:10px 10px;'>{$row['firstName']}</p></a>
+                                  <a href='http://localhost/posigraph_new/profile/profile.php?id={$row['userId']}'><p style='margin:10px 10px;'>{$row['firstName']}</p></a>
                              </div>
                              
                            <div class='row btn'>
@@ -539,15 +543,15 @@ $strr=implode(',', $strr);
                   ";
             }
         }
-//         <a href='http://localhost/plexus/profile/profile.php?id={$id}'> <p><button>View Profile</button></p></a>
+//         <a href='http://localhost/posigraph_new/profile/profile.php?id={$id}'> <p><button>View Profile</button></p></a>
         
     }
     else
         mysqli_error($conn);
     
- echo"<script>window.alert('{$str},{$strr}')</script>";
+//  echo"<script>window.alert('{$str},{$strr}')</script>";
  
- echo"<script>window.alert('{$FOF}')</script>";
+//  echo"<script>window.alert('{$FOF}')</script>";
  
 
 }
@@ -569,35 +573,27 @@ function moreSugg()
         {
             while($row=mysqli_fetch_array($newUser))
             {
-                echo"
-                    
+                echo"                    
                     <div class='col-sm-12 user-detail'>
-
-                               <div class='col-sm-4 user-pic'> <img src='../proImg/pro.jpg'> </div>
-                        <div class='col-sm-7 user-name-buttons'> 
-                        
+                               <div class='col-sm-4 user-pic'> <img src=./dp/{$row['dp']}> </div>
+                              <div class='col-sm-7 user-name-buttons'>                         
                              <div class=' row name'>
-                                  <a href='http://localhost/plexus/profile/profile.php?id={$row['userId']}'><p style='margin:10px 10px;'>{$row['firstName']}</p></a>
-                             </div>
-                             
+                                  <a href='http://localhost/posigraph_new/profile/profile.php?id={$row['userId']}'>
+                                  <p style='margin:10px 10px;' class='name-tilte'>{$row['firstName']}</p>
+                                  </a>
+                             </div>                             
                            <div class='row btn'>
-                             <a id='request' href='#'><button data-id='{$row['userId']}'         data-name='{$row['firstName']}' class='request-btn' >Request</button>
+                             <a id='request' href='#'><button data-id='{$row['userId']}' data-name='{$row['firstName']}' class='request-btn btn btn-sm btn-success' >Request</button>
                              </a>
                             </div>
-
                         </div>
-
-                   </div>
-                 
+                   </div>                 
                   ";
             }
-        }
-
-        
+        }        
     }
     else
-        mysqli_error($conn);
-    
+        mysqli_error($conn);    
 }
 
 ?>

@@ -26,6 +26,10 @@
     .all-user {
         height: 590px;
         background: red;
+
+
+
+
     }
 
     .new-user {
@@ -48,6 +52,9 @@
     .known-user {
         height: 590px;
         /*            background:green;*/
+
+
+
     }
 
     .known-user .request-list {
@@ -114,13 +121,118 @@
     }
     </style>
 
+
+
+
 </head>
 
 <body>
 
+
+    <!-- Navbar -->
+    <!--    ------------------------   -->
+    <div class="w3-top">
+        <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+            <a class="w3-bar-item w3-button  w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2"
+                href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i>
+
+            </a>
+
+            <a href="./home.php"
+                class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-padding-large w3-theme-d4"><i
+                    class="fa fa-home w3-margin-right"></i>Logo</a>
+
+
+            <input type="text" placeholder="search"
+                style="width:200px;border-radius:5px;outline:none;border:none; padding:5px; ; margin-left:10px;margin-top:5px;color:black">
+
+            <button class="btn" style="width:50px;"><i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+
+
+
+
+
+            <a href="./message/chatApp.php" class="w3-bar-item w3-button  w3-padding-large w3-hide-small w3-hover-white"
+                title="Messages"><i class="fa fa-envelope"></i><span
+                    class="w3-badge w3-right w3-small w3-green">10</span></a>
+
+
+            <a href="./friends/friends.php"
+                class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-padding-large w3-hover-white"
+                title="friends"><i class="fa fa-users" aria-hidden="true"></i>
+            </a>
+
+
+
+            <div class="w3-dropdown-hover">
+
+                <button class="w3-button w3-padding-large" title="Notifications">
+                    <i class="fa fa-bell"></i><span class="w3-badge w3-right w3-small w3-green">4</span> </button>
+
+                <!--      notification drop down-->
+
+                <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="overflow:scroll;height:300px;">
+
+                    <a href="#" class="w3-bar-item w3-button">One new friend request</a>
+                    <a href="#" class="w3-bar-item w3-button">John Doe posted on your wall</a>
+                    <a href="#" class="w3-bar-item w3-button">Jane likes your post</a>
+                    <a href="#" class="w3-bar-item w3-button">me</a>
+                    <a href="#" class="w3-bar-item w3-button">One new friend request</a>
+                    <a href="#" class="w3-bar-item w3-button">John Doe posted on your wall</a>
+                    <a href="#" class="w3-bar-item w3-button">Jane likes your post</a>
+                    <a href="#" class="w3-bar-item w3-button">me</a>
+                    <a href="#" class="w3-bar-item w3-button">rahul</a>
+
+
+                </div>
+
+
+            </div>
+
+            <a href="./myData.php" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white"
+                title="My Account">
+                <img src="dp/<?php echo $user['dp'];?>" class="w3-circle" style="height:23px;width:23px" alt="dp">
+            </a>
+            <a href="logOut.php"
+                class="w3-bar-item w3-button w3-hide-medium  w3-hide-small w3-right w3-padding-large w3-hover-white"
+                title="logOut"><i class="fa fa-power-off" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+
+    <!--    ----------------------    -->
+
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-large">
+        <br>
+        <br>
+        <br>
+        <a href="./home.php" class="w3-bar-item w3-button w3-padding-large "><i class="fa fa-home"
+                aria-hidden="true"></i></a>
+
+        <a href="./message/chatApp.php" class="w3-bar-item  w3-hide-medium w3-button w3-padding-large"><i
+                class="fa fa-envelope"></i><span class="w3-badge w3-small w3-green">10</span></a>
+
+        <a href="./friends/friends.php" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-users"
+                aria-hidden="true"></i></a>
+
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">My Post</a>
+
+        <a href="./myData.php" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-cogs"
+                aria-hidden="true"></i>
+        </a>
+
+        <a href="./logOut.php" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-power-off"
+                aria-hidden="true"></i>
+        </a>
+    </div>
+
+
     <div class="container" style="max-width:1400px;margin-top:50px">
         <div class="row">
-            <div class="col-sm-6 col-xs-6 all-user">
+            <div class="col-sm-5 col-xs-6 all-user">
 
                 <div class="row new-user">
                     <?php friendsOfFriend($_SESSION['id']); 
@@ -180,7 +292,7 @@ $(".request-btn").click(function() {
     callFun = new FormData();
     callFun.append("buttonName", buttonName);
     callFun.append("userId", userId);
-    // window.alert(userId);
+    window.alert(userId);
     callFun.append("userName", userName);
 
     $.ajax({
@@ -193,7 +305,7 @@ $(".request-btn").click(function() {
 
         success: function(result) {
             //                                                     window.open('home.php','_self');
-            // window.alert(result);
+            window.alert(result);
             window.open('friends.php', '_self');
         },
         error: function(result) {

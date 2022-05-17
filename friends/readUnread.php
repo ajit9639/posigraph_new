@@ -1,6 +1,6 @@
 <?php
 include("../database/connection.php");
-mysqli_select_db($conn,"socialplexus");
+mysqli_select_db($conn,"posigraph_socialplexus");
 
 
 //function getFriends($me)

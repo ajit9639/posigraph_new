@@ -52,8 +52,10 @@ function loadComments($pid)
               $userName=mysqli_fetch_array($user);
               $date=date('F j,Y,g:i a',strtotime($row['commentDate']));
               $data=$row['comment'];
-              echo "<h4 style='color:white'>".$userName['firstName']."   .... ".$date."</h4>";
-              echo"<p style='color:cyan'>$data</p>"."<hr>";
+            //   echo "<h4 style='color:#000'>".$userName['firstName']."   .... ".$date."</h4>";
+              echo "<h4 style='color:#000'>".$userName['firstName']." ". $userName['lastName']."</h4>";
+              echo "<span style='color:#000'>".$date." "."</span>";
+              echo"<p style='color:red'>$data</p>"."<hr>";
            } 
        }
        else

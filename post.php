@@ -23,12 +23,52 @@ else
     include "posi_header.php";
     ?>
 
+<style>
+#pop-up-div {
+    background: #fff;
+    display: none;
+    position: fixed;
+    height: 60vh;
+    overflow: hidden;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px 5px #000000;
+
+}
+
+#comment-like-div {
+    background-color: white;
+    height: 60vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#comment-text {
+    border: 2px solid #57707d;
+    width: 300px;
+    padding-top: 13px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    /* border: none; */
+    border-radius: 5px;
+}
+</style>
 <!--// html code-->
 
 
 <!-- post start -->
-<div class="container-fluid mt-5">
+<div class="container-fluid" style="margin-top: 75px;">
     <div class="row">
+    <div id='pop-up-div' class="col-sm-10 col-xs-11 "><br>
+                        <!--            append  dynamic comment div here-->
+                    </div>
         <div class="col-md-12">
             <!-- <div class="w3-row-padding ">
                     <div class="w3-col m12">
@@ -105,7 +145,7 @@ $(".comment-btn").click(function() {
     //             prepare  a jaxa call and load all like and comment of id (pid) and appen/write it comment div of pup-up-div and add pid data as data-pid for inert-comment btn and like btn of pup-up div
     var $this = $(this);
     pid = $this.data("pid");
-    window.alert(pid);
+    // window.alert(pid);
     postId = new FormData();
     postId.append("pid", pid);
     postId.append("comment-btn", "comment");
@@ -370,6 +410,9 @@ $("#srch").click(function() {
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+
 </body>
 
 </html>

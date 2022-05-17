@@ -150,12 +150,7 @@ h5 {
                 <!--      notification drop down-->
 
                 <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="overflow:scroll;height:300px;">
-
                     <?php getAllNotif($_SESSION['id']); ?>
-
-
-
-
                 </div>
 
 

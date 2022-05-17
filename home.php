@@ -20,14 +20,16 @@ else
     $userDetail=mysqli_fetch_array($result);
 
     include "posi_header.php";
+    include "./friends/friends.php";
     ?>
+   
    
     <!-- profile section started -->
         <div class="container-fluid">
           <div class="row ">
             <div class="col-lg-12 profile-section">
+             
               <div>
-
 
                 <div class="col-md-12">
                   <div class="profile-card text-center">
