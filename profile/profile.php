@@ -10,8 +10,6 @@ $id=$_GET['id'];
 $query="select *  from user where userId='$id'";
          $user_t=mysqli_query($conn,$query);
 
-
-
     if($user_t)
     {
      if(mysqli_num_rows($user_t) >= 1)
@@ -73,19 +71,16 @@ $query="select *  from user where userId='$id'";
              ";
      exit();
             
-        }
-       
+        }       
     }
 else
 {
     echo "<script>window.alert('Sorry something went wrong.')</script>";
      exit();
 }
-
- 
-
    
 ?>
+
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -150,7 +145,7 @@ else
 				</div><!-- row -->
 			</div><!-- heading-wrapper -->
 			
-			<a class="downlad-btn" href="http://localhost/plexus/home.php">Go To Home</a>
+			<a class="downlad-btn" href="http://localhost/posigraph_new/home.php">Go To Home</a>
 		</div><!-- container -->
 	</header>
 	
@@ -175,12 +170,15 @@ else
 							<li><a href="<?php echo $facebook ?>"><i class="ion-social-facebook"></i></a></li>
 							<li><a href="<?php echo $twitter ?>"><i class="ion-social-twitter"></i></a></li>
 						</ul>
-					</div><!-- intro -->
-				</div><!-- col-sm-8 -->
-			</div><!-- row -->
-		</div><!-- container -->
-	</section><!-- intro-section -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
     
+	<?php
+include "../posi_header.php";
+	?>
 <!--////////////////////////////////////////////////////////////////////////////////////////	-->
     <?php
        $query="select *  from posts where userId='$id' AND type!='text'";
@@ -268,14 +266,14 @@ else
 	
 	
 	
-	<section class="counter-section" id="counter">
+	<!-- <section class="counter-section" id="counter">
 		<div class="container">
 			<div class="row">
 			<h1>plexUs</h1>
 				
-			</div><!-- row-->
-		</div><!-- container-->
-    </section><!-- counter-section-->
+			</div>
+		</div>
+    </section> -->
 	
 
 	

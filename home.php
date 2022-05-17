@@ -20,7 +20,7 @@ else
     $userDetail=mysqli_fetch_array($result);
 
     include "posi_header.php";
-    include "./friends/friends.php";
+    include "./friends/friends_slider.php";
     ?>
    
    

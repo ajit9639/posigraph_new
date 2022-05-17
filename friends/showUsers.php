@@ -6,7 +6,7 @@
     background: #fff;
     color: #000;
     box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
-    margin: 40px 0;
+    margin: 15px 0;
     }
 .name-tilte{
     font-size: 16px;
@@ -20,8 +20,8 @@
 </style>
 
 <?php
-//session_start();
-include("./database/connection.php");
+session_start();
+include("connection.php");
 $database="posigraph_socialplexus";
 mysqli_select_db($conn,$database);
 
@@ -66,14 +66,10 @@ function newUsers()
     }
  else
       mysqli_error($conn);
- 
- 
- 
- 
- 
+    
         $str =implode(',', $friendId);
  
-// l///////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
     $query=" select userId ,firstName ,dp from user where userId NOT IN($str,$me)";
     $newUser=mysqli_query($conn,$query);
     if($newUser)
@@ -224,11 +220,14 @@ function meToUsers()
                  $query="select userId, firstName ,dp from user where userId={$row['receiverId']}";
                   $nameDp=mysqli_query($conn,$query);
                   $receiverNameDp=mysqli_fetch_array($nameDp);
+                //   print_r($receiverNameDp['dp']);exit();
                 echo"
                     
                     <div class='col-sm-12 user-detail'>
 
-                               <div class='col-sm-4 user-pic'> <img src='../proImg/pro.jpg'> </div>
+                               <div class='col-sm-4 user-pic'> 
+                               <img src=dp/{$receiverNameDp['dp']}> 
+                               </div>
                         <div class='col-sm-7 user-name-buttons'> 
                         
                              <div class=' row name'>
@@ -301,18 +300,12 @@ function usersToMe()
                             </div> 
                  </div>
                  
-                  ";
-                
-                
-                  
+                  ";                                                  
             }
-        }
-        
+        }        
     }
     else
-        mysqli_error($conn);
-    
-
+        mysqli_error($conn);    
 }
 
 function myFriends()
@@ -330,8 +323,7 @@ function myFriends()
      if(mysqli_num_rows($friends)>= 1)
      {  
            while($row=mysqli_fetch_array($friends))
-           {
-               
+           {               
                   if($row['userOne']==$me)
                   {
                      $query="select userId,firstName ,dp from user where userId={$row['userTwo']}";
@@ -354,11 +346,8 @@ function myFriends()
                                     </div>
 
                                 </div>
-
-                              </div> 
-                 
-                        ";
-                      
+                              </div>                  
+                        ";                      
                   }
                  else
                  {
@@ -387,9 +376,7 @@ function myFriends()
                  
                         "; 
                  }
-           }
-        
-     
+           }             
      }
 
     }

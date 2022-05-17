@@ -1,4 +1,5 @@
-<?php session_start();
+<?php 
+// session_start();
 
   include("showUsers.php");
 
@@ -24,11 +25,12 @@
 
     <style>
     .all-user {
-        height: 590px;
-        background: red;
+        /* height: 590px;
+        background: red; */
     }
 
     .new-user {
+        margin-top:65px;
         height: 280px;
         background: cyan;
         overflow-x: hidden;
@@ -118,14 +120,15 @@
 
 <body>
 
-    <div class="container" style="max-width:1400px;margin-top:50px">
+    <div class="container">
         <div class="row">
             <div class="col-sm-6 col-xs-6 all-user">
-
+                <!-- suggested friends -->
                 <div class="row new-user">
                     <?php friendsOfFriend($_SESSION['id']); 
                            moreSugg();?>
                 </div>
+              
                 <div class="row requested-user">
                     <?php meToUsers();?>
                 </div>
@@ -133,7 +136,7 @@
 
 
             <div class="col-sm-6  col-xs-6 known-user">
-
+          
                 <div class="row request-list">
                     <?php usersToMe();?>
                 </div>
@@ -197,7 +200,7 @@ $(".request-btn").click(function() {
             window.open('friends.php', '_self');
         },
         error: function(result) {
-            window.alert(" sorrry error t");
+            window.alert(" sorrry error {request}");
         }
     });
 
@@ -229,7 +232,7 @@ $(".cancel-btn").click(function() {
             window.open('friends.php', '_self');
         },
         error: function(result) {
-            window.alert(" sorrry error t");
+            window.alert(" sorrry error {cancel}");
         }
     });
 });
@@ -259,7 +262,7 @@ $(".ignore-btn").click(function() {
 
         },
         error: function(result) {
-            window.alert(" sorrry error t");
+            window.alert(" sorrry error {ignored}");
         }
     });
 });
@@ -289,7 +292,7 @@ $(".accept-btn").click(function() {
             window.open('friends.php', '_self');
         },
         error: function(result) {
-            window.alert(" sorrry error t");
+            window.alert(" sorrry error {accepted}");
         }
     });
 });
@@ -319,7 +322,7 @@ $(".unfriend-btn").click(function() {
             window.open('friends.php', '_self');
         },
         error: function(result) {
-            window.alert(" sorrry error t");
+            window.alert(" sorrry error occured {unfriend}");
         }
     });
 });
