@@ -108,8 +108,7 @@ if(strpos($a,'@')!==false)
                
                
                
-               echo "
-               
+               echo "               
                        <div class='card'>
                   <img src='dp/{$dp}' alt='John' style='width:200px' height='200px'>
                   <h3 style='color:green'>{$fname} {$lname}</h3>
@@ -123,22 +122,16 @@ if(strpos($a,'@')!==false)
                   <a href='{$f}'><i class='fa fa-facebook'></i></a> 
                   <a href='./profile/profile.php?id={$id}'> <p><button>View Profile</button></p></a>
                 </div>
-
                ";
                     
-           }
-        
-     
+           }             
      }
         
         else
             echo "<script>window.alert('sorry no such record')</script>";
-
     }
  else
       mysqli_error($conn);
-
-
 }    
 else{
    

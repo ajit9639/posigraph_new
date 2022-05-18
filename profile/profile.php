@@ -37,11 +37,7 @@ $query="select *  from user where userId='$id'";
          $facebook=$ud_row['facebook'];
          $twitter=$ud_row['twitter'];
          $insta=$ud_row['insta'];
-         $linkedIn=$ud_row['linkedIn'];
-
-               
-     
-         
+         $linkedIn=$ud_row['linkedIn'];                             
          
      }
         else

@@ -31,7 +31,6 @@
                         <!-- END SINGLE TESTIMONIALS -->
                         <?php friendsOfFriend($_SESSION['id']); 
                            moreSugg();?>
-
                        
                         <!-- END SINGLE TESTIMONIALS -->
                     </div>
@@ -94,7 +93,6 @@ $(".request-btn").click(function() {
         }
     });
 
-
 });
 
 $(".cancel-btn").click(function() {
@@ -117,7 +115,7 @@ $(".cancel-btn").click(function() {
         processData: false,
 
         success: function(result) {
-            //                                                     window.open('home.php','_self');
+            // window.open('home.php','_self');
             window.alert(result);
             window.open('friends.php', '_self');
         },
