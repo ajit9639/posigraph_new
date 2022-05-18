@@ -208,6 +208,7 @@ session_start();
             <div class="other-links">
                 <span class="text-white"><a href="forget.php" title="">Forget Password ?</a> /
                     <a href="signUp.php">New User</a>
+                    <a href="signup.php">New User</a>
                 </span>
             </div>
         </form>
