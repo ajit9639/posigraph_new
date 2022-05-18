@@ -2,7 +2,7 @@
 session_start();
  if(isset($_SESSION['email']))
  {
-     echo "<script>window.open('./home.php','_self')</script>";
+     echo "<script>window.open('./index.php','_self')</script>";
  }
 ?>
 <!DOCTYPE html>
@@ -206,6 +206,7 @@ session_start();
     </div>
     <div>
         <form class="form form-group" name="form" method="post" action="">
+        
             <div class="title">Sign up</div>
             <div class="input-container ic1">
                 <input class="input" type="text" placeholder="username" name="fname" placeholder="First Name"
