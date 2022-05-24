@@ -13,7 +13,7 @@
                         </div>
 
                         <div class="tab-2">
-                        <a class="first-tab" href="home.php"> Posi </a>
+                        <a class="first-tab" href="posi.php"> Posi </a>
                             <input id="tab2-2" name="tabs-two" type="radio">
                            
                         </div>

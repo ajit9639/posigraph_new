@@ -9,25 +9,17 @@ $user=mysqli_query($conn,"select * from user where userId='$me'");
 $user=mysqli_fetch_array($user);
 ?>
 <html>
+
 <head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../style/w3.css">
     <link rel="stylesheet" href="../style/w3-theme-blue-grey.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
-
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<link rel="stylesheet" type="text/css" href="../style.css">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../style/emojionearea.min.css">
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -36,24 +28,49 @@ $user=mysqli_fetch_array($user);
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="../style/emojionearea.min.js"></script>
 
+
+
+
+
+
     <title> message </title>
-    <style>       
+    <style>
+    /*
+    
+        *{
+            margin: 0;
+            padding: 0;
+            font-family:tahoma sans-serif;
+            box-sizing: border-box;
+        }
+*/
+    body {
+        background: #323232;
+        /*            margin-top:50px;*/
+
+
+    }
+
     .chatbox {
         width: 500px;
-        max-width: 100%;
+        max-width: 360px;
         height: 550px;
-        background: #fff;
+        background: gray;
         margin-top: 20px;
         margin-left: 60px;
         padding: 20px;
-        box-shadow: -50px 5px 100px 10px #ccc;       
+        box-shadow: -50px 5px 100px 10px #ccc;
+        border-bottom-right-radius: 50px;
+        border-top-left-radius: 50px;
+
+
     }
 
     .chatlogs {
         padding: 10px;
         width: 100%;
         height: 400px;
-        background: #f4f4f4;
+        background: #EEE;
         overflow-x: hidden;
         overflow-y: scroll;
     }
@@ -98,11 +115,11 @@ $user=mysqli_fetch_array($user);
     }
 
     .friend .chat-message {
-        background: #1874fb;
+        background: #1adda4;
     }
 
     .self .chat-message {
-        background:#f4f4f4 ;
+        background: #1ddced;
         order: -1;
     }
 
@@ -129,9 +146,9 @@ $user=mysqli_fetch_array($user);
     }
 
     .chat-form button {
-       
+        background: cadetblue;
         padding: 8px 20px;
-
+        color: black;
         font-size: 20px;
         border: none;
         border-radius: 5px;
@@ -147,18 +164,19 @@ $user=mysqli_fetch_array($user);
     .user {
         margin-top: 20;
         margin-left: 10px;
-        height: 250px;
-        background: #fff;
+        height: 550px;
+        background: cadetblue;
         padding: 20px;
         box-shadow: 10px 10px 100px 10px #ccc;
         float: left;
         border-radius: 10px;
-        overflow-x: hidden;
+
+
     }
-    a{text-decoration:none!important;}
+
     .list {
-        padding: 0px 20px;
-        height: 250px;
+        padding: 20px;
+        height: 400px;
 
         overflow-x: hidden;
         overflow-y: scroll;
@@ -174,8 +192,8 @@ $user=mysqli_fetch_array($user);
     }
 
     .online-user-img {
-        width: 70px;
-        height: 70px;
+        width: 40px;
+        height: 40px;
         background: #AAA;
         border-radius: 50%;
         overflow: hidden;
@@ -186,7 +204,7 @@ $user=mysqli_fetch_array($user);
     }
 
     .online-user-name {
-        /* float: right; */
+        float: right;
     }
 
     .chat-with-user {
@@ -214,162 +232,145 @@ $user=mysqli_fetch_array($user);
 
 </head>
 
-  </head>
-  <body>
-      <!-- posi_header -->
-
-      <div class="fixed-header">
-    <header id="header" class="header-items profile-header">
-     <div class="container-fluid">
-       <div class="row">
-         <div class="col-6 col-xs-6 header-contents">
-          <div class="row">
-            <div class="col-lg-2 col-2 col-xs-2 go-back">
-              <a href="#" title="">
-                <!-- <i class="fa-solid fa-arrow-left"></i> -->
-                <img src="../posigraph_text_logo.png" />
-              </a>
-            </div>
-            <div class="col-lg-7 col-7 col-xs-7 user-name">
-              <!-- <h4><?php echo $user['firstName'].' '.$user['lastName']?></h4> -->
-            </div>
-          </div>
-         </div>
-
-
-         <div class="col-2 col-xs-2 header-chat-icons">         
-           <a href="http://localhost/posigraph_new/search-form.php"  title="">
-             <!-- <i class="fa-solid fa-align-justify"></i> -->
-             <i class="fa fa-search" aria-hidden="true"></i>
-           </a>
-         </div>
-
-
-         <div class="col-2 col-xs-2 header-chat-icons">         
-           <a href="http://localhost/posigraph_new/message/chatApp.php"  title="">
-             <!-- <i class="fa-solid fa-align-justify"></i> -->
-             <i class="fa fa-envelope-o" aria-hidden="true"></i>
-           </a>
-         </div>
-
-
-         <div class="col-2 col-xs-2 header-chat-icons">         
-           <a href="#"  data-toggle="modal" data-target="#exampleModal" title="">
-             <!-- <i class="fa-solid fa-align-justify"></i> -->
-             <i class="fa fa-bars" aria-hidden="true"></i>
-           </a>
-         </div>
-
-       </div>
-     </div> 
-    </header>
-    <!-- /header -->
-    </div>
-<!-- popup modal -->
-
-<!-- Modal -->
-<div class="modal fade popup-modal " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog popup-modal-body" role="document">
-    <div class="modal-content sidebar-popup-section">
-      <div class="modal-header">
-
-        <!-- <h5 class="modal-title text-center" id="exampleModalLabel">Setting</h5> -->
-        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button> -->
-      </div>
-      <div class="modal-body">
-        <a href="http://localhost/posigraph_new/myData.php" class="text-center modal-links">Edit Profile</a>
-        <a href="#" class="text-center modal-links">Push Notifications</a>
-        <a href="friends/friends.php" class="text-center modal-links">Search For Friend</a>
-        <a href="#" class="text-center modal-links">Terms of use</a>
-        <a href="#" class="text-center modal-links">Help</a>
-      </div>
-      
-      <div class="modal-footer">
-        <a href="http://localhost/posigraph_new/logOut.php" type="button" class="text-center">Logout</a>
-        <a type="button" class="text-center" data-dismiss="modal">Cancel</a>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- end popup modal -->
-
-   <!-- fixed footer start -->
-   <div class="footer">
-      <div class="container-fluid">
-        <div class="row" id="myDIV">
-          <div class="col-3 col-xs-3 footer-icons">
-            <a href="http://localhost/posigraph_new/feed.php" class="footer-single-icon btn active" title="">
-              <i class="fa-solid fa-house"></i>             
-              <!-- <div class="hover-display">
-                <span>Home</span>
-              </div>     -->
-            </a>
-          </div>
-          <div class="col-3 col-xs-3 footer-icons">
-            <a href="http://localhost/posigraph_new/post.php" class="footer-single-icon btn" title="">
-              <i class="fa-solid fa-camera-retro"></i>
-              <!-- <div class="hover-display">
-                <span>Post</span>
-              </div> -->
-            </a>
-          </div>
-          <div class="col-3 col-xs-3 footer-icons">
-            <a href="#" class="footer-single-icon btn" title="">
-              <i class="fa-solid fa-heart"></i>
-              <span class="notification_alert">
-              <?php
-                // $n=getUnreadMsg($_SESSION['id']);
-                // if($n>0)
-                //     echo $n;
-                ?>
-                </span>
-              <!-- <div class="hover-display">
-                <span>notify</span>
-              </div> -->
-            </a>
-          </div>
-          <div class="col-3 col-xs-3 footer-icons">
-            <a href="http://localhost/posigraph_new/home.php" class="footer-single-icon btn" title="">
-              <i class="fa-solid fa-user"></i>
-              <!-- <div class="hover-display">
-                <span>notify</span>
-              </div> -->
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-<!-- fixed footer end -->
-      <!-- //posi_header -->
-
-   
-    <link rel="stylesheet" href="../style/emojionearea.min.css">    
-    <script src="../style/emojionearea.min.js"></script>
 <body>
+
+
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+            <a class="w3-bar-item w3-button  w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2"
+                href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i>
+
+            </a>
+
+            <a href="http://localhost/posigraph_new/home.php"
+                class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-padding-large w3-theme-d4"><i
+                    class="fa fa-home w3-margin-right"></i>Logo</a>
+
+
+            <input type="text" placeholder="search" id="srch_input"
+                style="width:200px;border-radius:5px;outline:none;border:none; padding:5px; ; margin-left:10px;margin-top:5px;color:black">
+
+            <button id="srch" class="btn" style="width:50px;"><i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+
+
+
+
+            <a href="http://localhost/posigraph_new/message/chatApp.php"
+                class="w3-bar-item w3-button  w3-padding-large w3-hide-small w3-hover-white" title="Messages"><i
+                    class="fa fa-envelope"></i><span class="w3-badge w3-right w3-small w3-green">
+
+                    <?php
+                $n=getUnreadMsg($_SESSION['id']);
+                if($n>0)
+                    echo $n;
+                ?>
+
+                </span></a>
+
+
+            <a href="http://localhost/posigraph_new/friends/friends.php"
+                class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-padding-large w3-hover-white"
+                title="friends"><i class="fa fa-users" aria-hidden="true"></i>
+            </a>
+
+
+
+            <div class="w3-dropdown-hover">
+
+                <button class="w3-button w3-padding-large" title="Notifications">
+                    <i class="fa fa-bell"></i><span class="w3-badge w3-right w3-small w3-green">
+                        <?php
+                $n=getTotalUnseenNotif($_SESSION['id']);
+                if($n>0)
+                    echo $n;
+                ?>
+                    </span>
+                </button>
+
+                <!--      notification drop down-->
+
+                <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="overflow:scroll;height:300px;">
+
+                    <?php getAllNotif($_SESSION['id']); ?>
+
+
+                </div>
+
+
+            </div>
+
+            <a href="http://localhost/posigraph_new/myData.php"
+                class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
+                <img src="../dp/<?php echo $user['dp'];?>" class="w3-circle" style="height:23px;width:23px" alt="dp">
+            </a>
+            <a href="http://localhost/posigraph_new/logOut.php"
+                class="w3-bar-item w3-button w3-hide-medium  w3-hide-small w3-right w3-padding-large w3-hover-white"
+                title="logOut"><i class="fa fa-power-off" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+
+    <!--    ----------------------    -->
+
+
     <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-large">
+        <br>
+        <br>
+        <br>
+        <a href="http://localhost/posigraph_new/home.php" class="w3-bar-item w3-button w3-padding-large "><i
+                class="fa fa-home" aria-hidden="true"></i></a>
+
+        <a href="http://localhost/posigraph_new/message/chatApp.php"
+            class="w3-bar-item  w3-hide-medium w3-button w3-padding-large"><i class="fa fa-envelope"></i><span
+                class="w3-badge w3-small w3-green">10</span></a>
+
+        <a href="http://localhost/posigraph_new/friends/friends.php" class="w3-bar-item w3-button w3-padding-large"><i
+                class="fa fa-users" aria-hidden="true"></i></a>
+
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">My Post</a>
+
+        <a href="http://localhost/posigraph_new/myData.php" class="w3-bar-item w3-button w3-padding-large"><i
+                class="fa fa-cogs" aria-hidden="true"></i>
+        </a>
+
+        <a href="http://localhost/posigraph_new/logOut.php" class="w3-bar-item w3-button w3-padding-large"><i
+                class="fa fa-power-off" aria-hidden="true"></i>
+        </a>
+    </div>
+
     <div class="container">
 
-        <div class="" style="margin-top: 60px;margin-bottom:80px;">
+
+        <div class="row" style=" margin-top:35px;">
 
             <div class="user col-sm-5 col-xs-10 " id="online-div">
                 <!-- <a href="#" class="w3-bar-item w3-button w3-padding-large"></a>-->
-                <!-- <a href="http://localhost/posigraph_new/message/broadcastMsg.php"><button type="button"
-                        class="comment-btn w3-button w3-theme-d2 w3-margin-bottom"> &nbsp;Group Message</button></a> -->
+                <a href="http://localhost/posigraph_new/message/broadcastMsg.php"><button type="button"
+                        class="comment-btn w3-button w3-theme-d2 w3-margin-bottom"> &nbsp;broadcast</button></a>
 
-                <!-- <a href="http://localhost/posigraph_new/message/chatApp.php"><button type="button"
-                        class="comment-btn w3-button w3-theme-d2 w3-margin-bottom"> &nbsp;Private Message</button></a> -->
+                <a href="http://localhost/posigraph_new/message/chatApp.php"><button type="button"
+                        class="comment-btn w3-button w3-theme-d2 w3-margin-bottom"> &nbsp;private Message</button></a>
                 <center>
-                    <h3>People in your Posigraph</h3>
+                    <h1>Online</h1>
                     <hr>
                 </center>
+
 
                 <div class="list" id="all friends">
                     <!--            ajax online users incllude page-->
                     <?php include("getUserData.php");?>
+
                 </div>
+
+
+
+
+
             </div>
+
 
             <div class="chatbox " style="float:right;">
                 <div class="chat-with-user" style="">
@@ -377,12 +378,12 @@ $user=mysqli_fetch_array($user);
                         <img id="chat-photo" style='width:100%'>
                     </div>
                     <div class="chat-name">
-                        <h4 id="name" style="color:black;"></h4>
+                        <h4 id="name" style="color:white"></h4>
                     </div>
                 </div>
                 <div class="chatlogs">
 
-                    <!--  presentation container that hold both chat box   -->
+                    <!--     presentation container that hold both chat box   -->
                     <?php
 //                this php code is just for msg insertion rightly
                 if(isset($_GET['id']))
@@ -426,8 +427,8 @@ $user=mysqli_fetch_array($user);
 
                     <!--            <form method="post">-->
                     <!--            <textarea id="msg" name="msg"></textarea>-->
-                    <textarea id="msg" name="msg" placeholder="Chat with us"></textarea>
-                    <button id="send" name="sumbit" value="send" style="float:right" class="btn btn-danger">Send</button>
+                    <textarea id="msg" name="msg"></textarea>
+                    <button id="send" name="sumbit" value="send" style="float:right">send</button>
                     <!--           </form>-->
 
                 </div>

@@ -86,12 +86,14 @@ function getPost($from,$count)
         style="width:37px;border-radius:50%;">
     <a href="./profile/profile.php?id=<?php echo $list['userId']?>" style="line-height: 30px;">
         <span class="font-weight-bold"><?php echo  $user['firstName'].' ' .$user['lastName']?></span></a>
-    <span class="w3-right w3-opacity font-weight-bold">Posted Date : <?php echo $postDate?></span>
+    <!-- <span class="w3-right w3-opacity font-weight-bold">Posted Date : <?php echo $postDate?></span> -->
 
     <hr class="w3-clear" style="margin-top: 25px;">
-    <p><?php echo $list['postContent']?></p>
+    <!-- <p><?php echo $list['postContent']?></p> -->
     <img src="<?php echo 'imagePost/'.$list['postImage']?>" style="width:100%" class="w3-margin-bottom">
-
+    <span class="w3-right w3-opacity font-weight-bold">Posted Date : <?php echo $postDate?></span>
+    <hr class="w3-clear" style="margin-top: 25px;">
+    <p><?php echo $list['postContent']?></p>
     <div class="mt-2">
         <button type="button" data-pid="<?php echo $list['postId']?>"
             class="like-btn w3-button w3-theme-d1 w3-margin-bottom btn btn-success"><i style="color:<?php echo $color?>"

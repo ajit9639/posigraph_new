@@ -1,4 +1,8 @@
 
+<?php 
+// session_start();
+// include("./database/getMsgNotif.php");
+?>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -35,7 +39,7 @@
     <header id="header" class="header-items profile-header">
      <div class="container-fluid">
        <div class="row">
-         <div class="col-8 col-xs-8 header-contents">
+         <div class="col-6 col-xs-6 header-contents">
           <div class="row">
             <div class="col-lg-2 col-2 col-xs-2 go-back">
               <a href="#" title="">
@@ -49,8 +53,9 @@
           </div>
          </div>
 
+
          <div class="col-2 col-xs-2 header-chat-icons">         
-           <a href="#"  data-toggle="modal" data-target="#exampleModal" title="">
+           <a href="search-form.php"  title="">
              <!-- <i class="fa-solid fa-align-justify"></i> -->
              <i class="fa fa-search" aria-hidden="true"></i>
            </a>
@@ -58,9 +63,17 @@
 
 
          <div class="col-2 col-xs-2 header-chat-icons">         
+           <a href="http://localhost/posigraph_new/message/chatApp.php"  title="">
+             <!-- <i class="fa-solid fa-align-justify"></i> -->
+             <i class="fa fa-envelope-o" aria-hidden="true"></i>
+           </a>
+         </div>
+
+
+         <div class="col-2 col-xs-2 header-chat-icons">         
            <a href="#"  data-toggle="modal" data-target="#exampleModal" title="">
              <!-- <i class="fa-solid fa-align-justify"></i> -->
-             <i class="fa fa-bell-o" aria-hidden="true"></i>
+             <i class="fa fa-bars" aria-hidden="true"></i>
            </a>
          </div>
 
@@ -75,18 +88,21 @@
   <div class="modal-dialog popup-modal-body" role="document">
     <div class="modal-content sidebar-popup-section">
       <div class="modal-header">
+
         <!-- <h5 class="modal-title text-center" id="exampleModalLabel">Setting</h5> -->
         <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button> -->
+
       </div>
       <div class="modal-body">
         <a href="myData.php" class="text-center modal-links">Edit Profile</a>
         <a href="#" class="text-center modal-links">Push Notifications</a>
-        <a href="all_friends.php" class="text-center modal-links">Search For Friend</a>
+        <a href="friends/friends.php" class="text-center modal-links">Search For Friend</a>
         <a href="#" class="text-center modal-links">Terms of use</a>
         <a href="#" class="text-center modal-links">Help</a>
       </div>
+      
       <div class="modal-footer">
         <a href="logOut.php" type="button" class="text-center">Logout</a>
         <a type="button" class="text-center" data-dismiss="modal">Cancel</a>
@@ -101,7 +117,7 @@
       <div class="container-fluid">
         <div class="row" id="myDIV">
           <div class="col-3 col-xs-3 footer-icons">
-            <a href="#" class="footer-single-icon btn active" title="">
+            <a href="feed.php" class="footer-single-icon btn active" title="">
               <i class="fa-solid fa-house"></i>             
               <!-- <div class="hover-display">
                 <span>Home</span>
@@ -118,7 +134,14 @@
           </div>
           <div class="col-3 col-xs-3 footer-icons">
             <a href="#" class="footer-single-icon btn" title="">
-              <i class="fa-regular fa-heart"></i>
+              <i class="fa-solid fa-heart"></i>
+              <span class="notification_alert">
+              <?php
+                // $n=getUnreadMsg($_SESSION['id']);
+                // if($n>0)
+                //     echo $n;
+                ?>
+                </span>
               <!-- <div class="hover-display">
                 <span>notify</span>
               </div> -->

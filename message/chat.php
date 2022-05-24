@@ -12,7 +12,7 @@
       
       <style>
       
-                         body{
+            body{
              background:#e5e5e5; 
              font-family: sans-serif;
             }
@@ -126,37 +126,29 @@
                  margin-left:5px;
             }
       
-      </style>
-      
-      
-      
+      </style>                  
  
   </head>
 
 <body>
- 
 
-        <div id="chat-sidebar" style="background-color:red">
-
-        
+        <div id="chat-sidebar" style="background-color:#acafb0">        
 
         <div id="sidebar-user-box" class="106" >
-        <img src="user.png" />
-        <span id="slider-username">Tony </span>
+        <img src="../dp/user.png" />
+        <span id="slider-username">Ajit </span>
         </div> 
 
         <div id="sidebar-user-box" class="107" >
-        <img src="user.png" />
-        <span id="slider-username">Alex Robby </span>
+        <img src="../dp/user.png" />
+        <span id="slider-username">Sachin </span>
         </div> 
 
         <div id="sidebar-user-box" class="108" >
-        <img src="user.png" />
-        <span id="slider-username">Pragaya Mishra </span>
+        <img src="../dp/user.png" />
+        <span id="slider-username">Misti </span>
         </div> 
-
        
-
         </div> 
 
 </body>

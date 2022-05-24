@@ -2,7 +2,7 @@
   
         session_start();
         include("../database/connection.php");
-        $database="plexus";
+        $database="posigraph_socialplexus";
         mysqli_select_db($conn,$database);
               $me=$_POST['me'];
             if(isset($_POST['id']))
@@ -79,4 +79,3 @@ else
 
 
 ?>
-

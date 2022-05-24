@@ -36,9 +36,11 @@ else
 </head>
 
 <body>
-    <!--    main body starts here-->
-    <div class="container" style="max-width:1300px;margin-top:50px">
+    <!--  main body starts here-->
+    
+    <div class="container">
         <div class="row">
+        <h3 class="text-center mt-4">Edit Profile</h3>
             <div class="col-sm-12">
                 <div class="col-sm-3 change_dp">
                     <div class="row">
@@ -52,9 +54,10 @@ else
                         <button id="cstmbtn" type="button" class="col-sm-8 col-xs-6 btn btn-default"
                             style="margin-left:5px"><span id="imgName">select photo</span></button>
                         <button id="uploadDp" type="button" class=" btn btn-primary">upload</button>
-                    </div>                
+                    </div>
                 </div>
-                <div class="col-sm-9 userTable">
+                
+                <div class="col-sm-12 userTable">
                     <br>
                     <div class="row r1">
 

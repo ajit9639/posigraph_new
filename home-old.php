@@ -6,7 +6,6 @@
   }
 else
 {
-
     include_once("database/connection.php");
    include_once("database/getPost.php");
     include("database/getMyImagePost.php");
@@ -114,10 +113,6 @@ h5 {
             <button id="srch" class="btn" style="width:50px;"><i class="fa fa-search" aria-hidden="true"></i>
             </button>
 
-
-
-
-
             <a id="msg" href="./message/chatApp.php"
                 class="w3-bar-item w3-button  w3-padding-large w3-hide-small w3-hover-white" title="Messages"><i
                     class="fa fa-envelope"></i><span class="w3-badge w3-right w3-small w3-green">
@@ -152,7 +147,6 @@ h5 {
                 <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="overflow:scroll;height:300px;">
                     <?php getAllNotif($_SESSION['id']); ?>
                 </div>
-
 
             </div>
 
@@ -527,7 +521,7 @@ h5 {
                 post.append("file", data[0]);
                 post.append("id", <?php echo $_SESSION['id']?>);
                 <?php  $d=rand(1,1000000000000); ?>
-                //                             if img is selected yhen test content
+                // if img is selected then test content
                 var con = $("#content").val();
                 if (con.length > 0) {
                     post.append("text", con);
@@ -567,7 +561,7 @@ h5 {
 
             var con = $("#content").val();
             if (con.length > 0) {
-                //                                   window.alert("only content");
+                // window.alert("only content");
                 var post = new FormData();
                 post.append("file", data[0]);
                 post.append("id", <?php echo $_SESSION['id']?>);
@@ -632,15 +626,6 @@ h5 {
 </html>
 
 
-<!--
-
-    
-
--->
-
-
-
-<?php
-    
+<?php    
 }
 ?>

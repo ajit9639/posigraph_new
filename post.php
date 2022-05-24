@@ -62,9 +62,9 @@ else
 </style>
 <!--// html code-->
 
-
+<?php include "feed.php" ?>
 <!-- post start -->
-<div class="container-fluid" style="margin-top: 75px;">
+<div class="container-fluid" style="">
     <div class="row">
     <div id='pop-up-div' class="col-sm-10 col-xs-11 "><br>
                         <!--            append  dynamic comment div here-->

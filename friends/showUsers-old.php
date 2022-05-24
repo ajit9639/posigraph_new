@@ -1,7 +1,5 @@
 <style>
 .user-detail {
-    
-    text-align:center;
     padding: 30px;
     position: relative;
     display: block;
@@ -15,7 +13,7 @@
     font-size: 16px;
     font-weight: 700;
     color: #0a69ed;
-    /* margin-top: 30px; */
+    margin-top: 30px;
     margin-bottom: 5px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -85,9 +83,7 @@ function newUsers()
                     
                     <div class='col-sm-12 user-detail'>
 
-                               <div class='col-sm-4 user-pic'> 
-                               <img src='../proImg/pro.jpg'> 
-                               </div>
+                               <div class='col-sm-4 user-pic'> <img src='../proImg/pro.jpg'> </div>
                         <div class='col-sm-7 user-name-buttons'> 
                         
                              <div class=' row name'>
@@ -131,9 +127,7 @@ $strr=implode(',', $strr);
                 echo"                    
                     <div class='col-sm-12 user-detail'>
 
-                               <div class='col-sm-4 user-pic'>
-                                <img src='../proImg/pro.jpg'>
-                                 </div>
+                               <div class='col-sm-4 user-pic'> <img src='../proImg/pro.jpg'> </div>
                         <div class='col-sm-7 user-name-buttons'> 
                         
                              <div class=' row name'>
@@ -226,19 +220,18 @@ function meToUsers()
                     
                     <div class='col-sm-12 user-detail'>
 
-                               <div class='user-pic'> 
-                               <img src=../dp/{$receiverNameDp['dp']}> 
+                               <div class='col-sm-4 user-pic'> 
+                               <img src=dp/{$receiverNameDp['dp']}> 
                                </div>
-                        <div class='user-name-buttons'> 
+                        <div class='col-sm-7 user-name-buttons'> 
                         
-                             <div class='name'>
-                                  <a href='http://localhost/posigraph_new/profile/profile.php?id={$row['receiverId']}'>
-                                  <p class='name-tilte'>{$receiverNameDp['firstName']}</p>
+                             <div class=' row name'>
+                                  <a href='http://localhost/posigraph_new/profile/profile.php?id={$row['receiverId']}'><p style='margin:10px 10px;'>{$receiverNameDp['firstName']}</p>
                                   </a>
                              </div>
                              
-                           <div class='btn'>
-                             <a id='request' href='#'><button data-id='{$row['receiverId']}'      data-name='{$receiverNameDp['firstName']}' class='btn btn-success cancel-btn' >cancel</button></a>
+                           <div class='row btn'>
+                             <a id='request' href='#'><button data-id='{$row['receiverId']}'      data-name='{$receiverNameDp['firstName']}' class='cancel-btn' >cancel</button></a>
                             </div>
 
                         </div>
@@ -273,27 +266,26 @@ function usersToMe()
                     
                      <div class='col-sm-12 user-detail'>
 
-                           <div class='user-pic'> 
+                           <div class='col-sm-4 user-pic'> 
                                  <img src='../proImg/pro.jpg'>    
                             </div>
 
-                            <div class='user-name-buttons'>
+                            <div class='col-sm-7 user-name-buttons'>
                        
-                                    <div class=' name'>
-                                      <a href='http://localhost/posigraph_new/profile/profile.php?id={$row['senderId']}'>
-                                      <p class='name-tilte'>{$senderNameDp['firstName']}</p>
+                                    <div class='row name'>
+                                      <a href='http://localhost/posigraph_new/profile/profile.php?id={$row['senderId']}'><p style='margin:10px 10px;'>{$senderNameDp['firstName']}</p>
                                        </a>
                                     </div>
 
-                                    <div class=' btn'>
+                                    <div class='row btn'>
 
                                      <a href='#'>
-                                    <button data-id='{$row['senderId']}'  data-name='{$senderNameDp['firstName']}' class='btn btn-success accept-btn' >accept
+                                    <button data-id='{$row['senderId']}'                            data-name='{$senderNameDp['firstName']}' class='accept-btn' >accept
                                        </button>
                                      </a>
                        
                                        <a href='#'>
-                                    <button data-id='{$row['senderId']}'     data-name='{$senderNameDp['firstName']}' class='ignore-btn btn btn-danger'>     ignore
+                                    <button data-id='{$row['senderId']}'                               data-name='{$senderNameDp['firstName']}' class='ignore-btn'>     ignore
                                        </button>
                                      </a>
                                     </div>
@@ -334,17 +326,16 @@ function myFriends()
                       echo"
                           <div class='col-sm-12 user-detail'>
 
-                                 <div class=''>
+                                 <div class='col-sm-5'>
                                        <div class='friend-pic round-pic'> 
                                              <img src='../proImg/pro.jpg'>    
                                         </div>
                                  </div>
 
-                                <div class=' user-name-buttons'> 
-                                    <div class='row name'><a href='http://localhost/posigraph_new/profile/profile.php?id={$friend['userId']}'>
-                                    <p class='name-tilte'>{$friend['firstName']}</p></a></div>
+                                <div class='col-sm-7 user-name-buttons'> 
+                                    <div class='row name'><a href='http://localhost/posigraph_new/profile/profile.php?id={$friend['userId']}'><p style='color:white;margin:10px 10px;'>{$friend['firstName']}</p></a></div>
                                    <div class='row btn'> <a href='#'>
-                                    <button data-id='{$friend['userId']}'  data-name='{$friend['firstName']}' class='btn btn-success unfriend-btn'>Unfriend</button></a>
+                                    <button data-id='{$friend['userId']}'                           data-name='{$friend['firstName']}' class='unfriend-btn'>Unfriend</button></a>
                                     </div>
 
                                 </div>
@@ -360,18 +351,16 @@ function myFriends()
                       echo"
                           <div class='col-sm-12 user-detail'>
 
-                                 <div class=''>
+                                 <div class='col-sm-5'>
                                        <div class='friend-pic round-pic'> 
                                              <img src='../proImg/pro.jpg'>    
                                         </div>
                                  </div>
 
-                                <div class='user-name-buttons'> 
-                                    <div class='name'><a href='http://localhost/posigraph_new/profile/profile.php?id={$friend['userId']}'>
-                                    <p class='name-tilte'>{$friend['firstName']}</p>
-                                    </a></div>
-                                   <div class='btn'> <a href='#'>
-                                   <button data-id='{$friend['userId']}' data-name='{$friend['firstName']}' class='unfriend-btn btn-sm btn-success'>Unfollow</button></a>
+                                <div class='col-sm-7 user-name-buttons'> 
+                                    <div class='row name'><a href='http://localhost/posigraph_new/profile/profile.php?id={$friend['userId']}'><p style='color:white;margin:10px 10px;'>{$friend['firstName']}</p></a></div>
+                                   <div class='row btn'> <a href='#'>
+                                   <button data-id='{$friend['userId']}'                         data-name='{$friend['firstName']}' class='unfriend-btn'>Unfriend</button></a>
                                    </div>
 
                                 </div>
@@ -514,18 +503,15 @@ $strr=implode(',', $strr);
                     
                     <div class='col-sm-12 user-detail'>
 
-                               <div class=' user-pic'> 
-                               <img src='../proImg/pro.jpg'>
-                                </div>
-                        <div class=' user-name-buttons'> 
+                               <div class='col-sm-4 user-pic'> <img src='../proImg/pro.jpg'> </div>
+                        <div class='col-sm-7 user-name-buttons'> 
                         
-                             <div class='  name'>
-                                  <a href='http://localhost/posigraph_new/profile/profile.php?id={$row['userId']}'>
-                                  <p class='name-tilte'>{$row['firstName']}</p></a>
+                             <div class=' row name'>
+                                  <a href='http://localhost/posigraph_new/profile/profile.php?id={$row['userId']}'><p style='margin:10px 10px;'>{$row['firstName']}</p></a>
                              </div>
                              
-                           <div class=' btn'>
-                             <a id='request' href='#'><button data-id='{$row['userId']}'         data-name='{$row['firstName']}' class='request-btn btn btn-success' >Follow</button>
+                           <div class='row btn'>
+                             <a id='request' href='#'><button data-id='{$row['userId']}'         data-name='{$row['firstName']}' class='request-btn' >Request</button>
                              </a>
                             </div>
 
@@ -566,19 +552,15 @@ function moreSugg()
             {
                 echo"                    
                     <div class='col-sm-12 user-detail'>
-                               <div class='user-pic'> 
-                               <img src=../dp/{$row['dp']}> 
-                               </div>
-
-                              <div class='user-name-buttons'>                         
-                             <div class='name'>
+                               <div class='col-sm-4 user-pic'> <img src=../dp/{$row['dp']}> </div>
+                              <div class='col-sm-7 user-name-buttons'>                         
+                             <div class=' row name'>
                                   <a href='http://localhost/posigraph_new/profile/profile.php?id={$row['userId']}'>
-                                  <p style='' class='name-tilte'>{$row['firstName']}</p>
+                                  <p style='margin:10px 10px;' class='name-tilte'>{$row['firstName']}</p>
                                   </a>
-                             </div>  
-
-                           <div class='btn'>
-                             <a id='request' href='#'><button data-id='{$row['userId']}' data-name='{$row['firstName']}' class='request-btn btn btn-sm btn-success' >Follow</button>
+                             </div>                             
+                           <div class='row btn'>
+                             <a id='request' href='#'><button data-id='{$row['userId']}' data-name='{$row['firstName']}' class='request-btn btn btn-sm btn-success' >Request</button>
                              </a>
                             </div>
                         </div>

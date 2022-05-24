@@ -17,12 +17,12 @@ if($friendList)
                    if($logInStatus=="Online")
                      {
                          $flag="Online";
-                         $color="#49ba26";
+                         $color="#86BB71";
                      }
                     else
                     {
                       $flag="Ofline";
-                        $color="#ee4342";
+                        $color="gray";
 
                     }
          $total=unseen($_SESSION['id'],$userId);
@@ -35,20 +35,17 @@ if($friendList)
                <div class='online-user-img' style='display:inline-block'>
                 <img src='../dp/{$dp}'>
               </div>
+              
+              <div class='online-user-name' style='display:inline-block'>
+              <p style='color:cyan;font-size:18px'>
+              <a style='color:white;font-size:20px' href='chatApp.php?id=$userId'> $userName 
               <span style='color:yellow' id='unreadOf{$userId}'>$read</span>
               </a> 
               <span>
-              <i style='color: $color;font-size: 20px;' class='fa fa-circle' aria-hidden='true'></i>        
+              <i style='color: $color;font-size: 20px;' class='fa fa-circle' aria-hidden='true'></i>$flag
               </span>
-
-              <div class='online-user-name' style='display:inline-block'>
-              <p style='color:cyan;font-size:18px'>
-              <a style='color:black;font-size:20px' href='chatApp.php?id=$userId'> $userName </a>
-                            
-              <span style='float:right;width:10%;'> <a class='btn btn-xs btn-success' href='chatApp.php?id=$userId'>Click to chat</a>
-              </span>
-
-              </p> </div> <hr>";          
+              </p> </div> <hr>";
+          
            
     }
 }
@@ -106,3 +103,7 @@ function unseen($me,$id)
        
         ?>
 
+<script>
+
+       
+</script>

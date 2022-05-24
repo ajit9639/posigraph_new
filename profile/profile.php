@@ -37,7 +37,11 @@ $query="select *  from user where userId='$id'";
          $facebook=$ud_row['facebook'];
          $twitter=$ud_row['twitter'];
          $insta=$ud_row['insta'];
-         $linkedIn=$ud_row['linkedIn'];                             
+         $linkedIn=$ud_row['linkedIn'];
+
+               
+     
+         
          
      }
         else
@@ -109,22 +113,14 @@ else
 		<div class="container">
 			<div class="heading-wrapper">
 				<div class="row">
-					<div class="col-sm-6 col-md-6 col-lg-4">
-						<div class="info">
-							<i class="icon ion-ios-location-outline"></i>
-							<div class="right-area">
-								<h5><?php echo $city?></h5>
-								<h5><?php echo $state.','.$country?></h5>
-							</div><!-- right-area -->
-						</div><!-- info -->
-					</div><!-- col-sm-4 -->
+					
 					
 					<div class="col-sm-6 col-md-6 col-lg-4">
 						<div class="info">
 							<i class="icon ion-ios-telephone-outline"></i>
 							<div class="right-area">
 								<h5><?php echo $phone?></h5>
-								<h6>MIN - FRI,8AM - 7PM</h6>
+
 							</div><!-- right-area -->
 						</div><!-- info -->
 					</div><!-- col-sm-4 -->
@@ -134,7 +130,7 @@ else
 							<i class="icon ion-ios-chatboxes-outline"></i>
 							<div class="right-area">
 								<h5><?php echo $email?></h5>
-								<h6>REPLY IN 24 HOURS</h6>
+
 							</div><!-- right-area -->
 						</div><!-- info -->
 					</div><!-- col-sm-4 -->
@@ -157,7 +153,6 @@ else
 						<ul class="information margin-tb-30">
 							<li><b>BORN : </b><?php echo $DOB?></li>
 							<li><b>EMAIL : </b><?php echo $email?></li>
-							<li><b>MARITAL STATUS : </b>Married</li>
 						</ul>
 						<ul class="social-icons">
 						
@@ -173,7 +168,7 @@ else
 	</section>
     
 	<?php
-include "../posi_header.php";
+// include "../posi_header.php";
 	?>
 <!--////////////////////////////////////////////////////////////////////////////////////////	-->
     <?php

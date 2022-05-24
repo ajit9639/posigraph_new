@@ -24,42 +24,30 @@
 
 
     <style>
-    .all-user {
-        /* height: 590px;
-        background: red; */
-    }
-
     .new-user {
-        margin-top:65px;
         height: 280px;
-        background: cyan;
-        overflow-x: hidden;
-        overflow-y: scroll;
+        /* overflow-x: hidden;
+        overflow-y: scroll; */
     }
 
     .requested-user {
         height: 300px;
-        background: green;
-        overflow-x: hidden;
-        overflow-y: scroll;
+        /* overflow-x: hidden;
+        overflow-y: scroll; */
         margin-top: 5px;
-        box-shadow: -1px 10px 100px 5px green;
-        border-radius: 15px;
+        /* box-shadow: 3px 3px 10px 5px #ccc;
+        border-radius: 15px; */
     }
 
     .known-user {
         height: 590px;
-        /*            background:green;*/
     }
 
     .known-user .request-list {
         height: 275px;
-        /*            background: pink;*/
-        overflow-x: hidden;
+        /* overflow-x: hidden;
         overflow-y: scroll;
-        box-shadow: -1px 10px 100px 5px gray;
-
-
+        box-shadow: 3px 3px 10px 5px #ccc; */
     }
 
     .known-user .friend-list {
@@ -70,20 +58,19 @@
         margin-top: 10px;
         box-shadow: -1px 10px 100px 5px green;
         border-radius: 10px;
-
     }
 
     .user-detail {
+        width:auto;
         height: auto;
-        /*        background:aqua;*/
         margin: 5px;
-        padding: 0;
-
+        /* padding: 0; */
     }
 
     .user-pic img {
         height: 90px;
         width: 90px;
+        border-radius:50%;
     }
 
     .user-detail .user-name-buttons {
@@ -91,58 +78,65 @@
     }
 
     .user-detail .user-name-buttons p {
-        font-size: 20px;
-        font-family: cursive;
+        font-size: 16px;
+    font-family: sans-serif;
     }
 
     .user-detail .user-name-buttons button {
         width: 100px;
-        padding: 4 10px;
+        padding: 4px 10px;
         font-size: 15px;
         outline: none;
         border: none;
-        border-radius: 5px;
+        border-radius: 100px;
     }
 
-    .friend-pic {
-        height: 90px;
-        width: 90px;
-        overflow: hidden;
-        border-radius: 50%;
-    }
+   
 
     .friend-pic img {
-        width: 100%;
+        height: 90px;
+        width: 90px;
+        border-radius:50%;
+    }
+
+    .user-detail .user-name-buttons a{
+text-decoration: none;
     }
     </style>
 
 </head>
 
 <body>
-
-    <div class="container">
+    <div class="container-fluid">
+        <a href="http://localhost/posigraph_new/" class="btn btn-danger">Back to home</a>
         <div class="row">
-            <div class="col-sm-6 col-xs-6 all-user">
-                <!-- suggested friends -->
-                <div class="row new-user">
+           
+            <div class="col-md-12 all-user">                
+                <div class="col-md-12 new-user">
+                <h3>Suggested Friends</h3>
                     <?php friendsOfFriend($_SESSION['id']); 
                            moreSugg();?>
                 </div>
-              
-                <div class="row requested-user">
-                    <?php meToUsers();?>
-                </div>
-            </div>
-
-
-            <div class="col-sm-6  col-xs-6 known-user">
-          
-                <div class="row request-list">
-                    <?php usersToMe();?>
-                </div>
-                <div class="row friend-list">
+                <div class="col-md-12 friend-list">
+                <h3>My Friends</h3>
                     <?php  myFriends();?>
+                </div>                
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 known-user">
+                <div class="col-md-12 request-list">
+                
+                <h3>Request Sent</h3>
+                <?php meToUsers();?>
+                    
                 </div>
+                <div class="col-md-12 requested-user">
+                <h3>Request Recived</h3>
+                <?php usersToMe();?>
+                </div>
+
             </div>
         </div>
     </div>

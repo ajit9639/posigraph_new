@@ -216,6 +216,7 @@ session_start();
     </div>
     
 </body>
+
 <script>
 $(document).ready(function() {
     $("#btn").click(function() {

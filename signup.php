@@ -2,7 +2,7 @@
 session_start();
  if(isset($_SESSION['email']))
  {
-     echo "<script>window.open('./index.php','_self')</script>";
+     echo "<script>window.open('./home.php','_self')</script>";
  }
 ?>
 <!DOCTYPE html>
@@ -305,7 +305,7 @@ session_start();
                         $("#nameerr, #phoneerr, #mailerr, #passerr , #conpasserr").html("");
                         // $(".msg").html("wait a moment verification link is being sent...")
                         alert("Verification link is sent to your mail id please verify it");
-                        window.location.replace("index.php");
+                        location.replace("index.php");
 
                         $(".msg").load("database/insertUser.php", {
                             fname: fname,
