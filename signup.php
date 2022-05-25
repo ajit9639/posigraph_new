@@ -3,7 +3,41 @@ session_start();
  if(isset($_SESSION['email']))
  {
      echo "<script>window.open('./home.php','_self')</script>";
- }
+ }else{
+//      if(isset($_POST['submit'])){
+// $fname = $_POST['fname'];
+// $lname = $_POST['lname'];
+// $mail = $_POST['mail'];
+// $password = $_POST['password'];
+// $gender = $_POST['gender'];
+// $phone = $_POST['phone'];
+// $conPassword = $_POST['conPassword'];
+// $regDate = date('dd-mm-yy');
+
+
+
+// $verStatus="unverified";
+// $post="no";
+
+// $verCode=mt_rand();
+
+// $dp="default_male.png";
+// $DOB=date('DD/MM/YYYY');
+// $status="";
+
+
+
+
+
+// if($password != $conPassword){
+//     echo "<acript>alert('password & conform Password missmatch')</script>";
+// }else{
+
+// $query = "INSERT INTO `user`(`firstName`, `lastName`, `email`, `password`, `gender`, `regDate`, `verStatus`, `verCode`, `post`, `phone`, `lastLogIn`, `DOB`, `dp`, `status`, `logInStatus`) 
+//                         VALUES('$fname','$lname','$mail','$password','$gender','','')";
+// }
+//      }
+//  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -209,7 +243,7 @@ session_start();
         
             <div class="title">Sign up</div>
             <div class="input-container ic1">
-                <input class="input" type="text" placeholder="username" name="fname" placeholder="First Name"
+                <input class="input" type="text" placeholder="First Name" name="fname" placeholder="First Name"
                     required="required" id="fnamebox" />
                 <span id="nameerr" style="font-size:15; color:red; text-align:center;"></span>
             </div>
@@ -265,7 +299,7 @@ session_start();
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
 
-    <script>
+ <script>
     $(document).ready(function() {
         $("#btn1").click(function() {
 
@@ -332,6 +366,8 @@ session_start();
             }
         });
     });
-    </script>
+    </script> 
 </body>
 </html>
+
+<?php}?>
