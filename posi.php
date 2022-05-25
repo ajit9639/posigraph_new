@@ -8,18 +8,18 @@
                     <div class="tabs">
                         
                         <div class="tab-2 tab-1">
-                        <a class="first-tab" href="post.php"> Feed </a>
+                        <a class="first-tab" href="https://posigraph.com/posigraph.com/ajit/post.php"> Feed </a>
                         <input id="tab2-2" name="tabs-two" type="radio">
                           
                         </div>
 
                         <div class="tab-2">
-                        <a class="first-tab" href="home.php"> Posi </a>                            
+                        <a class="first-tab" href="https://posigraph.com/posigraph.com/ajit/home.php"> Posi </a>                            
                             <input id="tab2-1" name="tabs-two" type="radio" checked="checked">                           
                         </div>
 
                         <div class="tab-2">
-                        <a href="board.php" class="first-tab"> Board </a>
+                        <a href="https://posigraph.com/posigraph.com/ajit/board.php" class="first-tab"> Board </a>
                             <input id="tab2-3" name="tabs-two" type="radio">                           
                         </div>
 

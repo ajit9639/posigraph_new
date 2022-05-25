@@ -238,7 +238,7 @@ $user=mysqli_fetch_array($user);
 
 
          <div class="col-2 col-xs-2 header-chat-icons">         
-           <a href="http://localhost/posigraph_new/search-form.php"  title="">
+           <a href="https://posigraph.com/posigraph.com/ajit/search-form.php"  title="">
              <!-- <i class="fa-solid fa-align-justify"></i> -->
              <i class="fa fa-search" aria-hidden="true"></i>
            </a>
@@ -246,7 +246,7 @@ $user=mysqli_fetch_array($user);
 
 
          <div class="col-2 col-xs-2 header-chat-icons">         
-           <a href="http://localhost/posigraph_new/message/chatApp.php"  title="">
+           <a href="https://posigraph.com/posigraph.com/ajit/message/chatApp.php"  title="">
              <!-- <i class="fa-solid fa-align-justify"></i> -->
              <i class="fa fa-envelope-o" aria-hidden="true"></i>
            </a>
@@ -279,7 +279,7 @@ $user=mysqli_fetch_array($user);
         </button> -->
       </div>
       <div class="modal-body">
-        <a href="http://localhost/posigraph_new/myData.php" class="text-center modal-links">Edit Profile</a>
+        <a href="https://posigraph.com/posigraph.com/ajit/myData.php" class="text-center modal-links">Edit Profile</a>
         <a href="#" class="text-center modal-links">Push Notifications</a>
         <a href="friends/friends.php" class="text-center modal-links">Search For Friend</a>
         <a href="#" class="text-center modal-links">Terms of use</a>
@@ -287,7 +287,7 @@ $user=mysqli_fetch_array($user);
       </div>
       
       <div class="modal-footer">
-        <a href="http://localhost/posigraph_new/logOut.php" type="button" class="text-center">Logout</a>
+        <a href="https://posigraph.com/posigraph.com/ajit/logOut.php" type="button" class="text-center">Logout</a>
         <a type="button" class="text-center" data-dismiss="modal">Cancel</a>
       </div>
     </div>
@@ -300,7 +300,7 @@ $user=mysqli_fetch_array($user);
       <div class="container-fluid">
         <div class="row" id="myDIV">
           <div class="col-3 col-xs-3 footer-icons">
-            <a href="http://localhost/posigraph_new/feed.php" class="footer-single-icon btn active" title="">
+            <a href="https://posigraph.com/posigraph.com/ajit/feed.php" class="footer-single-icon btn active" title="">
               <i class="fa-solid fa-house"></i>             
               <!-- <div class="hover-display">
                 <span>Home</span>
@@ -308,7 +308,7 @@ $user=mysqli_fetch_array($user);
             </a>
           </div>
           <div class="col-3 col-xs-3 footer-icons">
-            <a href="http://localhost/posigraph_new/post.php" class="footer-single-icon btn" title="">
+            <a href="https://posigraph.com/posigraph.com/ajit/post.php" class="footer-single-icon btn" title="">
               <i class="fa-solid fa-camera-retro"></i>
               <!-- <div class="hover-display">
                 <span>Post</span>
@@ -331,7 +331,7 @@ $user=mysqli_fetch_array($user);
             </a>
           </div>
           <div class="col-3 col-xs-3 footer-icons">
-            <a href="http://localhost/posigraph_new/home.php" class="footer-single-icon btn" title="">
+            <a href="https://posigraph.com/posigraph.com/ajit/home.php" class="footer-single-icon btn" title="">
               <i class="fa-solid fa-user"></i>
               <!-- <div class="hover-display">
                 <span>notify</span>
@@ -355,10 +355,10 @@ $user=mysqli_fetch_array($user);
 
             <div class="user col-sm-5 col-xs-10 " id="online-div">
                 <!-- <a href="#" class="w3-bar-item w3-button w3-padding-large"></a>-->
-                <!-- <a href="http://localhost/posigraph_new/message/broadcastMsg.php"><button type="button"
+                <!-- <a href="https://posigraph.com/posigraph.com/ajit/message/broadcastMsg.php"><button type="button"
                         class="comment-btn w3-button w3-theme-d2 w3-margin-bottom"> &nbsp;Group Message</button></a> -->
 
-                <!-- <a href="http://localhost/posigraph_new/message/chatApp.php"><button type="button"
+                <!-- <a href="https://posigraph.com/posigraph.com/ajit/message/chatApp.php"><button type="button"
                         class="comment-btn w3-button w3-theme-d2 w3-margin-bottom"> &nbsp;Private Message</button></a> -->
                 <center>
                     <h3>People in your Posigraph</h3>
@@ -566,7 +566,7 @@ $("#srch").click(function() {
     if (v == "")
         window.alert("please enter name or email")
     else
-        window.open('http://localhost/posigraph_new/search.php?a=' + v, '_self')
+        window.open('https://posigraph.com/posigraph.com/ajit/search.php?a=' + v, '_self')
 
 });
 </script>

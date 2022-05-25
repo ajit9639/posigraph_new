@@ -226,7 +226,7 @@ function meToUsers()
                         <div class='col-sm-7 user-name-buttons'> 
                         
                              <div class=' row name'>
-                                  <a href='http://localhost/posigraph_new/profile/profile.php?id={$row['receiverId']}'><p style='margin:10px 10px;'>{$receiverNameDp['firstName']}</p>
+                                  <a href='https://posigraph.com/posigraph.com/ajit/profile/profile.php?id={$row['receiverId']}'><p style='margin:10px 10px;'>{$receiverNameDp['firstName']}</p>
                                   </a>
                              </div>
                              
@@ -273,7 +273,7 @@ function usersToMe()
                             <div class='col-sm-7 user-name-buttons'>
                        
                                     <div class='row name'>
-                                      <a href='http://localhost/posigraph_new/profile/profile.php?id={$row['senderId']}'><p style='margin:10px 10px;'>{$senderNameDp['firstName']}</p>
+                                      <a href='https://posigraph.com/posigraph.com/ajit/profile/profile.php?id={$row['senderId']}'><p style='margin:10px 10px;'>{$senderNameDp['firstName']}</p>
                                        </a>
                                     </div>
 
@@ -333,7 +333,7 @@ function myFriends()
                                  </div>
 
                                 <div class='col-sm-7 user-name-buttons'> 
-                                    <div class='row name'><a href='http://localhost/posigraph_new/profile/profile.php?id={$friend['userId']}'><p style='color:white;margin:10px 10px;'>{$friend['firstName']}</p></a></div>
+                                    <div class='row name'><a href='https://posigraph.com/posigraph.com/ajit/profile/profile.php?id={$friend['userId']}'><p style='color:white;margin:10px 10px;'>{$friend['firstName']}</p></a></div>
                                    <div class='row btn'> <a href='#'>
                                     <button data-id='{$friend['userId']}'                           data-name='{$friend['firstName']}' class='unfriend-btn'>Unfriend</button></a>
                                     </div>
@@ -358,7 +358,7 @@ function myFriends()
                                  </div>
 
                                 <div class='col-sm-7 user-name-buttons'> 
-                                    <div class='row name'><a href='http://localhost/posigraph_new/profile/profile.php?id={$friend['userId']}'><p style='color:white;margin:10px 10px;'>{$friend['firstName']}</p></a></div>
+                                    <div class='row name'><a href='https://posigraph.com/posigraph.com/ajit/profile/profile.php?id={$friend['userId']}'><p style='color:white;margin:10px 10px;'>{$friend['firstName']}</p></a></div>
                                    <div class='row btn'> <a href='#'>
                                    <button data-id='{$friend['userId']}'                         data-name='{$friend['firstName']}' class='unfriend-btn'>Unfriend</button></a>
                                    </div>
@@ -507,7 +507,7 @@ $strr=implode(',', $strr);
                         <div class='col-sm-7 user-name-buttons'> 
                         
                              <div class=' row name'>
-                                  <a href='http://localhost/posigraph_new/profile/profile.php?id={$row['userId']}'><p style='margin:10px 10px;'>{$row['firstName']}</p></a>
+                                  <a href='https://posigraph.com/posigraph.com/ajit/profile/profile.php?id={$row['userId']}'><p style='margin:10px 10px;'>{$row['firstName']}</p></a>
                              </div>
                              
                            <div class='row btn'>
@@ -522,7 +522,7 @@ $strr=implode(',', $strr);
                   ";
             }
         }
-//         <a href='http://localhost/posigraph_new/profile/profile.php?id={$id}'> <p><button>View Profile</button></p></a>
+//         <a href='https://posigraph.com/posigraph.com/ajit/profile/profile.php?id={$id}'> <p><button>View Profile</button></p></a>
         
     }
     else
@@ -555,7 +555,7 @@ function moreSugg()
                                <div class='col-sm-4 user-pic'> <img src=../dp/{$row['dp']}> </div>
                               <div class='col-sm-7 user-name-buttons'>                         
                              <div class=' row name'>
-                                  <a href='http://localhost/posigraph_new/profile/profile.php?id={$row['userId']}'>
+                                  <a href='https://posigraph.com/posigraph.com/ajit/profile/profile.php?id={$row['userId']}'>
                                   <p style='margin:10px 10px;' class='name-tilte'>{$row['firstName']}</p>
                                   </a>
                              </div>                             

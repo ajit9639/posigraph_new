@@ -35,7 +35,7 @@ $("#srch").click(function() {
     if (v == "")
         window.alert("please enter name or email")
     else
-        window.open('http://localhost/posigraph_new/search.php?a=' + v, '_self')
+        window.open('https://posigraph.com/posigraph.com/ajit/search.php?a=' + v, '_self')
 
 });
 </script>
