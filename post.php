@@ -25,6 +25,8 @@ else
 
 <style>
 #pop-up-div {
+    width:80%;
+    margin:0 auto;
     background: #fff;
     display: none;
     position: fixed;
@@ -50,7 +52,7 @@ else
 
 #comment-text {
     border: 2px solid #57707d;
-    width: 300px;
+    width: 100%;
     padding-top: 13px;
     padding-left: 10px;
     box-sizing: border-box;
@@ -59,15 +61,19 @@ else
     /* border: none; */
     border-radius: 5px;
 }
+
+
 </style>
 <!--// html code-->
 
 <?php include "feed.php" ?>
 <!-- post start -->
-<div class="container-fluid" style="">
+<div class="container-fluid" >
     <div class="row">
+        <?php include "./slider.php";?>
     <div id='pop-up-div' class="col-sm-10 col-xs-11 "><br>
-                        <!--            append  dynamic comment div here-->
+
+
                     </div>
         <div class="col-md-12">
             <!-- <div class="w3-row-padding ">
@@ -99,9 +105,10 @@ else
                 </div> -->
         </div>
         <div class="col-md-12">
-            <!-- End Middle Column post area -->
+            <!--End Middle Column post area-->
+            
             <?php         
-        if(isset($_GET['pn']))  // when pagination started
+        if(isset($_GET['pn']))  //when pagination started
         {    $pn=$_GET['pn'];
                 if($pn=="" || $pn=="1")
             {
@@ -114,7 +121,7 @@ else
             }
         }
         else
-        getPost(0,10) ; // for the very first time when pagination is not started                    
+        getPost(0,10); // for the very first time when pagination is not started                    
         ?>
         </div>
         <!--   pagination div-->
@@ -131,6 +138,7 @@ else
 </div>
 </div>
 <!-- //post end -->
+
 
 
 
@@ -234,6 +242,69 @@ $(".like-btn").click(function() {
             }
         }
     });
+});
+
+//dislike
+$(".dislike-btn").click(function() {
+var $this = $(this);
+pid = $this.data("pid");
+$("#dislike1" + pid).css("color", "orange");
+postId = new FormData();
+postId.append("pid", pid);
+postId.append("me", "<?php echo $_SESSION['id']?>");
+postId.append("name", "<?php echo $_SESSION['name']?>");
+postId.append("dislike-btn", "dislike");
+
+$.ajax({
+    method: 'post',
+    url: "database/dislike.php",
+    cache: false,
+    data: postId,
+    contentType: false,
+    processData: false,
+    success: function(loadData) {
+        if (loadData == "yes") {
+            $("#" + pid).css("color", ""); // remove icon color
+            //                                     get total like after deletion
+            postId = new FormData();
+            postId.append("pid", pid);
+            postId.append("totaldisLikes", "totaldisLikes");
+
+            $.ajax({
+                method: 'post',
+                url: "database/dislike.php",
+                cache: false,
+                data: postId,
+                contentType: false,
+                processData: false,
+                success: function(loadData) {
+                    $("#dislike" + pid).html(loadData);
+                }
+            });
+
+
+        } else {
+
+            $("#dislike1" + pid).css("color", "orange");
+            //           get total like after insertion of like
+            postId = new FormData();
+            postId.append("pid", pid);
+            postId.append("totaldisLikes", "totalLikes");
+
+            $.ajax({
+                method: 'post',
+                url: "database/dislike.php",
+                cache: false,
+                data: postId,
+                contentType: false,
+                processData: false,
+                success: function(loadData) {
+                    $("#dislike" + pid).html(loadData);
+                }
+            });
+        }
+    }
+});
 });
 
 
@@ -410,7 +481,6 @@ $("#srch").click(function() {
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
 
 
 </body>

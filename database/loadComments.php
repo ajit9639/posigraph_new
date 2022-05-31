@@ -7,13 +7,15 @@ if(isset($_POST['comment-btn']))
 
 <div id="dynamic">
     <br>
-    <span class="w3-right w3-opacity"><button id="close-popUp"><i class="fa fa-times"></i></button></span>
-    <button type="button" data-pid='<?php echo $pid ?>' class="all-likes w3-button w3-theme-d1 w3-margin-bottom">
+    <span class="w3-right w3-opacity"><button id="close-popUp" style="
+    border: none;
+"><i class="fa fa-times"></i></button></span>
+    <button type="button" data-pid='<?php echo $pid ?>' class="all-likes w3-button w3-theme-d1 w3-margin-bottom btn btn-info">
         <i class="fa fa-thumbs-up"></i> &nbsp; All Likes</button>
-    <button type="button" data-pid='<?php echo $pid ?>' class="all-comments w3-button w3-theme-d1 w3-margin-bottom">
+    <button type="button" data-pid='<?php echo $pid ?>' class="all-comments w3-button w3-theme-d1 w3-margin-bottom btn btn-success">
         <i class="fa fa-comment"></i> &nbsp; All comments</button>
     <input type="text" name="comment-text" id="comment-text" placeholder="Write Your Comment Here">
-    <button type="button" data-pid='<?php echo $pid ?>' class=" insert-comment w3-button w3-theme-d2 w3-margin-bottom">
+    <button type="button" data-pid='<?php echo $pid ?>' class=" insert-comment w3-button w3-theme-d2 w3-margin-bottom btn btn-danger">
         <!-- <i class="fa fa-comment"></i>  -->
         <i class="fa fa-sign-in"></i>
         &nbsp; Submit</button>

@@ -528,11 +528,8 @@ $strr=implode(',', $strr);
                              <a id='request' href='#'><button data-id='{$row['userId']}'         data-name='{$row['firstName']}' class='request-btn btn btn-success' >Follow</button>
                              </a>
                             </div>
-
                         </div>
-
-                   </div>
-                 
+                   </div>                 
                   ";
             }
         }

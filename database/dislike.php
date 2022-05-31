@@ -5,56 +5,56 @@ include_once("connection.php");
 $database="posigraph_socialplexus";
 mysqli_select_db($conn,$database);
 
-if(isset($_POST['like-btn'])&&isset($_POST['me'])&&isset($_POST['pid']))
+if(isset($_POST['dislike-btn'])&&isset($_POST['me'])&&isset($_POST['pid']))
 {
-    // echo "<script>alert('welcome')</script>";exit();
     $me=$_POST['me'];
     $name=$_POST['name'];
     $pid=$_POST['pid'];
-    $check=myLike($pid,$me);
+    $check=mydisLike($pid,$me);
     if($check)
     {
 //        if alreay liked the remove like echo yes for changing the color of like icon in output
         
-        deleteLike($pid,$me);
+        deletedisLike($pid,$me);
          echo "yes";// for jquesry becoz return statement of php wont reflect in javascript(ajax) only   echo reflect the result in jaxa
     }
       
     else
     {
 //     if user dint like then add a like & echo no for changing the color of like icon in output
-        insertLike($pid,$me,$name);
+        insertdisLike($pid,$me,$name);
          echo "no";
     }
        
 }
 
-if(isset($_POST['totalLikes'])&&isset($_POST['pid']))
+if(isset($_POST['totaldisLikes'])&&isset($_POST['pid']))
 {
     $pid=$_POST['pid'];
-    totalLike($pid);
+    totaldisLike($pid);
 }
 
 
 
 
 
-function myLike($pid,$userId)
+function mydisLike($pid,$userId)
 {
 
   global $conn;
-    $query="select likeId from likes where postId='$pid' AND likeBy='$userId'";
-    $mylike=mysqli_query($conn,$query);
-   if($mylike)
+    $query="select dislikeId from dislikes where postId='$pid' AND dislikeBy='$userId'";
+    $mydislike=mysqli_query($conn,$query);
+   if($mydislike)
    {
-       if(mysqli_num_rows($mylike)>=1)
+       if(mysqli_num_rows($mydislike)>=1)
        {
            return true;
            
        }
        else
            return false;
-              
+       
+       
    }
     else
     {
@@ -64,43 +64,44 @@ function myLike($pid,$userId)
 }
 
 
-function totalLike($pid)
+function totaldisLike($pid)
 {
-    
   global $conn;
-    $query="select COUNT(*) from likes where postId='$pid'";
-    $likes=mysqli_query($conn,$query);
-   if($likes)
+    $query="select COUNT(*) from dislikes where postId='$pid'";
+    $dislikes=mysqli_query($conn,$query);
+   if($dislikes)
    {
-       $total=mysqli_fetch_array($likes);
+       $total=mysqli_fetch_array($dislikes);
       echo $total[0];
    }
     else
         echo"err";
 }
 
-function deleteLike($pid,$userId)
+
+function deletedisLike($pid,$userId)
 {
     global $conn;
-    $query="delete from likes where postId='$pid' AND likeBy='$userId'";
+    $query="delete from dislikes where postId='$pid' AND dislikeBy='$userId'";
     $likes=mysqli_query($conn,$query);
-    $notifFor=getUserId($pid);
-    deleteNotification($notifFor,$userId,"like",$pid);
-    
+    $notifFor=getdisUserId($pid);
+    deletedisNotification($notifFor,$userId,"dislike",$pid);
 }
-function insertLike($pid,$userId,$name)
+
+
+function insertdisLike($pid,$userId,$name)
 {
      global $conn;
-    $query="insert into likes(postId,likeBy,likeDate) values('$pid','$userId',NOW())";
+    $query="insert into dislikes(postId,dislikeBy,dislikeDate) values('$pid','$userId',NOW())";
     $likes=mysqli_query($conn,$query);
-    $notifFor=getUserId($pid);
-    $msg=$name."  liked your post";
-    insertNotification($notifFor,$userId,"like",$msg,$pid);
+    $notifFor=getdisUserId($pid);
+    $msg=$name."  disliked your post";
+    insertdisNotification($notifFor,$userId,"dislike",$msg,$pid);
     
      
 }
 
-function getUserId($pid)
+function getdisUserId($pid)
 {
      global $conn;
     $query="select userId from posts where postId='$pid'";
@@ -109,14 +110,14 @@ function getUserId($pid)
     return $row['userId'];
     
 }
-function insertNotification($for,$by,$type,$msg,$pid)
+function insertdisNotification($for,$by,$type,$msg,$pid)
 {  global $conn;
     $query="insert into notifications(notificationFor,notificationBy,notificationType,notificationMessage,postId,date,notificationStatus) values('$for','$by','$type','$msg','$pid',NOW(),'new')";
     $likes=mysqli_query($conn,$query);
 }
 
 
-function deleteNotification($for,$by,$type,$pid)
+function deletedisNotification($for,$by,$type,$pid)
 {  global $conn;
  
     $query="delete from notifications where notificationFor='$for' AND notificationBy='$by' AND notificationType='$type' AND postId='$pid'";
