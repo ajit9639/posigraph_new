@@ -70,7 +70,9 @@ else
 <!-- post start -->
 <div class="container-fluid" >
     <div class="row">
-        <?php include "./slider.php";?>
+        
+        <?php //include "./slider.php";?>
+
     <div id='pop-up-div' class="col-sm-10 col-xs-11 "><br>
 
 
