@@ -53,7 +53,7 @@ $user=mysqli_fetch_array($user);
         padding: 10px;
         width: 100%;
         height: 400px;
-        background: #dcdfdc;
+        background: #fdfdfd;
         overflow-x: hidden;
         overflow-y: scroll;
     }
