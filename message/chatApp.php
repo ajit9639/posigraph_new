@@ -53,7 +53,7 @@ $user=mysqli_fetch_array($user);
         padding: 10px;
         width: 100%;
         height: 400px;
-        background: #f4f4f4;
+        background: #dcdfdc;
         overflow-x: hidden;
         overflow-y: scroll;
     }
@@ -102,7 +102,7 @@ $user=mysqli_fetch_array($user);
     }
 
     .self .chat-message {
-        background:#f4f4f4 ;
+        background:#e6e4e4 ;
         order: -1;
     }
 
