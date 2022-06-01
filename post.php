@@ -25,19 +25,19 @@ else
 
 <style>
 #pop-up-div {
-    width:80%;
+    width:94%;
     margin:0 auto;
     background: #fff;
     display: none;
     position: fixed;
-    height: 60vh;
+    height: 100vh;
     overflow: hidden;
-    top: 52%;
+    top: 56%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
     border-radius: 10px;
-    box-shadow: 2px 2px 6px 5px #000000;
+    /* box-shadow: 2px 2px 6px 5px #000000; */
 
 }
 
