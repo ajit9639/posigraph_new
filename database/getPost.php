@@ -87,6 +87,10 @@ button:focus {
     border: none !important;
     outline: none !important;
 }
+
+p{
+    padding-top: 10px;
+}
 </style>
 <?php 
     
