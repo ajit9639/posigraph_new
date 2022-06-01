@@ -38,7 +38,7 @@
 
 .dislike_base-graph {
     position: absolute;
-    bottom: 31px;
+    bottom: 32px;
     width: 100%;
     display: flex;
     background: #fff;
