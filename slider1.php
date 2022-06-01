@@ -124,15 +124,37 @@ include  "./friends/showUsers.php";
 </head>
 
 <body>
+<!-- friends slider -->
+<section id="testimonial_area" class="section_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="testmonial_slider_area text-center owl-carousel">
+                    <?php meToUsers();?>
+                        
+                        <!-- END SINGLE TESTIMONIALS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- friends slider -->
+
 
 
     <!-- friends slider -->
     <section id="testimonial_area" class="section_padding">
         <div class="container">
             <div class="row">
-            <?php myFriends();?>
-                
-            </div>
+            <div class='col-md-12'>
+           
+            <?php //meToUsers();?>
+            <?php //usersToMe();?>
+            <?php //friendsOfFriend($_SESSION['id']); 
+                           //moreSugg();?>
+            </div></div>
+
+
         </div>
     </section>
     <!-- friends slider -->

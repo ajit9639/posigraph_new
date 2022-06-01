@@ -69,7 +69,7 @@ else
 <?php include "feed.php" ?>
 <!-- post start -->
 
-<?php //include "./slider.php";?>
+<?php include "./slider1.php";?>
 
 
 <div class="container-fluid" >

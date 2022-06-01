@@ -1,4 +1,5 @@
 <?php
+
 include  "./friends/showUsers.php";
 
 ?>
