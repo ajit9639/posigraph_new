@@ -1,5 +1,6 @@
 <?php
 session_start();
+include "chat_header.php";
 include("../database/connection.php");
 include("../database/getMsgNotif.php");
 $database="posigraph_socialplexus";
@@ -16,17 +17,14 @@ $user=mysqli_fetch_array($user);
     <link rel="stylesheet" href="../style/w3.css">
     <link rel="stylesheet" href="../style/w3-theme-blue-grey.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
 
     <link rel="stylesheet" href="../style/emojionearea.min.css">
     <!-- jQuery library -->
@@ -35,6 +33,9 @@ $user=mysqli_fetch_array($user);
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="../style/emojionearea.min.js"></script>
+
+
+
 
     <title> message </title>
     <style>       
@@ -102,7 +103,7 @@ $user=mysqli_fetch_array($user);
     }
 
     .self .chat-message {
-        background:#e6e4e4 ;
+        background: red ;
         order: -1;
     }
 
@@ -216,57 +217,13 @@ $user=mysqli_fetch_array($user);
 
   </head>
   <body>
-      <!-- posi_header -->
-
-      <div class="fixed-header">
-    <header id="header" class="header-items profile-header">
-     <div class="container-fluid">
-       <div class="row">
-         <div class="col-6 col-xs-6 header-contents">
-          <div class="row">
-            <div class="col-lg-2 col-2 col-xs-2 go-back">
-              <a href="#" title="">
-                <!-- <i class="fa-solid fa-arrow-left"></i> -->
-                <img src="../posigraph_text_logo.png" />
-              </a>
-            </div>
-            <div class="col-lg-7 col-7 col-xs-7 user-name">
-              <!-- <h4><?php echo $user['firstName'].' '.$user['lastName']?></h4> -->
-            </div>
-          </div>
-         </div>
 
 
-         <div class="col-2 col-xs-2 header-chat-icons">         
-           <a href="https://posigraph.com/posigraph.com/ajit/search-form.php"  title="">
-             <!-- <i class="fa-solid fa-align-justify"></i> -->
-             <i class="fa fa-search" aria-hidden="true"></i>
-           </a>
-         </div>
 
+<?php include "chat_header.php" ?>
 
-         <div class="col-2 col-xs-2 header-chat-icons">         
-           <a href="https://posigraph.com/posigraph.com/ajit/message/chatApp.php"  title="">
-             <!-- <i class="fa-solid fa-align-justify"></i> -->
-             <i class="fa fa-envelope-o" aria-hidden="true"></i>
-           </a>
-         </div>
-
-
-         <div class="col-2 col-xs-2 header-chat-icons">         
-           <a href="#"  data-toggle="modal" data-target="#exampleModal" title="">
-             <!-- <i class="fa-solid fa-align-justify"></i> -->
-             <i class="fa fa-bars" aria-hidden="true"></i>
-           </a>
-         </div>
-
-       </div>
-     </div> 
-    </header>
-    <!-- /header -->
-    </div>
 <!-- popup modal -->
-
+<?php //include "../posi_header.php" ?>
 <!-- Modal -->
 <div class="modal fade popup-modal " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog popup-modal-body" role="document">
@@ -277,9 +234,10 @@ $user=mysqli_fetch_array($user);
         <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button> -->
+
       </div>
       <div class="modal-body">
-        <a href="https://posigraph.com/posigraph.com/ajit/myData.php" class="text-center modal-links">Edit Profile</a>
+        <a href="myData.php" class="text-center modal-links">Edit Profile</a>
         <a href="#" class="text-center modal-links">Push Notifications</a>
         <a href="friends/friends.php" class="text-center modal-links">Search For Friend</a>
         <a href="#" class="text-center modal-links">Terms of use</a>
@@ -287,7 +245,7 @@ $user=mysqli_fetch_array($user);
       </div>
       
       <div class="modal-footer">
-        <a href="https://posigraph.com/posigraph.com/ajit/logOut.php" type="button" class="text-center">Logout</a>
+        <a href="logOut.php" type="button" class="text-center">Logout</a>
         <a type="button" class="text-center" data-dismiss="modal">Cancel</a>
       </div>
     </div>
@@ -295,56 +253,9 @@ $user=mysqli_fetch_array($user);
 </div>
 <!-- end popup modal -->
 
-   <!-- fixed footer start -->
-   <div class="footer">
-      <div class="container-fluid">
-        <div class="row" id="myDIV">
-          <div class="col-3 col-xs-3 footer-icons">
-            <a href="https://posigraph.com/posigraph.com/ajit/feed.php" class="footer-single-icon btn active" title="">
-              <i class="fa-solid fa-house"></i>             
-              <!-- <div class="hover-display">
-                <span>Home</span>
-              </div>     -->
-            </a>
-          </div>
-          <div class="col-3 col-xs-3 footer-icons">
-            <a href="https://posigraph.com/posigraph.com/ajit/post.php" class="footer-single-icon btn" title="">
-              <i class="fa-solid fa-camera-retro"></i>
-              <!-- <div class="hover-display">
-                <span>Post</span>
-              </div> -->
-            </a>
-          </div>
-          <div class="col-3 col-xs-3 footer-icons">
-            <a href="#" class="footer-single-icon btn" title="">
-              <i class="fa-solid fa-heart"></i>
-              <span class="notification_alert">
-              <?php
-                // $n=getUnreadMsg($_SESSION['id']);
-                // if($n>0)
-                //     echo $n;
-                ?>
-                </span>
-              <!-- <div class="hover-display">
-                <span>notify</span>
-              </div> -->
-            </a>
-          </div>
-          <div class="col-3 col-xs-3 footer-icons">
-            <a href="https://posigraph.com/posigraph.com/ajit/home.php" class="footer-single-icon btn" title="">
-              <i class="fa-solid fa-user"></i>
-              <!-- <div class="hover-display">
-                <span>notify</span>
-              </div> -->
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-<!-- fixed footer end -->
-      <!-- //posi_header -->
 
-   
+
+
     <link rel="stylesheet" href="../style/emojionearea.min.css">    
     <script src="../style/emojionearea.min.js"></script>
 <body>

@@ -34,15 +34,16 @@ function getAllNotif($id){
      $get_noti_img_id = $get_noti_img['notificationFor'];
 
     $get_noti_img_img1 = mysqli_fetch_assoc(mysqli_query($conn , "SELECT * FROM `user` WHERE `userId` = '$get_noti_img_id'" ));
-     $my_img = $get_noti_img_img1["dp"];
+    $my_img = $get_noti_img_img1["dp"];
     
-
     $query="select * from notifications where notificationFor='$id' ORDER BY date DESC";
     $all=mysqli_query($conn,$query);
     while($row=mysqli_fetch_array($all))
-    {                
-        if(($row['notificationType']=='like')||($row['notificationType']=='comment'))
+      
+    {    
+        if(($row['notificationType']=='like')||($row['notificationType']=='comment')||($row['notificationType']=='dislike'))
         {
+           // echo "hello1";
         // attached post id also check notif seen or not        
             if(isNotifSeen($id,$row['notificationId']))
             {
@@ -51,25 +52,34 @@ function getAllNotif($id){
             }
             else
             {  
-                echo " <div class='alert alert-success alert-dismissible fade show'>
+                echo " <div class='alert alert-success alert-dismissible show'>
                 <button type='button' class='close' data-dismiss='alert'>&times;</button>
                 <img src='./dp/$my_img' style='width: 40px;
                 border-radius: 100px;' />
-                <a href='./database/seePost.php?notifId={$row['notificationId']}&postId={$row['postId']}' class='w3-bar-item w3-button' data-notifId='{$row['notificationId']}' data-postId='{$row['postId']}' >{$row['notificationMessage']}</a>
+                <span href='' class='w3-bar-item w3-button ' >{$row['notificationMessage']}</span>
               </div>";
+
+            // this is the url
+            //   <a href='./database/seePost.php?notifId={$row['notificationId']}&postId={$row['postId']}' class='w3-bar-item w3-button' data-notifId='{$row['notificationId']}' data-postId='{$row['postId']}' >{$row['notificationMessage']}</a>
 
                 //echo" <a href='./database/seePost.php?notifId={$row['notificationId']}&postId={$row['postId']}' class='w3-bar-item w3-button' data-notifId='{$row['notificationId']}' data-postId='{$row['postId']}' style='background:gray'>{$row['notificationMessage']}</a>";
             }           
         }
         else
-        {
+        {   //echo "hello2";
              if(isNotifSeen($id,$row['notificationId']))
             {
-               echo" <a href='#' class='w3-bar-item w3-button' data-notifId='{$row['notificationId']}' style='background:darkGray'>{$row['notificationMessage']}</a>";
+               echo" <a href='#' class='w3-bar-item w3-button ' data-notifId='{$row['notificationId']}' style='background:darkGray'>{$row['notificationMessage']}</a>";
             }
             else
             {
-                echo" <a href='#' class='w3-bar-item w3-button' data-notifId='{$row['notificationId']}' style='background:gray'>{$row['notificationMessage']}</a>";
+                //echo" <a href='#' class='w3-bar-item w3-button ' data-notifId='{$row['notificationId']}' style='background:gray'>{$row['notificationMessage']}</a>";
+                echo " <div class='alert alert-success alert-dismissible show'>
+                <button type='button' class='close' data-dismiss='alert'>&times;</button>
+                <img src='./dp/$my_img' style='width: 40px;
+                border-radius: 100px;' />
+                <span href='' class='w3-bar-item w3-button ' >{$row['notificationMessage']}</span>
+              </div>";
             }       
         }                
     }           

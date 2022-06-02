@@ -35,7 +35,8 @@ if($friendList)
                <div class='online-user-img' style='display:inline-block'>
                 <img src='../dp/{$dp}'>
               </div>
-              <span style='color:yellow' id='unreadOf{$userId}'>$read</span>
+              <span style='color: black;
+              font-weight: 800;' id='unreadOf{$userId}'>$read</span>
               </a> 
               <span>
               <i style='color: $color;font-size: 20px;' class='fa fa-circle' aria-hidden='true'></i>        
@@ -43,9 +44,9 @@ if($friendList)
 
               <div class='online-user-name' style='display:inline-block'>
               <p style='color:cyan;font-size:18px'>
-              <a style='color:black;font-size:20px' href='chatApp.php?id=$userId'> $userName </a>
+              <a style='color:black;font-size:20px;display:block;' href='chatApp.php?id=$userId'> $userName </a>
                             
-              <span style='float:right;width:10%;'> <a class='btn btn-xs btn-success' href='chatApp.php?id=$userId'>Click to chat</a>
+              <span style='float:right;width:35%;'> <a class='btn btn-xs btn-success' href='chatApp.php?id=$userId'>Click to chat</a>
               </span>
 
               </p> </div> <hr>";          

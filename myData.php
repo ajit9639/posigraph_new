@@ -1,3 +1,5 @@
+
+
 <?php
  session_start();
  if(!isset($_SESSION['email']))
@@ -38,9 +40,14 @@ else
 <body>
     <!--  main body starts here-->
     
-    <div class="container">
+    <div class="container" style="
+    margin-bottom: 100px;
+    margin-top: 60px;
+">
         <div class="row">
-        <h3 class="text-center mt-4">Edit Profile</h3>
+        <h3 class="text-center" style="
+    width: 100%;
+">Edit Profile</h3>
             <div class="col-sm-12">
                 <div class="col-sm-3 change_dp">
                     <div class="row">
@@ -115,8 +122,8 @@ else
 
                         <div class="col-sm-3">
                             <!--                             when button i click pop model is shown-->
-                            <button type="button" id="show-detail-pop" class="form-control btn-success">update
-                                Information</button>
+                            <button type="button" id="show-detail-pop" class="form-control btn-success">Click to Update
+    </button>
 
                             <br>
                         </div>
@@ -126,8 +133,8 @@ else
 
                 </div>
             </div>
-            <!--           pop up model-->
-
+            <!--  pop up model-->
+           
             <!-- Modal -->
             <div id="myModal" class="modal fade" role="dialog">
                 <div class="modal-dialog">
@@ -136,7 +143,7 @@ else
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Update</h4>
+                            <!-- <h4 class="modal-title">Update</h4> -->
                         </div>
 
                         <div class="modal-body">
@@ -170,7 +177,7 @@ else
 
                                 <div class="col-sm-6 col-xs-6 form-group">
                                     <label>Date Of Birth</label>
-                                    <input id="M_dob" type="text" class="form-control">
+                                    <input id="M_dob" type="date" class="form-control">
                                 </div>
 
                             </div>
@@ -207,44 +214,37 @@ else
 
         <div class="row userdetails_table">
 
-            <div class="col-sm-12">
+            <!-- <div class="col-sm-12"> -->
                 <!-- <h2 style="text-align:center">social Media </h2> -->
                 <!-- <div class="row r1">
-
                     <div class="col-sm-4">
                         <input id="job" type="text" class="form-control" disabled>
                         <br>
                     </div>
-
                     <div class="col-sm-4">
                         <input id="city" type="text" class="form-control" disabled>
                         <br>
                     </div>
-
                     <div class="col-sm-4">
                         <input id="pin" type="text" class="form-control" disabled>
-
                     </div>
-
                 </div>
                 <br>
                 <div class="row r2">
-
                     <div class="col-sm-4">
                         <input id="state" type="text" class="form-control" disabled>
                         <br>
                     </div>
-
                     <div class="col-sm-4">
                         <input id="country" type="text" class="form-control" disabled>
                         <br>
                     </div>
-
                 </div> -->
 
-                <hr>
-                <div class="row r3">
 
+
+                <!-- <hr>
+                <div class="row r3">
                     <div class="col-sm-12">
                         <div class="row">
                             <div class="col-sm-3 col-xs-3"><label>facebook link</label></div>
@@ -280,27 +280,20 @@ else
                                 <input id="web" type="text" class="form-control" disabled>
                             </div>
                         </div>
-
                         <br>
                         <div class="row">
-
                             <div class="col-sm-5 col-xs-3"></div>
-
                             <div class="col-sm-5 col-xs-3"></div>
-
                             <div class="col-sm-2 col-xs-6">
                                 <button id="btn-social" class="form-control btn-success"> update</button>
                             </div>
                         </div>
-
                         <br>
                     </div>
+                </div> -->
 
-
-                </div>
-
-            </div>
-            <!--           social pop model-->
+            <!-- </div> -->
+            <!-- social pop model-->
 
 
             <!-- Modal -->
@@ -728,7 +721,9 @@ function openNav() {
     }
 }
 </script>
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </html>
 
 <?php } ?>

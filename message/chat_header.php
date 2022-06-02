@@ -44,9 +44,9 @@
          <div class="col-6 col-xs-6 header-contents">
           <div class="row">
             <div class="col-lg-2 col-2 col-xs-2 go-back">
-              <a href="dashboard.php" title="">
+              <a href="../dashboard.php" title="">
                 <!-- <i class="fa-solid fa-arrow-left"></i> -->
-                <img src="posigraph_text_logo.png" />
+                <img src="../posigraph_text_logo.png" />
               </a>
             </div>
             <div class="col-lg-7 col-7 col-xs-7 user-name">
@@ -119,7 +119,7 @@
       <div class="container-fluid">
         <div class="row" id="myDIV">
           <div class="col-3 col-xs-3 footer-icons">
-            <a href="dashboard.php" class="footer-single-icon btn active" title="">
+            <a href="../dashboard.php" class="footer-single-icon btn active" title="">
               <i class="fa-solid fa-house"></i>             
               <!-- <div class="hover-display">
                 <span>Home</span>
@@ -127,7 +127,7 @@
             </a>
           </div>
           <div class="col-3 col-xs-3 footer-icons">
-            <a href="add_post.php" class="footer-single-icon btn" title="">
+            <a href="../add_post.php" class="footer-single-icon btn" title="">
               <i class="fa-solid fa-camera-retro"></i>
               <!-- <div class="hover-display">
                 <span>Post</span>
@@ -135,7 +135,7 @@
             </a>
           </div>
           <div class="col-3 col-xs-3 footer-icons">
-            <a href="notification.php" class="footer-single-icon btn" title="">
+            <a href="../notification.php" class="footer-single-icon btn" title="">
               <i class="fa-solid fa-heart"></i>
               <span class="notification_alert">
               <?php
@@ -150,7 +150,7 @@
             </a>
           </div>
           <div class="col-3 col-xs-3 footer-icons">
-            <a href="home.php" class="footer-single-icon btn" title="">
+            <a href="../home.php" class="footer-single-icon btn" title="">
               <i class="fa-solid fa-user"></i>
               <!-- <div class="hover-display">
                 <span>notify</span>

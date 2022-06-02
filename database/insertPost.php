@@ -20,8 +20,8 @@ if(isset($_FILES['file']['name'])&&(strlen($_POST['text'])>0))
         {   
              $update="update user set post='yes' where userId='$id'";
              $sqlresult=mysqli_query($conn, $update);
-//              echo "<script>window.open('home.php','_self')</script>";
-//             header("location:http://localhost/plexus/home.php");
+//              echo "<script>window.open('dashboard.php','_self')</script>";
+//             header("location:http://localhost/plexus/dashboard.php");
 
         }
         else 
@@ -47,7 +47,7 @@ else if(isset($_FILES['file']['name'])&&($_POST['text']==''))
         {   
              $update="update user set post='yes' where userId='$id'";
              $sqlresult=mysqli_query($conn, $update);
-              echo "<script>window.open('home.php','_self')</script>";
+              echo "<script>window.open('dashboard.php','_self')</script>";
         }
         else 
         {
@@ -67,7 +67,7 @@ else if(!isset($_FILES['file']['name']) && (strlen($_POST['text'])>0) )
         {   
              $update="update user set post='yes' where userId='$id'";
              $sqlresult=mysqli_query($conn, $update);
-              echo "<script>window.open('home.php','_self')</script>";
+              echo "<script>window.open('dashboard.php','_self')</script>";
         }
         else 
         {

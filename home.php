@@ -23,7 +23,9 @@ else
     include "posi_header.php";
     include "posi.php";
     ?>
-   
+   <style>
+
+   </style>
    
     <!-- profile section started -->
         <div class="container-fluid">

@@ -7,7 +7,7 @@ function image()
     $image=mysqli_query($conn,$query);
     while($row=mysqli_fetch_array($image))
     {
-        echo "<div class='col-md-4'>
+        echo "<div class='col-md-4 col-sm-4 col-lg-4'>
                  <img src='imagePost/{$row['postImage']}' style='width:100%; height:300px;margin-bottom:20px;' class='w3-margin-bottom'>
                </div>";
     }

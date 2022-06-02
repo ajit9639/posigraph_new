@@ -35,7 +35,7 @@ $logInQuery="select * from user where email='".$email."'";
             
             echo "<script>
             alert('You Have Successfully Logged In');
-            window.open('./post.php','_self')</script>";
+            window.open('./dashboard.php','_self')</script>";
                 }
             }
             else

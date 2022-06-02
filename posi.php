@@ -1,5 +1,5 @@
 <?php
-if(basename($_SERVER['PHP_SELF']) == 'post.php'){?>
+if(basename($_SERVER['PHP_SELF']) == 'dashboard.php'){?>
     <div class="tabs-area">
         <div class="container-fluid">
             <div class="row">
@@ -7,7 +7,7 @@ if(basename($_SERVER['PHP_SELF']) == 'post.php'){?>
                     <div class="tabs">
                         
                         <div class="tab-2 tab-1">
-                        <a class="first-tab" href="https://posigraph.com/posigraph.com/ajit/post.php"> Feed </a>
+                        <a class="first-tab" href="https://posigraph.com/posigraph.com/ajit/dashboard.php"> Feed </a>
                         <input id="tab2-2" name="tabs-two" type="radio" checked="checked">
                           
                         </div>
@@ -37,7 +37,7 @@ if(basename($_SERVER['PHP_SELF']) == 'post.php'){?>
                 <div class="tabs">
                     
                     <div class="tab-2 tab-1">
-                    <a class="first-tab" href="https://posigraph.com/posigraph.com/ajit/post.php"> Feed </a>
+                    <a class="first-tab" href="https://posigraph.com/posigraph.com/ajit/dashboard.php"> Feed </a>
                     <input id="tab2-2" name="tabs-two" type="radio">
                       
                     </div>
@@ -67,7 +67,7 @@ if(basename($_SERVER['PHP_SELF']) == 'post.php'){?>
                 <div class="tabs">
                     
                     <div class="tab-2 tab-1">
-                    <a class="first-tab" href="https://posigraph.com/posigraph.com/ajit/post.php"> Feed </a>
+                    <a class="first-tab" href="https://posigraph.com/posigraph.com/ajit/dashboard.php"> Feed </a>
                     <input id="tab2-2" name="tabs-two" type="radio">
                       
                     </div>
