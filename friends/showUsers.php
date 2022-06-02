@@ -321,7 +321,6 @@ function myFriends()
                       
                       echo"
 
-
                       <div class='box-area'>
                       <div class='img-area'>
                           <img src='./proImg/pro.jpg' alt=''>
@@ -329,14 +328,7 @@ function myFriends()
                       <a href='https://posigraph.com/posigraph.com/ajit/profile/profile.php?id={$friend['userId']}'>
                       <p class='name-tilte'>{$friend['firstName']}</p></a>
                   </div>
-
-
-
-                     
-                   
-               
-
-                                        
+                                                                                            
                         ";                      
                   }
                  else

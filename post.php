@@ -8,7 +8,7 @@ else
 {
 
     include_once("database/connection.php");
-   include_once("database/getPost.php");
+    include_once("database/getPost.php");
     include("database/getMyImagePost.php");
     include("database/getMsgNotif.php");
     
@@ -16,7 +16,7 @@ else
     $result=mysqli_query($conn,$query);
     $user=mysqli_fetch_array($result);
     
-     $query="select * from user_details where userId='".$_SESSION['id']."'";
+    $query="select * from user_details where userId='".$_SESSION['id']."'";
     $result=mysqli_query($conn,$query);
     $userDetail=mysqli_fetch_array($result);
 
@@ -43,7 +43,7 @@ else
 
 #comment-like-div {
     background-color: white;
-    height: 60vh;
+    height: 70vh;
     overflow-x: hidden;
     overflow-y: scroll;
     padding: 10px;
@@ -52,7 +52,7 @@ else
 
 #comment-text {
     border: 2px solid #57707d;
-    width: 100%;
+    width: 60%;
     padding-top: 13px;
     padding-left: 10px;
     box-sizing: border-box;

@@ -10,18 +10,24 @@ if(isset($_POST['comment-btn']))
     <span class="w3-right w3-opacity"><button id="close-popUp" style="
     border: none;
 "><i class="fa fa-times"></i></button></span>
+
+
+<div id="comment-like-div" style="background:#fff; box-shadow:0px 0px 100px 5px white">
+    </div>
+
     <button type="button" data-pid='<?php echo $pid ?>' class="all-likes w3-button w3-theme-d1 w3-margin-bottom btn btn-info">
-        <i class="fa fa-thumbs-up"></i> &nbsp; All Likes</button>
+        <i class="fa fa-thumbs-up"></i> &nbsp; All Likes1</button>
     <button type="button" data-pid='<?php echo $pid ?>' class="all-comments w3-button w3-theme-d1 w3-margin-bottom btn btn-success">
-        <i class="fa fa-comment"></i> &nbsp; All comments</button>
+        <i class="fa fa-comment"></i> &nbsp; All comments1</button>
     <input type="text" name="comment-text" id="comment-text" placeholder="Write Your Comment Here">
     <button type="button" data-pid='<?php echo $pid ?>' class=" insert-comment w3-button w3-theme-d2 w3-margin-bottom btn btn-danger">
         <!-- <i class="fa fa-comment"></i>  -->
         <i class="fa fa-sign-in"></i>
         &nbsp; Submit</button>
     <hr class="w3-clear">
-    <div id="comment-like-div" style="background:#fff; box-shadow:0px 0px 100px 5px white">
-    </div>
+
+    <!-- <div id="comment-like-div" style="background:#fff; box-shadow:0px 0px 100px 5px white">
+    </div> -->
 </div>
 
 <script>
