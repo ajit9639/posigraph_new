@@ -179,6 +179,7 @@ function getPost($from,$count)
         <span class="font-weight-bold"><?php echo  $user['firstName'].' ' .$user['lastName']?></span></a>
     <!-- <span class="w3-right w3-opacity font-weight-bold">Posted Date : <?php echo $postDate?></span> -->
 
+    
     <hr class="w3-clear" style="margin-top: 25px;">
     <!-- <p><?php echo $list['postContent']?></p> -->
     <img src="<?php echo 'imagePost/'.$list['postImage']?>" style="width:100%;" class="w3-margin-bottom post_image">
