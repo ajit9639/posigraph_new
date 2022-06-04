@@ -6,7 +6,7 @@
   }
 else
 {
-    // include_once("database/connection.php");  
+    include_once("database/connection.php");  
     include("database/getMsgNotif.php");   
     include "posi_header.php";  
     ?>

@@ -1,6 +1,5 @@
 <?php
-// include("connection.php");
-include("database/connection.php");
+ $conn = mysqli_connect("localhost", "posigraph_socialplexus", "Posigraph@123", "posigraph_socialplexus");
 mysqli_select_db($conn,"posigraph_socialplexus");
 
 function getUnreadMsg($id){
