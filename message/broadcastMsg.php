@@ -242,7 +242,7 @@ $me=$_SESSION['id'];
      
      </a>
    
-     <a href="https://posigraph.com/posigraph.com/ajit/home.php" class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>Logo</a>
+     <a href="https://posigraph.com/ajit/home.php" class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>Logo</a>
      
      
   <input type="text" placeholder="search"  style="width:200px;border-radius:5px;outline:none;border:none; padding:5px; ; margin-left:10px;margin-top:5px;color:black">
@@ -254,10 +254,10 @@ $me=$_SESSION['id'];
 
 
      
-  <a href="https://posigraph.com/posigraph.com/ajit/message/chatApp.php" class="w3-bar-item w3-button  w3-padding-large w3-hide-small w3-hover-white" title="Messages"><i class="fa fa-envelope"></i><span class="w3-badge w3-right w3-small w3-green">10</span></a>
+  <a href="https://posigraph.com/ajit/message/chatApp.php" class="w3-bar-item w3-button  w3-padding-large w3-hide-small w3-hover-white" title="Messages"><i class="fa fa-envelope"></i><span class="w3-badge w3-right w3-small w3-green">10</span></a>
      
      
-         <a href="https://posigraph.com/posigraph.com/ajit/friends/friends.php" class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-padding-large w3-hover-white" title="friends"><i class="fa fa-users" aria-hidden="true"></i>
+         <a href="https://posigraph.com/ajit/friends/friends.php" class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-padding-large w3-hover-white" title="friends"><i class="fa fa-users" aria-hidden="true"></i>
         </a>
     
     
@@ -287,7 +287,7 @@ $me=$_SESSION['id'];
      
   </div>
    
-  <a href="https://posigraph.com/posigraph.com/ajit/myData.php" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
+  <a href="https://posigraph.com/ajit/myData.php" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
   <img src="dp/<?php echo $user['dp'];?>" class="w3-circle" style="height:23px;width:23px" alt="dp">
   </a>
      <a href="logOut.php" class="w3-bar-item w3-button w3-hide-medium  w3-hide-small w3-right w3-padding-large w3-hover-white" title="logOut"><i class="fa fa-power-off" aria-hidden="true"></i>
@@ -303,18 +303,18 @@ $me=$_SESSION['id'];
     <br>
     <br>
     <br>
-  <a href="https://posigraph.com/posigraph.com/ajit/home.php" class="w3-bar-item w3-button w3-padding-large "><i class="fa fa-home" aria-hidden="true"></i></a>
+  <a href="https://posigraph.com/ajit/home.php" class="w3-bar-item w3-button w3-padding-large "><i class="fa fa-home" aria-hidden="true"></i></a>
     
-  <a href="https://posigraph.com/posigraph.com/ajit/message/chatApp.php" class="w3-bar-item  w3-hide-medium w3-button w3-padding-large"><i class="fa fa-envelope"></i><span class="w3-badge w3-small w3-green" >10</span></a>
+  <a href="https://posigraph.com/ajit/message/chatApp.php" class="w3-bar-item  w3-hide-medium w3-button w3-padding-large"><i class="fa fa-envelope"></i><span class="w3-badge w3-small w3-green" >10</span></a>
     
-  <a href="https://posigraph.com/posigraph.com/ajit/friends/friends.php" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-users" aria-hidden="true"></i></a>
+  <a href="https://posigraph.com/ajit/friends/friends.php" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-users" aria-hidden="true"></i></a>
     
     <a href="#" class="w3-bar-item w3-button w3-padding-large">My Post</a>
     
-    <a href="https://posigraph.com/posigraph.com/ajit/myData.php" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-cogs" aria-hidden="true"></i>
+    <a href="https://posigraph.com/ajit/myData.php" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-cogs" aria-hidden="true"></i>
 </a>
     
-    <a href="https://posigraph.com/posigraph.com/ajit/logOut.php" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-power-off" aria-hidden="true"></i>
+    <a href="https://posigraph.com/ajit/logOut.php" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-power-off" aria-hidden="true"></i>
 </a>
 </div>
     
@@ -324,9 +324,9 @@ $me=$_SESSION['id'];
     <div class="row"style=" margin-top:35px;">
         
         <div class="user col-sm-5 col-xs-10 " id="online-div">
-            <a href="https://posigraph.com/posigraph.com/ajit/message/broadcastMsg.php"><button  type="button" class="comment-btn w3-button w3-theme-d2 w3-margin-bottom"> &nbsp;broadcast</button></a>
+            <a href="https://posigraph.com/ajit/message/broadcastMsg.php"><button  type="button" class="comment-btn w3-button w3-theme-d2 w3-margin-bottom"> &nbsp;broadcast</button></a>
             
-             <a href="https://posigraph.com/posigraph.com/ajit/message/chatApp.php"><button  type="button" class="comment-btn w3-button w3-theme-d2 w3-margin-bottom"> &nbsp;private Message</button></a>
+             <a href="https://posigraph.com/ajit/message/chatApp.php"><button  type="button" class="comment-btn w3-button w3-theme-d2 w3-margin-bottom"> &nbsp;private Message</button></a>
            <center>   <h1>Online</h1> <hr>  </center>
 
               

@@ -113,7 +113,7 @@ text-decoration: none;
 
 <body>
     <div class="container-fluid">
-        <a href="https://posigraph.com/posigraph.com/ajit/post.php" class="btn btn-danger">Back to home</a>
+        <a href="https://posigraph.com/ajit/post.php" class="btn btn-danger">Back to home</a>
         <div class="row">
            
             <div class="col-md-12 all-user">                
