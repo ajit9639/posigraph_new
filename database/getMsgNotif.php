@@ -36,7 +36,7 @@ function getAllNotif($id){
     $get_noti_img_img1 = mysqli_fetch_assoc(mysqli_query($conn , "SELECT * FROM `user` WHERE `userId` = '$get_noti_img_id'" ));
     $my_img = $get_noti_img_img1["dp"];
     
-    $query="select * from notifications where notificationFor='$id' ORDER BY date DESC";
+    echo $query="select * from notifications where notificationFor='$id' ORDER BY date DESC";
     $all=mysqli_query($conn,$query);
     while($row=mysqli_fetch_array($all))
       
