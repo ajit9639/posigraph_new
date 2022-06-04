@@ -73,10 +73,11 @@ function totalLike($pid)
    if($likes)
    {
        $total=mysqli_fetch_array($likes);
-      echo $total[0];
+       echo $total[0];
+      return $total[0];
    }
     else
-        echo"err";
+        return "err";
 }
 
 function deleteLike($pid,$userId)

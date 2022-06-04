@@ -72,7 +72,9 @@ function totaldisLike($pid)
    if($dislikes)
    {
        $total=mysqli_fetch_array($dislikes);
-      echo $total[0];
+       echo $total[0];
+
+       return $total[0];
    }
     else
         echo"err";

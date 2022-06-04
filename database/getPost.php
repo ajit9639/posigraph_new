@@ -1,5 +1,5 @@
 <?php 
-
+$like_post_num=0;
 //include("connection.php");
 //$database="plexus";
       include("database/connection.php");
@@ -182,22 +182,28 @@ function getPost($from,$count)
     <hr class="w3-clear" style="margin-top: 25px;">
     <!-- <p><?php echo $list['postContent']?></p> -->
     <img src="<?php echo 'imagePost/'.$list['postImage']?>" style="width:100%;" class="w3-margin-bottom post_image">
-    <!-- <span class="w3-right w3-opacity font-weight-bold">Posted Date : <?php// echo $postDate?></span> -->
+    <!-- <span class="w3-right w3-opacity font-weight-bold">Posted Date : <?php // echo $postDate?></span> -->
 
     <p><?php echo $list['postContent']?></p>
 
     <!-- like dislike graph -->
 
     <?php
-// $like_post_num = totalLike($list['postId']);
+ $like_post_num = totalLike($list['postId']);
 // $like1 = totalLike($list['postId']);
-// $dislike1 = totaldisLike($list['postId']);
+ $hate_post_num = totaldisLike($list['postId']);
 //print_r($list['postId']);
 
+// $like_post_num = 5;
+// $hate_post_num = 6;
 
-$like_post_num = 5;
-$hate_post_num = 6;
 $sum = $like_post_num + $hate_post_num;
+
+if(( $like_post_num + $hate_post_num)==0){
+    $like_post_num = 1;
+     $hate_post_num = 1;
+     $sum=1;
+}
 $like_percent = round($like_post_num / $sum * 100);
 $hate_percent = round($hate_post_num / $sum * 100);
 
@@ -248,8 +254,8 @@ $user=mysqli_fetch_array($result);
     <!-- <div class="mt-2">
         <button type="button" data-pid="<?php echo $list['postId']?>"
             class="like-btn w3-button w3-theme-d1 w3-margin-bottom btn btn-success"><i style="color:<?php echo $color?>"
-                id="<?php// echo $list['postId']?>" class="fa fa-thumbs-up"></i> &nbsp;<span
-                id="like<?php// echo $list['postId']?>"><?php totalLike($list['postId']);?></span></button>
+                id="<?php // echo $list['postId']?>" class="fa fa-thumbs-up"></i> &nbsp;<span
+                id="like<?php // echo $list['postId']?>"><?php totalLike($list['postId']);?></span></button>
 
         <button type="button" data-pid="<?php echo $list['postId']?>"
             class="comment-btn w3-button w3-theme-d2 w3-margin-bottom btn btn-info"><i class="fa fa-comment"></i>
