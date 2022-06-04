@@ -43,7 +43,7 @@ function getAllNotif($id){
     {    
         if(($row['notificationType']=='like')||($row['notificationType']=='comment')||($row['notificationType']=='dislike'))
         {
-            echo "hello1";
+            //echo "hello1";
         // attached post id also check notif seen or not        
             if(isNotifSeen($id,$row['notificationId']))
             {
