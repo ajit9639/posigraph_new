@@ -29,7 +29,7 @@ function changeNotifStatus($id){
 function getAllNotif($id){
 //  when loading whither it is seen or not if not the change color if seen then change its color    
      global $conn;
-    //  echo $id;
+      echo $id;
      $get_noti_img = mysqli_fetch_assoc(mysqli_query($conn , "select * from notifications where notificationFor='$id'"));
      $get_noti_img_id = $get_noti_img['notificationFor'];
 
