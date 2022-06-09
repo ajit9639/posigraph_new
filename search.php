@@ -19,7 +19,7 @@ header("location:./home.php");
         
 //search by email id
 if(strpos($a,'@')!==false){
-    $query="select *  from user where email='{$a}'";
+    $query="select *  from user where  verStatus='verified' && email='{$a}'";
     $result=mysqli_query($conn,$query);
     if($result){
      if(mysqli_num_rows($result)>= 1){  
@@ -41,21 +41,26 @@ if(strpos($a,'@')!==false){
                
                echo "  
                 
-                  <div class='card'>
+                  <div class='card' style='
+                  border: 2px dashed;'>
                   <img src='dp/{$dp}' alt='John' style='width:200px' height='200px'>
-                  <h3 style='color:green'>{$fname} {$lname}</h3>
-                  <p class='title'>{$job}</p>
-                  <p style='color:green'>website : www.me.com</p>
-
-                  <p style='color:green'>add: $city,$state,$country</p>
-                  <a href='{$i}'><i class='fa fa-instagram'></i></a> 
-                    <a href='{$t}'><i class='fa fa-twitter'></i></a> 
-                  <a href='{$l}'><i class='a fa-linkedIn'></i></a> 
-                  <a href='{$f}'><i class='fa fa-facebook'></i></a> 
-                  <a href='./profile/profile.php?id={$id}'> <p><button class='btn btn-success'>View Profile</button></p></a>
+                  <h3 style='color: #3a768f;
+                  padding: 10px;
+                  text-align: center;
+                  font-weight: 600;'>{$fname} {$lname}</h3>                                                     
+                  
+                  <a href='./profile/profile.php?id={$id}'> <p style='text-align:center'><button class='btn btn-info'>View Profile</button></p></a>
                 </div>
                ";                    
-           }             
+           }      
+
+                    // <p style='color:green'>add: $city,$state,$country</p>
+                        // <p class='title'>{$job}</p>
+                    //  <a href='{$i}'><i class='fa fa-instagram'></i></a> 
+                    //  <a href='{$t}'><i class='fa fa-twitter'></i></a> 
+                    //  <a href='{$l}'><i class='a fa-linkedIn'></i></a> 
+                    //  <a href='{$f}'><i class='fa fa-facebook'></i></a> 
+
      }        
         else
             echo "<script>window.alert('sorry no such record')</script>";

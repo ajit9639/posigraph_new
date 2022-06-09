@@ -24,7 +24,7 @@
 
 <?php
 // session_start();
-include("connection.php");
+include "connection.php";
 $database="posigraph_socialplexus";
 mysqli_select_db($conn,$database);
 
@@ -59,10 +59,8 @@ function newUsers()
      if(mysqli_num_rows($receiver)>= 1)
      {  
            while($row=mysqli_fetch_array($receiver))
-           {
-               
-                     $friendId[$i]=$row['receiverId'];
-               
+           {               
+                     $friendId[$i]=$row['receiverId'];               
                      $i++;  
            }             
      }
@@ -81,26 +79,20 @@ function newUsers()
         {
             while($row=mysqli_fetch_array($newUser))
             {
-                echo"
-                    
+                echo"                
                     <div class='col-sm-12 user-detail'>
-
                                <div class='col-sm-4 user-pic'> 
                                <img src='../proImg/pro.jpg'> 
                                </div>
-                        <div class='col-sm-7 user-name-buttons'> 
-                        
+                        <div class='col-sm-7 user-name-buttons'>                         
                              <div class=' row name'>
                                   <a href='peopleProfile.php'><p style='margin:10px 10px;'>{$row['firstName']}</p></a>
-                             </div>
-                             
+                             </div>                            
                            <div class='row btn'>
                              <a id='request' href='#'><button data-id='{$row['userId']}'         data-name='{$row['firstName']}' class='request-btn' >Request</button>
                              </a>
                             </div>
-
                         </div>
-
                    </div>
                  
                   ";
@@ -224,26 +216,15 @@ function meToUsers()
                 //   print_r($receiverNameDp['dp']);exit();
                 echo"
                     
-                    <div class='col-sm-12 user-detail'>
-
-                               <div class='user-pic'> 
-                               <img src=../dp/{$receiverNameDp['dp']}> 
-                               </div>
-                        <div class='user-name-buttons'> 
-                        
-                             <div class='name'>
-                                  <a href='https://posigraph.com/ajit/profile/profile.php?id={$row['receiverId']}'>
-                                  <p class='name-tilte'>{$receiverNameDp['firstName']}</p>
-                                  </a>
-                             </div>
-                             
-                           <div class='btn'>
-                             <a id='request' href='#'><button data-id='{$row['receiverId']}'      data-name='{$receiverNameDp['firstName']}' class='btn btn-success cancel-btn' >cancel</button></a>
-                            </div>
-
-                        </div>
-
-                   </div>
+                <div class='box-area'>
+                <div class='img-area'>
+                    <img src=./dp/{$receiverNameDp['dp']} alt=''>
+                </div>
+                <a href='https://posigraph.com/ajit/profile/profile.php?id={$row['receiverId']}'>
+                <p class='name-tilte'>{$receiverNameDp['firstName']}</p>
+                </a>
+            </div>
+                                       
                  
                   ";
             }
@@ -271,35 +252,24 @@ function usersToMe()
                   $senderNameDp=mysqli_fetch_array($nameDp);
                 echo"
                     
-                     <div class='col-sm-12 user-detail'>
 
-                           <div class='user-pic'> 
-                                 <img src='../proImg/pro.jpg'>    
-                            </div>
+               
+                <div class='testmonial_slider_area text-center owl-carousel'>
+                    <div class='box-area'>
+                        <div class='img-area'>
+                            <img src='../proImg/pro.jgp' alt=''>
+                            
+                        </div>
+                        <a href='https://posigraph.com/ajit/profile/profile.php?id={$row['senderId']}'>
+                        <p class='name-tilte'>{$senderNameDp['firstName']}</p>
+                         </a>
+                    </div>
+                                            
+                </div>
+            </div>
 
-                            <div class='user-name-buttons'>
-                       
-                                    <div class=' name'>
-                                      <a href='https://posigraph.com/ajit/profile/profile.php?id={$row['senderId']}'>
-                                      <p class='name-tilte'>{$senderNameDp['firstName']}</p>
-                                       </a>
-                                    </div>
 
-                                    <div class=' btn'>
-
-                                     <a href='#'>
-                                    <button data-id='{$row['senderId']}'  data-name='{$senderNameDp['firstName']}' class='btn btn-success accept-btn' >accept
-                                       </button>
-                                     </a>
-                       
-                                       <a href='#'>
-                                    <button data-id='{$row['senderId']}'     data-name='{$senderNameDp['firstName']}' class='ignore-btn btn btn-danger'>     ignore
-                                       </button>
-                                     </a>
-                                    </div>
-
-                            </div> 
-                 </div>
+                                    
                  
                   ";                                                  
             }
@@ -311,13 +281,15 @@ function usersToMe()
 
 function myFriends()
 {
+
 //    friendsOfFriend(1);
 //    rqstdAndRqstng(1);
 //    SgstdUser(1);
 
     global $conn,$me;
     
-  $query="select userOne,userTwo from friends where userOne=$me or userTwo=$me";// when i'am 1st col,get friend Id from userTwo
+     $query="select userOne,userTwo from friends where userOne=$me or userTwo=$me";
+     // when i'am 1st col,get friend Id from userTwo
      $friends=mysqli_query($conn,$query);
     if($friends)
     {
@@ -333,24 +305,14 @@ function myFriends()
                       
                       echo"
 
-
-
-
-                      <div class='col-md-12'>
-                    <div class='testmonial_slider_area text-center owl-carousel'>
-                        <div class='box-area'>
-                            <div class='img-area'>
-                                <img src='./proImg/pro.jpg' alt=''>
-                                
-                            </div>
-                            <a href='https://posigraph.com/ajit/profile/profile.php?id={$friend['userId']}'>
-                                    <p class='name-tilte'>{$friend['firstName']}</p></a>
-                        </div>
-                                                
-                    </div>
-                </div>
-
-                                        
+                      <div class='box-area'>
+                      <div class='img-area'>
+                          <img src='./proImg/pro.jpg' alt=''>
+                      </div>
+                      <a href='https://posigraph.com/ajit/profile/profile.php?id={$friend['userId']}'>
+                      <p class='name-tilte'>{$friend['firstName']}</p></a>
+                  </div>
+                                                                                            
                         ";                      
                   }
                  else
@@ -360,25 +322,31 @@ function myFriends()
                       $friend=mysqli_fetch_array($nameDp);
                       
                       echo"
+
+
+
+                      <div class='box-area'>
+                      <div class='img-area'>
+                          <img src='./proImg/pro.jpg' alt=''>
+                      </div>
+                      <a href='https://posigraph.com/ajit/profile/profile.php?id={$friend['userId']}'>
+                      <p class='name-tilte'>{$friend['firstName']}</p></a>
+                  </div>
+
+
+
                           <div class='col-sm-12 user-detail'>
 
                                  <div class=''>
                                        <div class='friend-pic round-pic'> 
                                              <img src='../proImg/pro.jpg'>    
                                         </div>
+                                        <a href='https://posigraph.com/ajit/profile/profile.php?id={$friend['userId']}'>
+                                    <p class='name-tilte'>{$friend['firstName']}</p>
+                                    </a>
                                  </div>
 
-                                <div class='user-name-buttons'> 
-                                    <div class='name'><a href='https://posigraph.com/ajit/profile/profile.php?id={$friend['userId']}'>
-                                    <p class='name-tilte'>{$friend['firstName']}</p>
-                                    </a></div>
-                                   <div class='btn'> <a href='#'>
-                                   <button data-id='{$friend['userId']}' data-name='{$friend['firstName']}' class='unfriend-btn btn-sm btn-success'>Unfollow</button></a>
-                                   </div>
-
-                                </div>
-
-                              </div> 
+                               
                  
                         "; 
                  }
@@ -514,24 +482,24 @@ $strr=implode(',', $strr);
             {
                 echo"
                     
-                    <div class='col-sm-12 user-detail'>
 
-                               <div class=' user-pic'> 
-                               <img src='../proImg/pro.jpg'>
-                                </div>
-                        <div class=' user-name-buttons'> 
-                        
-                             <div class='  name'>
-                                  <a href='https://posigraph.com/ajit/profile/profile.php?id={$row['userId']}'>
-                                  <p class='name-tilte'>{$row['firstName']}</p></a>
-                             </div>
-                             
-                           <div class=' btn'>
-                             <a id='request' href='#'><button data-id='{$row['userId']}'         data-name='{$row['firstName']}' class='request-btn btn btn-success' >Follow</button>
-                             </a>
-                            </div>
+               
+                <div class='testmonial_slider_area text-center owl-carousel'>
+                    <div class='box-area'>
+                        <div class='img-area'>
+                            <img src='./proImg/pro.jpg' alt=''>
+                            
                         </div>
-                   </div>                 
+                        <a href='https://posigraph.com/ajit/profile/profile.php?id={$row['userId']}'>
+                                  <p class='name-tilte'>{$row['firstName']}</p></a>
+                    </div>
+                                            
+                </div>
+           
+
+
+
+                                 
                   ";
             }
         }
@@ -563,25 +531,27 @@ function moreSugg()
         {
             while($row=mysqli_fetch_array($newUser))
             {
-                echo"                    
-                    <div class='col-sm-12 user-detail'>
-                               <div class='user-pic'> 
-                               <img src=../dp/{$row['dp']}> 
-                               </div>
-
-                              <div class='user-name-buttons'>                         
-                             <div class='name'>
-                                  <a href='https://posigraph.com/ajit/profile/profile.php?id={$row['userId']}'>
+                echo"          
+                
+                
+               
+                <div class='testmonial_slider_area text-center owl-carousel'>
+                    <div class='box-area'>
+                        <div class='img-area'>
+                            <img src='./proImg/pro.jpg' alt=''>
+                            
+                        </div>
+                        <a href='https://posigraph.com/ajit/profile/profile.php?id={$row['userId']}'>
                                   <p style='' class='name-tilte'>{$row['firstName']}</p>
                                   </a>
-                             </div>  
+                    </div>
+                                            
+                </div>
+            
 
-                           <div class='btn'>
-                             <a id='request' href='#'><button data-id='{$row['userId']}' data-name='{$row['firstName']}' class='request-btn btn btn-sm btn-success' >Follow</button>
-                             </a>
-                            </div>
-                        </div>
-                   </div>                 
+
+                
+                            
                   ";
             }
         }        

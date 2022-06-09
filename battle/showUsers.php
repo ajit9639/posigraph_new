@@ -35,7 +35,7 @@ function newUsers()
       $i=0;
       $friendId[]=0;
  //when someone sent rqst to me get Id from userTwo
- $id="select senderId from friend_request where receiverId=$me";
+ $id="select senderId from battle_request where receiverId=$me";
      $sender=mysqli_query($conn,$id);
     if($sender)
     {
@@ -52,7 +52,7 @@ function newUsers()
       mysqli_error($conn);
  
  //when someone sent rqst to me get Id from userTwo
- $id="select receiverId from friend_request where senderId=$me";
+ $id="select receiverId from battle_request where senderId=$me";
      $receiver=mysqli_query($conn,$id);
     if($receiver)
     {
@@ -166,7 +166,7 @@ function rqstdAndRqstng($me)
       $friendId[]=0;
 // 
  
- $id="select senderId from friend_request where receiverId=$me";//when someone sent rqst to me get Id from userTwo
+ $id="select senderId from battle_request where receiverId=$me";//when someone sent rqst to me get Id from userTwo
      $sender=mysqli_query($conn,$id);
     if($sender)
     {
@@ -185,7 +185,7 @@ function rqstdAndRqstng($me)
       mysqli_error($conn);
  
  
- $id="select receiverId from friend_request where senderId=$me";//when someone sent rqst to me get Id from userTwo
+ $id="select receiverId from battle_request where senderId=$me";//when someone sent rqst to me get Id from userTwo
      $receiver=mysqli_query($conn,$id);
     if($receiver)
     {
@@ -209,7 +209,7 @@ return $friendId;
 function meToUsers()
 {
     global $conn,$me;
-    $query="select receiverId from friend_request where senderId='$me'";
+    $query="select receiverId from battle_request where senderId='$me'";
     $requestedUser=mysqli_query($conn,$query);
     if($requestedUser)
     {
@@ -222,6 +222,7 @@ function meToUsers()
                   $nameDp=mysqli_query($conn,$query);
                   $receiverNameDp=mysqli_fetch_array($nameDp);
                 //   print_r($receiverNameDp['dp']);exit();
+                // echo $row['receiverId'].'<br>';
                 echo"
                     
                     <div class='col-sm-12 user-detail'>
@@ -258,7 +259,7 @@ function meToUsers()
 function usersToMe()
 {
     global $conn,$me;
-    $query="select senderId  from friend_request where receiverId='$me'";
+    $query="select senderId  from battle_request where receiverId='$me'";
     $requestedUser=mysqli_query($conn,$query);
     if($requestedUser)
     {
@@ -316,8 +317,8 @@ function myFriends()
 //    SgstdUser(1);
 
     global $conn,$me;
-    
-  $query="select userOne,userTwo from friends where userOne=$me or userTwo=$me";// when i'am 1st col,get friend Id from userTwo
+    // when i'am 1st col,get friend Id from userTwo
+  $query="select userOne,userTwo from battle_request_accepted where userOne=$me or userTwo=$me";
      $friends=mysqli_query($conn,$query);
     if($friends)
     {
@@ -358,8 +359,9 @@ function myFriends()
                  {
                     $query="select userId,firstName ,dp from user where userId={$row['userOne']}";
                       $nameDp=mysqli_query($conn,$query);
-                      $friend=mysqli_fetch_array($nameDp);
-                      
+                      $friend=mysqli_fetch_assoc($nameDp);                     
+
+
                       echo"
                           <div class='col-sm-12 user-detail'>
 
@@ -374,7 +376,7 @@ function myFriends()
                                     <p class='name-tilte'>{$friend['firstName']}</p>
                                     </a></div>
                                    <div class='btn'> <a href='#'>
-                                   <button data-id='{$friend['userId']}' data-name='{$friend['firstName']}' class='unfriend-btn btn-sm btn-success'>Unfollow</button></a>
+                                   <button data-id='{$friend['userId']}' data-name='{$friend['firstName']}' class='unfriend-btn btn-sm btn-success'>Start Battle</button></a>
                                    </div>
 
                                 </div>
@@ -397,7 +399,7 @@ function get_all_myFriends()
 {
     global $conn,$me;
     
-  $query="select userOne,userTwo from friends where userOne=$me or userTwo=$me";// when i'am 1st col,get friend Id from userTwo
+  $query="select userOne,userTwo from battle_request_accepted where userOne=$me or userTwo=$me";// when i'am 1st col,get friend Id from userTwo
      $friends=mysqli_query($conn,$query);
     if($friends)
     {
@@ -476,7 +478,7 @@ function get_all_myFriends()
 //{ global $conn;
 //    $i=0;
 //      $friendId[]=0;
-//    $query="select userOne,userTwo from friends where userOne=$id or userTwo=$id";// when i'am 1st col,get friend Id from userTwo
+//    $query="select userOne,userTwo from battle_request_accepted where userOne=$id or userTwo=$id";// when i'am 1st col,get friend Id from userTwo
 //     $friends=mysqli_query($conn,$query);
 //    if($friends)
 //    {
@@ -517,7 +519,7 @@ function myF($id)
 { global $conn;
     $i=0;
       $friendId[]=0;
-    $query="select userOne,userTwo from friends where userOne=$id or userTwo=$id";// when i'am 1st col,get friend Id from userTwo
+    $query="select userOne,userTwo from battle_request_accepted where userOne=$id or userTwo=$id";// when i'am 1st col,get friend Id from userTwo
      $friends=mysqli_query($conn,$query);
     if($friends)
     {

@@ -1,8 +1,8 @@
 <?php 
 // session_start();
 
-  include("showUsers.php");
-
+    include("showUsers.php");
+    include "friends_header.php";
 ?>
 <html>
 
@@ -23,14 +23,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css">
-
     <style>
     .new-user {
-        height: 280px;
+        /* height: 280px; */
         /* overflow-x: hidden;
         overflow-y: scroll; */
     }
@@ -49,7 +44,7 @@
     }
 
     .known-user .request-list {
-        height: 275px;
+        /* height: 275px; */
         /* overflow-x: hidden;
         overflow-y: scroll;
         box-shadow: 3px 3px 10px 5px #ccc; */
@@ -66,7 +61,7 @@
     }
 
     .user-detail {
-        width:auto;
+        width: 270px;
         height: auto;
         margin: 5px;
         /* padding: 0; */
@@ -96,8 +91,6 @@
         border-radius: 100px;
     }
 
-   
-
     .friend-pic img {
         height: 90px;
         width: 90px;
@@ -105,18 +98,23 @@
     }
 
     .user-detail .user-name-buttons a{
-text-decoration: none;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
     }
+
     </style>
 
 </head>
 
 <body>
-    <div class="container-fluid">
-        <a href="https://posigraph.com/ajit/post.php" class="btn btn-danger">Back to home</a>
+    <div class="container-fluid" style="margin-bottom:100px;">
+        
         <div class="row">
            
-            <div class="col-md-12 all-user">                
+            <div class="col-md-12 all-user" style="
+    margin-top: 60px;
+">                
                 <div class="col-md-12 new-user">
                 <h3>Suggested Friends</h3>
                     <?php friendsOfFriend($_SESSION['id']); 
@@ -139,29 +137,14 @@ text-decoration: none;
                 </div>
                 <div class="col-md-12 requested-user">
                 <h3>Request Recived</h3>
-                <?php usersToMe();?>
+                <?php usersToMe();?><br><br>
                 </div>
-
+                <br><br>
             </div>
         </div>
     </div>
 
 
- <!-- friends slider -->
- <section id="testimonial_area" class="section_padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="testmonial_slider_area text-center owl-carousel">
-                    <?php  myFriends();?>
-                        
-                        <!-- END SINGLE TESTIMONIALS -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- friends slider -->
 
 </body>
 
@@ -341,36 +324,71 @@ $(".unfriend-btn").click(function() {
     });
 });
 </script>
+<style>
+
+</style>
+<!--
+request butn can only be shown when  user has not send reqst .. cancel vice virsa
+so use data base for checkin reqst table for the first time
+
+so there would  be a check fucntion/or php page  call both time
+
+
+     <div class='col-sm-12 user-detail'>
+                    
+                       <div class='col-sm-4 user-pic'> 
+                             <img src='../proImg/pro.jpg'>    
+                        </div>
+
+                        <div class='col-sm-7 user-name-buttons'> 
+                            <div class=" row name"><a href="#"><p style="margin:10px 10px;">Abul Hasan</p></a></div>
+                           <div class="row btn">
+                               
+                               <a id="request" href="#"><button id="request-btn" >Request</button></a>
+                                <a  id="cancel" href="#"><button style="display: none;" id="cancel-btn">Cancel</button></a>
+                            
+                            </div>
+                            
+                        </div>
+                   
+                  </div>
+                  
 
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
-    <script>
-        $(".testmonial_slider_area").owlCarousel({
-            autoplay: true,
-            slideSpeed: 1000,
-            items: 3,
-            loop: true,
-            nav: true,
-            navText: ['<i class="fa fa-arrow-left"></i>', '<i class="fa fa-arrow-right"></i>'],
-            margin: 30,
-            dots: true,
-            responsive: {
-                320: {
-                    items: 1
-                },
-                767: {
-                    items: 3
-                },
-                600: {
-                    items: 4
-                },
-                1000: {
-                    items: 5
-                }
-            }
+knowl
+                  <div class='col-sm-12 user-detail'>
 
-        });
-    </script>
+                             <div class="col-sm-5">
+                                   <div class='friend-pic round-pic'> 
+                                         <img src='../proImg/pro.jpg'>    
+                                    </div>
+                             </div>
+
+                            <div class='col-sm-7 user-name-buttons'> 
+                                <div class=" row name"><a href="#"><p style="color:white;margin:10px 10px;">Abul Hasan</p></a></div>
+                               <div class="row btn"> <a href="#"><button>Unfriend</button></a></div>
+
+                            </div>
+
+                          </div>
+    
+    
+-->
+
+
+<!--    
+
+                        <button class="test" data-id="new"> 0</button>
+                        <button class="test" data-id="has">1</button>
+
+
+                 $(".test").click(function(){
+                    var $this=$(this)
+                    v=$this.data("id");  // data receive use this id for verification or ajax(crud)
+                    window.alert(v);
+                });
+
+-->
+
 </html>

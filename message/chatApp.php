@@ -219,7 +219,6 @@ $user=mysqli_fetch_array($user);
   <body>
 
 
-
 <?php include "chat_header.php" ?>
 
 <!-- popup modal -->

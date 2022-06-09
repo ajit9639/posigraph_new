@@ -69,36 +69,31 @@ else
 <?php include "feed.php" ?>
 <!-- post start -->
 
-<?php //include "./slider.php";?>
+<?php include "dash-testing.php";?>
 
 
 <div class="container-fluid" >
     <div class="row">
         
-   
 
     <div id='pop-up-div' class="col-sm-10 col-xs-11 "><br>
-
-
-                    </div>
-
+    </div>
                    
         <div class="col-md-12">
             <!-- <div class="w3-row-padding ">
                     <div class="w3-col m12">
                         <div class="w3-card w3-round w3-white">
                             <div class="w3-container w3-padding"> -->
-
             <!-- <h6 class="h4"> Welcome <?php //echo $_SESSION['name']?></h6>            -->
-
-            <!-- <div class="">
-                
+            <!-- <div class="">                
             </div> -->
             <!-- </div>
                         </div>
                     </div>
                 </div> -->
         </div>
+
+        
         <div class="col-md-12">
             <!--End Middle Column post area-->
             
@@ -478,6 +473,23 @@ $("#srch").click(function() {
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 
+
+    <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(document).on('ready', function() {
+
+            $(".center").slick({
+                dots: true,
+                infinite: true,
+                centerMode: true,
+                slidesToShow: 3,
+                slidesToScroll: 3,
+
+            });
+
+
+        });
+    </script>
 </body>
 
 </html>
