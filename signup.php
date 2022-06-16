@@ -38,9 +38,27 @@ if(isset($_POST['submit'])){
         //   echo "<script>window.open('home.php','_self')</script>";
     }else{
     
-   $insert="insert into $table(firstName,lastName,email,gender,password,phone,regDate,verCode,verStatus,DOB,dp,status,lastLogIn,post,logInStatus) values('".$fName."','".$lName."','".$email."','".$gender."','".$pass."','".$phone."',NOW(),'".$verCode."','".$verStatus."','".$DOB."','".$dp."','".$status."',NOW(),'".$post."','Online')";        
-    $ins = mysqli_query($conn, $insert);
-    if($ins){
+//    $insert="insert into $table(firstName,lastName,email,gender,password,phone,regDate,verCode,verStatus,DOB,dp,status,lastLogIn,post,logInStatus) values('".$fName."','".$lName."','".$email."','".$gender."','".$pass."','".$phone."',NOW(),'".$verCode."','".$verStatus."','".$DOB."','".$dp."','".$status."',NOW(),'".$post."','Online')";        
+//     $ins = mysqli_query($conn, $insert);
+
+    $insert="insert into $table(firstName,lastName,email,gender,password,phone,regDate,verCode,verStatus,DOB,dp,status,lastLogIn,post,logInStatus) values('".$fName."','".$lName."','".$email."','".$gender."','".$pass."','".$phone."',NOW(),'".$verCode."','".$verStatus."','".$DOB."','".$dp."','".$status."',NOW(),'".$post."','Online')";        
+    if (mysqli_query($conn, $insert))
+    {
+        $query="select userId ,email,FirstName,dp from user where email='$email'";
+        $userData=mysqli_query($conn, $query);
+        $row=mysqli_fetch_array($userData);
+        $id=$row['userId'];
+        
+        $query="insert into user_details(userId) values('$id')";
+        mysqli_query($conn, $query);  
+
+
+
+
+
+
+
+    // if($ins){
 
         require 'phpmailer/PHPMailerAutoload.php';
         $mail = new PHPMailer;

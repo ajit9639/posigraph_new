@@ -1,5 +1,3 @@
-
-
 <?php
  session_start();
  if(!isset($_SESSION['email']))
@@ -39,15 +37,10 @@ else
 
 <body>
     <!--  main body starts here-->
-    
-    <div class="container" style="
-    margin-bottom: 100px;
-    margin-top: 60px;
-">
+
+    <div class="container" style="margin-bottom: 100px;margin-top: 60px;">
         <div class="row">
-        <h3 class="text-center" style="
-    width: 100%;
-">Edit Profile</h3>
+            <h3 class="text-center" style="width: 100%;">Edit Profile</h3>
             <div class="col-sm-12">
                 <div class="col-sm-3 change_dp">
                     <div class="row">
@@ -63,7 +56,7 @@ else
                         <button id="uploadDp" type="button" class=" btn btn-primary">upload</button>
                     </div>
                 </div>
-                
+
                 <div class="col-sm-12 userTable">
                     <br>
                     <div class="row r1">
@@ -123,7 +116,7 @@ else
                         <div class="col-sm-3">
                             <!--                             when button i click pop model is shown-->
                             <button type="button" id="show-detail-pop" class="form-control btn-success">Click to Update
-    </button>
+                            </button>
 
                             <br>
                         </div>
@@ -134,7 +127,7 @@ else
                 </div>
             </div>
             <!--  pop up model-->
-           
+
             <!-- Modal -->
             <div id="myModal" class="modal fade" role="dialog">
                 <div class="modal-dialog">
@@ -215,8 +208,8 @@ else
         <div class="row userdetails_table">
 
             <!-- <div class="col-sm-12"> -->
-                <!-- <h2 style="text-align:center">social Media </h2> -->
-                <!-- <div class="row r1">
+            <!-- <h2 style="text-align:center">social Media </h2> -->
+            <!-- <div class="row r1">
                     <div class="col-sm-4">
                         <input id="job" type="text" class="form-control" disabled>
                         <br>
@@ -243,7 +236,7 @@ else
 
 
 
-                <!-- <hr>
+            <!-- <hr>
                 <div class="row r3">
                     <div class="col-sm-12">
                         <div class="row">
@@ -722,8 +715,9 @@ function openNav() {
 }
 </script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </html>
 
 <?php } ?>
