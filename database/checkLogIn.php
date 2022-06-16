@@ -1,10 +1,12 @@
 <?php
 include("connection.php");
 $database="posigraph_socialplexus";
+
 $table="user";
 $email=$_POST['mail'];
 $pass=$_POST['pass'];
 $ver="verified";
+
 mysqli_select_db($conn,$database);
 $logInQuery="select * from user where email='".$email."'";
    $emails=mysqli_query($conn,$logInQuery);
@@ -30,7 +32,7 @@ $logInQuery="select * from user where email='".$email."'";
                 $_SESSION['name']=$row['firstName']; 
                 $_SESSION['lname']=$row['lastName']; 
             
-        mysqli_query($conn,"update user set logInStatus='Online' where userId=".$_SESSION['id']);
+                mysqli_query($conn,"update user set logInStatus='Online' where userId=".$_SESSION['id']);
             
             
             echo "<script>

@@ -8,7 +8,8 @@ include  "./friends/showUsers.php";
 
 <head>
     <meta charset="UTF-8">
-    <title>Responsive Testimonial Slider</title>
+    <title>Posigraph </title>
+    <link rel="icon" type="image/x-icon" href="https://posigraph.com/posi_favicon.png">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">

@@ -2,42 +2,84 @@
 session_start();
  if(isset($_SESSION['email']))
  {
-     echo "<script>window.open('./home.php','_self')</script>";
+    //  echo "<script>window.open('./home.php','_self')</script>";
  }else{
-//      if(isset($_POST['submit'])){
-// $fname = $_POST['fname'];
-// $lname = $_POST['lname'];
-// $mail = $_POST['mail'];
-// $password = $_POST['password'];
-// $gender = $_POST['gender'];
-// $phone = $_POST['phone'];
-// $conPassword = $_POST['conPassword'];
-// $regDate = date('dd-mm-yy');
 
+error_reporting(0);
+include "./database/connection.php";
+$database="posigraph_socialplexus";
+$table="user";
+    
+if(isset($_POST['submit'])){
+   
+     $fName=$_POST['fname'];
+     $lName=$_POST['lname'];
+     $email=$_POST['mail'];
+     $pass=$_POST['password'];
+     $conPass=$_POST['conPassword'];
+     $phone=$_POST['phone'];
+    $gender=$_POST['gender'];
 
+    $verStatus="unverified"; // will be verified when mail/sms(phone) is confirmed for vercode..
+    $post="no";
+    
+    $verCode=mt_rand();/// take a random number for verification code
+    
+    $dp="default_male.png";
+    $DOB=date('DD/MM/YYYY');
+    $status="";
+    
+    mysqli_select_db($conn,$database);
+    $check_email="select * from $table where email='$email'";
+    $emails=mysqli_query($conn,$check_email);
+    $total= mysqli_num_rows($emails);
+    if($total>0){
+        echo "<script>alert('You have already registred')</script>";
+        //   echo "<script>window.open('home.php','_self')</script>";
+    }else{
+    
+   $insert="insert into $table(firstName,lastName,email,gender,password,phone,regDate,verCode,verStatus,DOB,dp,status,lastLogIn,post,logInStatus) values('".$fName."','".$lName."','".$email."','".$gender."','".$pass."','".$phone."',NOW(),'".$verCode."','".$verStatus."','".$DOB."','".$dp."','".$status."',NOW(),'".$post."','Online')";        
+    $ins = mysqli_query($conn, $insert);
+    if($ins){
 
-// $verStatus="unverified";
-// $post="no";
-
-// $verCode=mt_rand();
-
-// $dp="default_male.png";
-// $DOB=date('DD/MM/YYYY');
-// $status="";
-
-
-
-
-
-// if($password != $conPassword){
-//     echo "<acript>alert('password & conform Password missmatch')</script>";
-// }else{
-
-// $query = "INSERT INTO `user`(`firstName`, `lastName`, `email`, `password`, `gender`, `regDate`, `verStatus`, `verCode`, `post`, `phone`, `lastLogIn`, `DOB`, `dp`, `status`, `logInStatus`) 
-//                         VALUES('$fname','$lname','$mail','$password','$gender','','')";
-// }
-//      }
-//  }
+        require 'phpmailer/PHPMailerAutoload.php';
+        $mail = new PHPMailer;
+        define('EMAIL','info@posigraph.com');
+        define('PASS','Posigraph@123');
+        
+        $mail->isSMTP();
+        $mail->Host='mail.posigraph.com';
+        $mail->Port=465;
+        $mail->SMTPAuth=true;
+        $mail->SMTPSecure='ssl';
+        
+        $mail->Username='info@posigraph.com';
+        $mail->Password='Posigraph@123';
+        
+        $mail->setFrom(EMAIL, 'info@posigraph.com');
+        $mail->addAddress($email,$fName);    
+        $mail->addReplyTo(EMAIL);
+        
+        $mail->isHTML(true);
+        $mail->Subject = 'Posigraph Password';
+        $mail->Body    = "<p style='color:DodgerBlue;font-family:arial;font-size:35px'>Hi $fName,</p>
+        <p>Verify your Posigraph account , come togather and enjoy sharing <b>photo and have  some fun & chit chat through messanger </b></p>
+        <span><a href='https://posigraph.com/ajit/verify.php?email=$email&code=$verCode'>click here to verify and Sign In</a></span>";
+        $mail->AltBody = "your password : test";
+        
+        if(!$mail->send()){
+            echo "<script>alert('messsage cannot send')</script>";
+        }
+        else{
+            echo "<script>alert('A verification link has been sent to your email, please check & verify')</script>";        
+        }
+   }
+    else 
+    {        
+    echo "<script>alert('Error')</script>";
+   }
+}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,7 +99,8 @@ session_start();
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-    <title>Hello, world!</title>
+    <title>Posigraph </title>
+    <link rel="icon" type="image/x-icon" href="https://posigraph.com/posi_favicon.png">
     <style>
     body {
         /* align-items: center;
@@ -240,8 +283,9 @@ session_start();
     </div>
     <div>
         <form class="form form-group" name="form" method="post" action="">
-        
+
             <div class="title">Sign up</div>
+
             <div class="input-container ic1">
                 <input class="input" type="text" placeholder="First Name" name="fname" placeholder="First Name"
                     required="required" id="fnamebox" />
@@ -282,7 +326,7 @@ session_start();
             </div>
 
             <div class="form-check">
-                <input type="checkbox" class="checkbox" style="" required="required" />
+                <input type="checkbox" class="checkbox" required="required" />
                 <label class="form-check-label text-white" for="exampleCheck1">Agree</label>
             </div>
 
@@ -299,7 +343,7 @@ session_start();
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
 
- <script>
+    <script>
     $(document).ready(function() {
         $("#btn1").click(function() {
 
@@ -314,7 +358,7 @@ session_start();
                 $('#conpassbox').css('border-color', '');
                 $('#passbox').css('border-color', '');
                 $("#nameerr, #phoneerr, #mailerr, #passerr,#conpasserr").html("");
-                //                    validate password/phone regex
+                // validate password/phone regex
                 if (pass.length < 8) {
                     $('#passbox').css('border-color', 'red');
                     $('#passerr').html('al least 8 characters !');
@@ -326,7 +370,8 @@ session_start();
                 } else {
                     var validatePass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@_!&])[A-Za-z0-9@!_&]*$/
                     var validatePhone = /^[0-9]{10}$/
-                    if (!validatePass.test(pass)) // password validatrot
+                    if (!validatePass.test(pass))
+                    // password validatrot
                     {
                         $('#passbox').css('border-color', 'red');
                         $('#passerr').html(
@@ -366,8 +411,9 @@ session_start();
             }
         });
     });
-    </script> 
+    </script>
 </body>
+
 </html>
 
-<?php}?>
+<?php } ?>

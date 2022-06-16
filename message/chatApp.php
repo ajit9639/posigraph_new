@@ -33,11 +33,8 @@ $user=mysqli_fetch_array($user);
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="../style/emojionearea.min.js"></script>
-
-
-
-
-    <title> message </title>
+    <title>Posigraph </title>
+    <link rel="icon" type="image/x-icon" href="https://posigraph.com/posi_favicon.png">
     <style>       
     .chatbox {
         width: 500px;

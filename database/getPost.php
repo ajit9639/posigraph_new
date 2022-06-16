@@ -20,7 +20,7 @@ $like_post_num=0;
     text-align: center;
     font-weight: 900;
     font-size: 12px;
-    padding: 5px;
+    padding: 7px 30px 5px 14px;
 }
 
 .like-graph {
@@ -37,7 +37,7 @@ $like_post_num=0;
 }
 
 .dislike_base-graph {
-    position: absolute;
+    /* position: absolute; */
     bottom: 32px;
     width: 100%;
     display: flex;
@@ -88,7 +88,7 @@ button:focus {
     outline: none !important;
 }
 
-p{
+p {
     padding-top: 10px;
 }
 </style>
@@ -152,13 +152,14 @@ function getPost($from,$count)
             <?php totalLike($list['postId']);?></span></button>
 
 
-<!-- ajit aaded -->
-            <button type="button" data-pid="<?php echo $list['postId']?>"
+    <!-- ajit aaded -->
+    <button type="button" data-pid="<?php echo $list['postId']?>"
         class="dislike-btn w3-button w3-theme-d1 w3-margin-bottom">
-        <i style="color:<?php echo $color?>"  id="dislike1<?php echo $list['postId']?>" class="fa fa-thumbs-up"></i> &nbsp;
+        <i style="color:<?php echo $color?>" id="dislike1<?php echo $list['postId']?>" class="fa fa-thumbs-up"></i>
+        &nbsp;
         <span id="dislike<?php echo $list['postId']?>">
             <?php totaldisLike($list['postId']);?><?php totaldisLike($list['postId']);?></span></button>
-<!-- // ajit added -->
+    <!-- // ajit added -->
 
 
     <button type="button" data-pid="<?php echo $list['postId']?>"
@@ -179,11 +180,11 @@ function getPost($from,$count)
         <span class="font-weight-bold"><?php echo  $user['firstName'].' ' .$user['lastName']?></span></a>
     <!-- <span class="w3-right w3-opacity font-weight-bold">Posted Date : <?php echo $postDate?></span> -->
 
-    
+
     <hr class="w3-clear" style="margin-top: 25px;">
     <!-- <p><?php echo $list['postContent']?></p> -->
     <img src="<?php echo 'imagePost/'.$list['postImage']?>" style="width:100%;" class="w3-margin-bottom post_image">
-    <!-- <span class="w3-right w3-opacity font-weight-bold">Posted Date : <?php // echo $postDate?></span> -->
+    <!-- <span class="w3-right w3-opacity font-weight-bold">Posted Date : <?php // echo $postDate; ?></span> -->
 
     <p><?php echo $list['postContent']?></p>
 
@@ -214,7 +215,6 @@ $query="select * from user where userId=".$_SESSION['id'];
 $result=mysqli_query($conn,$query);
 $user=mysqli_fetch_array($result);
 
-
 ?>
     <div style="position:relative">
         <div class="dislike_base-graph">
@@ -228,13 +228,14 @@ $user=mysqli_fetch_array($result);
                 <!-- <i class="fa fa-heart-o heart-graph"></i> -->
             </span>
 
-            <div class="like-graph" style="width: <?php echo $like_percent; ?>%"><?php echo $like_percent; ?> %</div>
-            <div class="dislike-graph" style="width: <?php echo $hate_percent; ?>%"><?php echo $hate_percent; ?> %</div>
+            <div class="like-graph" style="width:<?php echo $like_percent; ?>%"><?php echo $like_percent; ?>%</div>
+            <div class="dislike-graph" style="width:<?php echo $hate_percent; ?>%"><?php echo $hate_percent; ?>%</div>
 
             <button type="button" data-pid="<?php echo $list['postId']?>"
                 class="dislike-btn w3-theme-d1 w3-margin-bottom" style="border: none;
     background: #fff;"><i style="color:<?php echo $color?>" id="<?php echo $list['postId']?>"
-                    class="fa fa-heart heart-graph text-danger"></i> &nbsp;<span id="dislike<?php echo $list['postId']?>"
+                    class="fa fa-heart heart-graph text-danger"></i> &nbsp;<span
+                    id="dislike<?php echo $list['postId']?>"
                     style="color:#000;"><?php totaldisLike($list['postId']);?></span></button>
 
             <!-- <span><i class="fa fa-heart heart-graph"></i></span> -->
@@ -344,13 +345,13 @@ function getFriendPost($from,$count)
         <span id="like<?php echo $list['postId']?>">
             <?php totalLike($list['postId']);?></span></button>
 
-                <!-- ajit added -->
-            <button type="button" data-pid="<?php echo $list['postId']?>"
+    <!-- ajit added -->
+    <button type="button" data-pid="<?php echo $list['postId']?>"
         class="  dislike-btn w3-button w3-theme-d1 w3-margin-bottom">
         <i style="color:<?php echo $color?>" id="<?php echo $list['postId']?>" class="fa fa-thumbs-up"></i> &nbsp;
         <span id="dislike<?php echo $list['postId']?>">
             <?php totaldisLike($list['postId']);?></span></button>
-            <!--// ajit added -->
+    <!--// ajit added -->
 
     <button type="button" data-pid="<?php echo $list['postId']?>"
         class="comment-btn w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i> &nbsp;Comment</button>
@@ -380,13 +381,13 @@ function getFriendPost($from,$count)
         <span id="like<?php echo $list['postId']?>">
             <?php totalLike($list['postId']);?></span></button>
 
-<!-- ajit added -->
-            <button type="button" data-pid="<?php echo $list['postId']?>"
+    <!-- ajit added -->
+    <button type="button" data-pid="<?php echo $list['postId']?>"
         class="dislike-btn w3-button w3-theme-d1 w3-margin-bottom">
         <i style="color:<?php echo $color?>" id="<?php echo $list['postId']?>" class="fa fa-thumbs-up"></i> &nbsp;
         <span id="dislike<?php echo $list['postId']?>">
             <?php totaldisLike($list['postId']);?></span></button>
-<!-- // ajit added -->
+    <!-- // ajit added -->
 
     <button type="button" data-pid="<?php echo $list['postId']?>"
         class="comment-btn w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i> &nbsp;Comment</button>
@@ -436,5 +437,5 @@ function getFriends($id)
  else
       mysqli_error($conn); 
 }
-    //  ////////////////////////////////////////////////////////////////  
+    //////////////////////////////////////////////////////////////////  
         ?>

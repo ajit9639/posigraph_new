@@ -5,9 +5,9 @@ $database="posigraph_socialplexus";
 $table="user";
     
      $fName=$_POST['fname'];
-      $lName=$_POST['lname'];
+    $lName=$_POST['lname'];
      $email=$_POST['mail'];
-    $pass=$_POST['password'];
+     $pass=$_POST['password'];
      $conPass=$_POST['conPassword'];
     $phone=$_POST['phone'];
     $gender=$_POST['gender'];
@@ -20,20 +20,17 @@ $table="user";
     $dp="default_male.png";
     $DOB=date('DD/MM/YYYY');
     $status="";
-
-//
-//echo "<br>".$fName."<br>".$lName."<br>".$email."<br>".$pass."<br>".$conPass."<br>".$phone."<br>".$gender."<br>";
-
+   
+        //echo "<br>".$fName."<br>".$lName."<br>".$email."<br>".$pass."<br>".$conPass."<br>".$phone."<br>".$gender."<br>";
     
-     mysqli_select_db($conn,$database);
-    
+        mysqli_select_db($conn,$database);
         $check_email="select * from $table where email='$email'";
         $emails=mysqli_query($conn,$check_email);
         $total= mysqli_num_rows($emails);
 
     
 //     password validation....
-        if(strlen($pass)<8)
+        if(strlen($pass) > 3)
         {          
             echo "<script>            
              $('#passbox').css('border-color','red');
@@ -59,7 +56,7 @@ $table="user";
             exit();
         }
 
- //prepare sql query and insertt user data
+ //prepare sql query and insert user data
     
     $insert="insert into $table(firstName,lastName,email,gender,password,phone,regDate,verCode,verStatus,DOB,dp,status,lastLogIn,post,logInStatus) values('".$fName."','".$lName."','".$email."','".$gender."','".$pass."','".$phone."',NOW(),'".$verCode."','".$verStatus."','".$DOB."','".$dp."','".$status."',NOW(),'".$post."','Online')";        
     if (mysqli_query($conn, $insert))
@@ -72,7 +69,7 @@ $table="user";
         $query="insert into user_details(userId) values('$id')";
         mysqli_query($conn, $query);                
         
-//          // create a session variable and set user id  and  name... then redirect it to home page and  make a gate pass. here
+//      create a session variable and set user id  and  name... then redirect it to home page and  make a gate pass. here
            
             session_start(); 
            $_SESSION['id']=$id;
@@ -84,15 +81,13 @@ $table="user";
         //    $_SESSION['name']=$fName;      
         //    $_SESSION['name']=$fName;      
         //    $_SESSION['name']=$fName;      
-//echo "<script>window.open('home.php','_self')</script>";
+        //echo "<script>window.open('home.php','_self')</script>";
     
         $mailSent=sendMail($fName,$email,$verCode);
         if($mailSent)
         {            
-           echo "<script>            
-            //  $('.msg').html(' a verification link has been sent to your email, please check & verify');
-            alert('A verification link has been sent to your email, please check & verify');
-            window.location.replace('index.php');
+           echo "<script>                       
+            alert('A verification link has been sent to your email, please check & verify');            
             </script>"; 
         }
         else
@@ -114,24 +109,24 @@ function sendMail($name,$email,$verCode)
 require '../PHPMailerAutoload.php';
 
 $mail = new PHPMailer;
-define('EMAIL','in.ajitgupta9639@gmail.com');
-define('PASS','Pulsar180');
+define('EMAIL','info@posigraph.com');
+define('PASS','Posigraph@123');
 
-//$mail->SMTPDebug = 4;                               // Enable verbose debug output
+$mail->SMTPDebug = 4;                                      // Enable verbose debug output
 
-$mail->isSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-$mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = EMAIL;                 // SMTP username
-$mail->Password = PASS;                           // SMTP password
-$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-$mail->Port = 587;                                    // TCP port to connect to
+$mail->isSMTP();                                         // Set mailer to use SMTP
+$mail->Host='mail.posigraph.com';                       // Specify main and backup SMTP servers
+$mail->SMTPAuth = true;                                // Enable SMTP authentication
+$mail->Username = EMAIL;                              // SMTP username
+$mail->Password = PASS;                              // SMTP password
+$mail->SMTPSecure='ssl';                          // Enable TLS encryption, `ssl` also accepted
+$mail->Port=465;                               // TCP port to connect to
 
-$mail->setFrom(EMAIL, 'in.ajitgupta9639@gmail.com');
+$mail->setFrom(EMAIL, 'info@posigraph.com');
 $mail->addAddress($email,$name);     // Add a recipient
 $mail->addReplyTo(EMAIL);
 
-$mail->Subject = 'verificatoin code';
+$mail->Subject = 'verification code';
 $mail->Body    = "<p style='color:DodgerBlue;font-family:arial;font-size:35px'>Hi $name,</p>
 <span>Verify your Posigraph account , come togather and enjoy sharing <b>photo,video and have  some fun & chit chat through messanger and live video chat </b></span>
 <p style='font-family:arial;font-size:15px'> <a href='https://posigraph.com/ajit/verify.php?email=$email&code=$verCode'>click here to verify and Sign In</a></p>

@@ -38,7 +38,6 @@ else
     z-index: 1;
     border-radius: 10px;
     /* box-shadow: 2px 2px 6px 5px #000000; */
-
 }
 
 #comment-like-div {
@@ -75,10 +74,8 @@ else
 <div class="container-fluid" >
     <div class="row">
         
-   
 
     <div id='pop-up-div' class="col-sm-10 col-xs-11 "><br>
-
 
                     </div>
 
@@ -102,7 +99,7 @@ else
                 <button id="postbtn" style="float:right" type="button" class="btn btn-success mt-2">
                 <i class="fa fa-pencil"></i> &nbsp;Post</button>
                 </form>
-            </div>
+                </div>
 
             <!-- <div class="">
                 

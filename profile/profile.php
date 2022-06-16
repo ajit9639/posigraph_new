@@ -64,7 +64,7 @@ $query="select *  from user where userId='$id'";
            echo "
            
            <div>
-           <h1>No such Profile <a  href='http://localhost/plexus/home.php'>Go To Home</a></h1>
+           <h1>No such Profile <a  href='http://localhost/posigraph_new/home.php'>Go To Home</a></h1>
            
            
            </div>

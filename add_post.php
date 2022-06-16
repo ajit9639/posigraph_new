@@ -66,13 +66,13 @@ else
 </style>
 <!--// html code-->
 
-<?php include "feed.php" ?>
+<?php // include "feed.php" ?>
 <!-- post start -->
 
 <?php //include "./slider.php";?>
 
 
-<div class="container-fluid" >
+<div class="container-fluid" style="margin-top:90px;">
     <div class="row">
            
     <div id='pop-up-div' class="col-sm-10 col-xs-11 "><br>
@@ -334,7 +334,7 @@ $("#postbtn").click(function() {
             post.append("file", data[0]);
             post.append("id", <?php echo $_SESSION['id']?>);
             <?php  $d=rand(1,1000000000000); ?>
-            //                             if img is selected yhen test content
+            // if img is selected yhen test content
             var con = $("#content").val();
             if (con.length > 0) {
                 post.append("text", con);

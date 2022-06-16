@@ -6,8 +6,11 @@
   }
 else
 {
-    include_once("database/connection.php");  
-    include("database/getMsgNotif.php");   
+    include "./database/connection.php";
+    include "./database/getMsgNotif.php";
+
+    // include_once("database/connection.php");  
+    // include("database/getMsgNotif.php");   
     include "posi_header.php";  
     ?>
 
@@ -19,7 +22,8 @@ else
 
 <head>
 
-    <title>posigraph</title>
+     <title>Posigraph </title>
+    <link rel="icon" type="image/x-icon" href="https://posigraph.com/posi_favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style/w3.css">

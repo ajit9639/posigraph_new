@@ -120,10 +120,10 @@ session_start();
 
     <div class="container" id="reg">
         <div class="row">
-            <div class="col-sm-7">
+            <!-- <div class="col-sm-7">
                 <div class="slider visible-md visible-lg">
                 </div>
-            </div>
+            </div> -->
             <div class="col-sm-5">
                 <div id="ui">
                     <form name="form" method="post" action="signUpFormvali.php" class="form-group">

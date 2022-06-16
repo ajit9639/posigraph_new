@@ -112,14 +112,13 @@
         
         <div class="row">
            
-            <div class="col-md-12 all-user" style="
-    margin-top: 60px;
-">                
+            <div class="col-md-12 all-user" style="margin-top: 60px;">                
                 <!-- <div class="col-md-12 new-user">
                 <h3>Suggested Friends For Battle</h3>
                     <?php // friendsOfFriend($_SESSION['id']); 
                            // moreSugg();?>
                 </div> -->
+                
                 <div class="col-md-12 friend-list">
                 <h3>Friends For Battle</h3>
                     <?php  myFriends();?>

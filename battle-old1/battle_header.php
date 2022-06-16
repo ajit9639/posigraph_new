@@ -100,7 +100,8 @@
       <div class="modal-body">
         <a href="myData.php" class="text-center modal-links">Edit Profile</a>
         <a href="#" class="text-center modal-links">Push Notifications</a>
-        <a href="friends/friends.php" class="text-center modal-links">Search For Friend</a>
+        <a href="././friends/friends.php" class="text-center modal-links">Search For Friend</a>
+        <a href="battle.php" class="text-center modal-links">Battle With Friend</a>
         <a href="#" class="text-center modal-links">Terms of use</a>
         <a href="#" class="text-center modal-links">Help</a>
       </div>

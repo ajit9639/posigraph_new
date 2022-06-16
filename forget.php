@@ -16,7 +16,8 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-    <title>Hello, world!</title>
+    <title>Posigraph </title>
+    <link rel="icon" type="image/x-icon" href="https://posigraph.com/posi_favicon.png">
     <style>
     body {
         margin: 0px;
@@ -217,8 +218,7 @@ if(isset($_POST['email']))
        
         $result=sendMail($row['firstName'],$email,$row['password']);
         if($result)
-            echo "<script>
-            //  $('#msg').html('password is sent to your registered email id');
+            echo "<script>           
             alert('password is sent to your registered email id');
             window.location.replace('index.php');
             </script>";
@@ -238,30 +238,29 @@ if(isset($_POST['email']))
 function sendMail($name,$email,$pass)
 {
     
-
 require 'PHPMailerAutoload.php';
 
 $mail = new PHPMailer;
-define('EMAIL','in.ajitgupta9639@gmail.com');
-define('PASS','Pulsar180');
+define('EMAIL','info@posigraph.com');
+define('PASS','Posigraph@123');
 
-//$mail->SMTPDebug = 4;                               // Enable verbose debug output
+$mail->SMTPDebug = 4;                                      // Enable verbose debug output
 
-$mail->isSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-$mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = EMAIL;                 // SMTP username
-$mail->Password = PASS;                           // SMTP password
-$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-$mail->Port = 587;                                    // TCP port to connect to
+$mail->isSMTP();                                         // Set mailer to use SMTP
+$mail->Host='mail.posigraph.com';                       // Specify main and backup SMTP servers
+$mail->SMTPAuth = true;                                // Enable SMTP authentication
+$mail->Username = EMAIL;                              // SMTP username
+$mail->Password = PASS;                              // SMTP password
+$mail->SMTPSecure='ssl';                          // Enable TLS encryption, `ssl` also accepted
+$mail->Port=465;                               // TCP port to connect to
 
-$mail->setFrom(EMAIL, 'Posigraph');
+$mail->setFrom(EMAIL, 'info@posigraph.com');
 $mail->addAddress($email,$name);     // Add a recipient
 $mail->addReplyTo(EMAIL);
 
 $mail->Subject = 'Posigraph Password';
 $mail->Body    = "<p style='color:DodgerBlue;font-family:arial;font-size:35px'>Hi $name,</p>
-<span>Your <b>Posigraph</b> password is : <b>$pass</b> <br> please change the password to keep your accounrt safe </span>";
+<span>Your <b>Posigraph</b> password is : <b>$pass</b> <br> Thank You </span>";
 $mail->AltBody = "your password : $pass";
 
 if(!$mail->send()) {

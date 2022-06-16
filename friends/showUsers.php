@@ -316,8 +316,8 @@ function myFriends()
 //    SgstdUser(1);
 
     global $conn,$me;
-    
-  $query="select userOne,userTwo from friends where userOne=$me or userTwo=$me";// when i'am 1st col,get friend Id from userTwo
+    // when i'am 1st col,get friend Id from userTwo
+     $query="select userOne,userTwo from friends where userOne=$me or userTwo=$me";
      $friends=mysqli_query($conn,$query);
     if($friends)
     {
@@ -345,7 +345,7 @@ function myFriends()
                                   <div class='row name'><a href='https://posigraph.com/posigraph.com/ajit/profile/profile.php?id={$friend['userId']}'>
                                   <p class='name-tilte'>{$friend['firstName']}</p></a></div>
                                  <div class='row btn'> <a href='#'>
-                                  <button data-id='{$friend['userId']}'  data-name='{$friend['firstName']}' class='btn btn-success unfriend-btn'>Unfriend</button></a>
+                                  <button data-id='{$friend['userId']}'  data-name='{$friend['firstName']}' class='btn btn-success unfriend-btn'>Unfollow</button></a>
                                   </div>
 
                               </div>
@@ -642,6 +642,8 @@ function moreSugg()
         {
             while($row=mysqli_fetch_array($newUser))
             {
+                // echo $row['userId'];
+
                 echo"                    
                     <div class='col-sm-12 user-detail'>
                                <div class='user-pic'> 

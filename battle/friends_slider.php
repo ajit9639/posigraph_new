@@ -1,7 +1,7 @@
 <?php 
-// session_start();
+ session_start();
   include("showUsers.php");
-?>
+  ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +9,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Responsive Testimonial Slider</title>
+    <title>Posigraph </title>
+    <link rel="icon" type="image/x-icon" href="https://posigraph.com/posi_favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
@@ -72,7 +73,6 @@ $(".request-btn").click(function() {
     callFun = new FormData();
     callFun.append("buttonName", buttonName);
     callFun.append("userId", userId);
-    // window.alert(userId);
     callFun.append("userName", userName);
 
     $.ajax({
@@ -84,9 +84,8 @@ $(".request-btn").click(function() {
         processData: false,
 
         success: function(result) {
-            //                                                     window.open('home.php','_self');
-            // window.alert(result);
-            window.open('friends.php', '_self');
+            
+            window.open('battle.php', '_self');
         },
         error: function(result) {
             window.alert(" sorrry error {request}");
@@ -104,8 +103,7 @@ $(".cancel-btn").click(function() {
     callFun.append("buttonName", buttonName);
     callFun.append("userId", userId);
     callFun.append("userName", userName);
-    window.alert(userId);
-
+   
     $.ajax({
         method: 'post',
         url: "functions.php",
@@ -117,7 +115,7 @@ $(".cancel-btn").click(function() {
         success: function(result) {
             // window.open('home.php','_self');
             window.alert(result);
-            window.open('friends.php', '_self');
+            window.open('battle.php', '_self');
         },
         error: function(result) {
             window.alert(" sorrry error {cancel}");
@@ -146,7 +144,7 @@ $(".ignore-btn").click(function() {
         success: function(result) {
             //                                                     window.open('home.php','_self');
             window.alert(result);
-            window.open('friends.php', '_self');
+            window.open('button.php', '_self');
 
         },
         error: function(result) {
@@ -177,7 +175,7 @@ $(".accept-btn").click(function() {
         success: function(result) {
             //                                                     window.open('home.php','_self');
             window.alert(result);
-            window.open('friends.php', '_self');
+            window.open('button.php', '_self');
         },
         error: function(result) {
             window.alert(" sorrry error {accepted}");
@@ -194,7 +192,7 @@ $(".unfriend-btn").click(function() {
     callFun.append("buttonName", buttonName);
     callFun.append("userId", userId);
     callFun.append("userName", userName);
-    window.alert(userId);
+    
 
     $.ajax({
         method: 'post',
@@ -207,13 +205,45 @@ $(".unfriend-btn").click(function() {
         success: function(result) {
             //                                                     window.open('home.php','_self');
             window.alert(result);
-            window.open('friends.php', '_self');
+            window.open('button.php', '_self');
         },
         error: function(result) {
             window.alert(" sorrry error occured {unfriend}");
         }
     });
 });
+
+$(".battle-btn").click(function() {
+    var $this = $(this);
+    userId = $this.data("id");
+    userName = $this.data("name");
+    buttonName = "requests";
+    callFun = new FormData();
+    callFun.append("buttonName", buttonName);
+    callFun.append("userId", userId);
+    // window.alert(userId);
+    callFun.append("userName", userName);
+
+    $.ajax({
+        method: 'post',
+        url: "functions.php",
+        cache: false,
+        data: callFun,
+        contentType: false, // error if both are absent in ajax code 
+        processData: false,
+
+        success: function(result) {
+            //                                                     window.open('home.php','_self');
+            // window.alert(result);
+            window.open('battle.php', '_self');
+        },
+        error: function(result) {
+            window.alert(" sorrry error {request}");
+        }
+    });
+
+});
+
 </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
