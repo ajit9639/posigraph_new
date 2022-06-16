@@ -1,3 +1,6 @@
+<?php 
+include "./posi_header.php";
+?>
 <html lang="en">
 
 <head>
