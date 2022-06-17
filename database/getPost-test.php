@@ -172,7 +172,7 @@ function getPost($from,$count)
                     else
                     { ?>
 
-<!-- 
+
 <div class="row">
     <div class="col-6">
 
@@ -189,21 +189,21 @@ function getPost($from,$count)
     <a href="./profile/profile.php?id=84" style="line-height: 30px;">
     <span class="font-weight-bold">Bunty Gupta</span></a>
     <hr class="w3-clear" style="margin-top: 25px;">
-    <img src="imagePost/844490865profile3.jpg" style="width:100%;" class="w3-margin-bottom post_image">
+    <img src="imagePost/7454192751904775.jpg" style="width:100%;" class="w3-margin-bottom post_image">
     </div>    
-</div> -->
+</div>
 
 
 
 <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
 
-    <img src="dp/<?php echo $user['dp']?>" alt="Avatar4" class="w3-left w3-circle w3-margin-right"
+    <!-- <img src="dp/<?php echo $user['dp']?>" alt="Avatar4" class="w3-left w3-circle w3-margin-right"
     style="width:37px;border-radius:50%;">
     <a href="./profile/profile.php?id=<?php echo $list['userId']?>" style="line-height: 30px;">
-    <span class="font-weight-bold"><?php echo  $user['firstName'].' ' .$user['lastName']?></span></a>
+    <span class="font-weight-bold"><?php echo  $user['firstName'].' ' .$user['lastName']?></span></a> -->
 
-    <hr class="w3-clear" style="margin-top: 25px;">
-    <img src="<?php echo 'imagePost/'.$list['postImage']?>" style="width:100%;" class="w3-margin-bottom post_image">
+    <!-- <hr class="w3-clear" style="margin-top: 25px;">
+    <img src="<?php echo 'imagePost/'.$list['postImage']?>" style="width:100%;" class="w3-margin-bottom post_image"> -->
     <p><?php echo $list['postContent']?></p>
     <!-- like dislike graph -->
 

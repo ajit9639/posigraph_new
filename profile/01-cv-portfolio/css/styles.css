@@ -186,11 +186,11 @@ b.max-bold {
 --------------------------------- */
 
 .section {
-    padding: 100px 0 50px;
+    padding: 10px 0 50px;
 }
 
 .section .heading {
-    margin-bottom: 60px;
+    margin-bottom: 10px;
 }
 
 .section .heading:before {
@@ -239,7 +239,7 @@ b.max-bold {
 
 header {
     position: absolute;
-    top: 30px;
+    top: 0px;
     left: 0;
     right: 0;
     z-index: 100;
@@ -250,6 +250,7 @@ header .heading-wrapper {
     padding: 30px 40px 20px;
     background: #FFAD01;
     color: #fff;
+    margin-top: 52px
 }
 
 header .info {
@@ -318,10 +319,11 @@ header .downlad-btn:hover {
 }
 
 .intro {
-    padding: 0 20px;
+    padding-bottom: 10px;
     margin-top: 30px;
     text-align: center;
     background: #fff;
+    box-shadow: 6px 4px 20px 9px #8b8b8b;
 }
 
 .intro .profile-img {

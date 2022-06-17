@@ -9,9 +9,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">    
 
-    <link rel="stylesheet" type="text/css" href="../style.css">
-    <link rel="stylesheet" href="../style/w3.css">
-    <link rel="stylesheet" href="../style/w3-theme-blue-grey.css">
+    <link rel="stylesheet" type="text/css" href="./../style.css">
+    <link rel="stylesheet" href="./../style/w3.css">
+    <link rel="stylesheet" href="./../style/w3-theme-blue-grey.css">
 
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
       
-    <title>Posigraph </title>
+    <title>Posigraph</title>
     <link rel="icon" type="image/x-icon" href="https://posigraph.com/posi_favicon.png">
     
   </head>
@@ -102,13 +102,13 @@
         <a href="../myData.php" class="text-center modal-links">Edit Profile</a>
         <a href="../notification.php" class="text-center modal-links">Push Notifications</a>
         <a href="../friends/friends.php" class="text-center modal-links">Search For Friend</a>
-        <a href="../battle/battle.php" class="text-center modal-links">Battle With Friend</a>
+        <a href="battle.php" class="text-center modal-links">Battle With Friend</a>
         <a href="../terms.php" class="text-center modal-links">Terms of use</a>
         <a href="../help.php" class="text-center modal-links">Help</a>
       </div>
       
       <div class="modal-footer">
-        <a href="../logOut.php" type="button" class="text-center">Logout</a>
+        <a href="logOut.php" type="button" class="text-center">Logout</a>
         <a type="button" class="text-center" data-dismiss="modal">Cancel</a>
       </div>
     </div>
