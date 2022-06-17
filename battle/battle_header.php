@@ -58,7 +58,7 @@
 
 
          <div class="col-2 col-xs-2 header-chat-icons">         
-           <a href="search-form.php"  title="">
+           <a href="../search-form.php"  title="">
              <!-- <i class="fa-solid fa-align-justify"></i> -->
              <i class="fa fa-search" aria-hidden="true"></i>
            </a>
@@ -101,7 +101,7 @@
       <div class="modal-body">
         <a href="../myData.php" class="text-center modal-links">Edit Profile</a>
         <a href="../notification.php" class="text-center modal-links">Push Notifications</a>
-        <a href="././friends/friends.php" class="text-center modal-links">Search For Friend</a>
+        <a href="../friends/friends.php" class="text-center modal-links">Search For Friend</a>
         <a href="battle.php" class="text-center modal-links">Battle With Friend</a>
         <a href="../terms.php" class="text-center modal-links">Terms of use</a>
         <a href="../help.php" class="text-center modal-links">Help</a>

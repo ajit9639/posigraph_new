@@ -37,6 +37,10 @@ if(isset($_POST['submit'])){
         echo "<script>alert('You have already registred')</script>";
         //   echo "<script>window.open('home.php','_self')</script>";
     }else{
+    if(!$pass === $conPass){
+        echo "<script>alert('Password Not Matched')</script>";
+    }else{
+
     
 //    $insert="insert into $table(firstName,lastName,email,gender,password,phone,regDate,verCode,verStatus,DOB,dp,status,lastLogIn,post,logInStatus) values('".$fName."','".$lName."','".$email."','".$gender."','".$pass."','".$phone."',NOW(),'".$verCode."','".$verStatus."','".$DOB."','".$dp."','".$status."',NOW(),'".$post."','Online')";        
 //     $ins = mysqli_query($conn, $insert);
@@ -51,12 +55,6 @@ if(isset($_POST['submit'])){
         
         $query="insert into user_details(userId) values('$id')";
         mysqli_query($conn, $query);  
-
-
-
-
-
-
 
     // if($ins){
 
@@ -96,6 +94,7 @@ if(isset($_POST['submit'])){
     {        
     echo "<script>alert('Error')</script>";
    }
+}
 }
 }
 ?>
