@@ -58,10 +58,9 @@
 
 
          <div class="col-2 col-xs-2 header-chat-icons">         
-           <a href="../search-form.php"  title="">
-             <!-- <i class="fa-solid fa-align-justify"></i> -->
+           <!-- <a href="../search-form.php"  title="">
              <i class="fa fa-search" aria-hidden="true"></i>
-           </a>
+           </a> -->
          </div>
 
 
