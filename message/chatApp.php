@@ -27,7 +27,7 @@ $user=mysqli_fetch_array($user);
         height: 550px;
         background: #fff;
         margin-top: 20px;
-        /* margin-left: 60px; */
+        margin-left: 15px;
         padding: 20px;
         box-shadow: -50px 5px 100px 10px #ccc;       
     }
