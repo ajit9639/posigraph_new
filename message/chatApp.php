@@ -206,11 +206,11 @@ $user=mysqli_fetch_array($user);
 
             <div class="user col-sm-5 col-xs-10 " id="online-div">
                 <!-- <a href="#" class="w3-bar-item w3-button w3-padding-large"></a>-->
-                <a href="http://localhost/posigraph_new/message/broadcastMsg.php"><button type="button"
+                <!-- <a href="http://localhost/posigraph_new/message/broadcastMsg.php"><button type="button"
                         class="comment-btn w3-button w3-theme-d2 w3-margin-bottom"> &nbsp;broadcast</button></a>
 
                 <a href="http://localhost/posigraph_new/message/chatApp.php"><button type="button"
-                        class="comment-btn w3-button w3-theme-d2 w3-margin-bottom"> &nbsp;private Message</button></a>
+                        class="comment-btn w3-button w3-theme-d2 w3-margin-bottom"> &nbsp;private Message</button></a> -->
                 <center>
                     <h1>Online</h1>
                     <hr>
