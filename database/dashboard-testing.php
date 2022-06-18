@@ -8,7 +8,7 @@ else
 {
 
     include_once("database/connection.php");
-    include_once("database/getPost.php");
+    include_once("database/getPost-test.php");
     include("database/getMyImagePost.php");
     include("database/getMsgNotif.php");
     
@@ -32,7 +32,7 @@ else
     position: fixed;
     height: 100vh;
     overflow: hidden;
-    top: 60%;
+    top: 56%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
@@ -43,7 +43,7 @@ else
 
 #comment-like-div {
     background-color: white;
-    height: 58vh;
+    height: 70vh;
     overflow-x: hidden;
     overflow-y: scroll;
     padding: 10px;
