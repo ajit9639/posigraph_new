@@ -24,7 +24,7 @@
 
 <?php
 // session_start();
-include "./connection.php";
+include "connection.php";
 $database="posigraph_socialplexus";
 mysqli_select_db($conn,$database);
 
@@ -342,7 +342,7 @@ function myFriends()
                                </div>
 
                               <div class=' user-name-buttons'> 
-                                  <div class='row name'><a href='https://posigraph.com/posigraph.com/ajit/profile/profile.php?id={$friend['userId']}'>
+                                  <div class='row name'><a href='https://posigraph.com/ajit/profile/profile.php?id={$friend['userId']}'>
                                   <p class='name-tilte'>{$friend['firstName']}</p></a></div>
                                  <div class='row btn'> <a href='#'>
                                   <button data-id='{$friend['userId']}'  data-name='{$friend['firstName']}' class='btn btn-success unfriend-btn'>Unfollow</button></a>
@@ -422,7 +422,7 @@ function get_all_myFriends()
                                </div>
 
                               <div class=' user-name-buttons'> 
-                                  <div class='row name'><a href='https://posigraph.com/posigraph.com/ajit/profile/profile.php?id={$friend['userId']}'>
+                                  <div class='row name'><a href='https://posigraph.com/ajit/profile/profile.php?id={$friend['userId']}'>
                                   <p class='name-tilte'>{$friend['firstName']}</p></a></div>
                                  <div class='row btn'> <a href='#'>
                                   <button data-id='{$friend['userId']}'  data-name='{$friend['firstName']}' class='btn btn-success unfriend-btn'>Unfriend</button></a>
