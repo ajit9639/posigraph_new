@@ -128,12 +128,6 @@ else
 
 
 
-
-
-
-
-
-
 <script>
 $(".comment-btn").click(function() {
 

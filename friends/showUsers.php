@@ -24,7 +24,7 @@
 
 <?php
 // session_start();
-include("connection.php");
+include "./connection.php";
 $database="posigraph_socialplexus";
 mysqli_select_db($conn,$database);
 
