@@ -241,9 +241,9 @@ $user=mysqli_fetch_array($user);
                 </div>
                 <div class="chatlogs">
 
-                    <!--     presentation container that hold both chat box   -->
+                    <!-- presentation container that hold both chat box   -->
                     <?php
-//                this php code is just for msg insertion rightly
+//  this php code is just for msg insertion rightly
                 if(isset($_GET['id']))
                     {
                         $id=$_GET['id'];
