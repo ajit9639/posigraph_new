@@ -1,5 +1,5 @@
 <?php 
-// session_start();
+session_start();
 
     include("showUsers.php");
     include "friends_header.php";

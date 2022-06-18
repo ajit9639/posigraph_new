@@ -9,9 +9,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">    
 
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="style/w3.css">
-    <link rel="stylesheet" href="style/w3-theme-blue-grey.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" href="../style/w3.css">
+    <link rel="stylesheet" href="../style/w3-theme-blue-grey.css">
 
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

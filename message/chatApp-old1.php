@@ -10,8 +10,22 @@ $user=mysqli_query($conn,"select * from user where userId='$me'");
 $user=mysqli_fetch_array($user);
 ?>
 <html>
-
 <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style/w3.css">
+    <link rel="stylesheet" href="../style/w3-theme-blue-grey.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
     <link rel="stylesheet" href="../style/emojionearea.min.css">
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -19,7 +33,8 @@ $user=mysqli_fetch_array($user);
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="../style/emojionearea.min.js"></script>
-
+    <title>Posigraph </title>
+    <link rel="icon" type="image/x-icon" href="https://posigraph.com/posi_favicon.png">
     <style>       
     .chatbox {
         width: 500px;
@@ -85,7 +100,7 @@ $user=mysqli_fetch_array($user);
     }
 
     .self .chat-message {
-        background: #0088a9 ;
+        background: red ;
         order: -1;
     }
 
@@ -194,41 +209,74 @@ $user=mysqli_fetch_array($user);
         overflow: hidden;
     }
     </style>
-    
 
 </head>
 
-<body>
+  </head>
+  <body>
 
+
+<?php include "chat_header.php" ?>
+
+<!-- popup modal -->
+<?php //include "../posi_header.php" ?>
+<!-- Modal -->
+<div class="modal fade popup-modal " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog popup-modal-body" role="document">
+    <div class="modal-content sidebar-popup-section">
+      <div class="modal-header">
+
+        <!-- <h5 class="modal-title text-center" id="exampleModalLabel">Setting</h5> -->
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> -->
+
+      </div>
+      <div class="modal-body">
+        <a href="myData.php" class="text-center modal-links">Edit Profile</a>
+        <a href="#" class="text-center modal-links">Push Notifications</a>
+        <a href="friends/friends.php" class="text-center modal-links">Search For Friend</a>
+        <a href="#" class="text-center modal-links">Terms of use</a>
+        <a href="#" class="text-center modal-links">Help</a>
+      </div>
+      
+      <div class="modal-footer">
+        <a href="logOut.php" type="button" class="text-center">Logout</a>
+        <a type="button" class="text-center" data-dismiss="modal">Cancel</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end popup modal -->
+
+
+
+
+    <link rel="stylesheet" href="../style/emojionearea.min.css">    
+    <script src="../style/emojionearea.min.js"></script>
+<body>
+    <!-- Navbar on small screens -->
     <div class="container">
 
-        <div class="row" style=" margin-top:35px;">
+        <div class="" style="margin-top: 60px;margin-bottom:80px;">
 
             <div class="user col-sm-5 col-xs-10 " id="online-div">
                 <!-- <a href="#" class="w3-bar-item w3-button w3-padding-large"></a>-->
-                <a href="http://localhost/posigraph_new/message/broadcastMsg.php"><button type="button"
-                        class="comment-btn w3-button w3-theme-d2 w3-margin-bottom"> &nbsp;broadcast</button></a>
+                <!-- <a href="https://posigraph.com/ajit/message/broadcastMsg.php"><button type="button"
+                        class="comment-btn w3-button w3-theme-d2 w3-margin-bottom"> &nbsp;Group Message</button></a> -->
 
-                <a href="http://localhost/posigraph_new/message/chatApp.php"><button type="button"
-                        class="comment-btn w3-button w3-theme-d2 w3-margin-bottom"> &nbsp;private Message</button></a>
+                <!-- <a href="https://posigraph.com/ajit/message/chatApp.php"><button type="button"
+                        class="comment-btn w3-button w3-theme-d2 w3-margin-bottom"> &nbsp;Private Message</button></a> -->
                 <center>
-                    <h1>Online</h1>
+                    <h3>People in your Posigraph</h3>
                     <hr>
                 </center>
-
 
                 <div class="list" id="all friends">
                     <!--            ajax online users incllude page-->
                     <?php include("getUserData.php");?>
-
                 </div>
-
-
-
-
-
             </div>
-
 
             <div class="chatbox " style="float:right;">
                 <div class="chat-with-user" style="">
@@ -236,12 +284,12 @@ $user=mysqli_fetch_array($user);
                         <img id="chat-photo" style='width:100%'>
                     </div>
                     <div class="chat-name">
-                        <h4 id="name" style="color:#000"></h4>
+                        <h4 id="name" style="color:black;"></h4>
                     </div>
                 </div>
                 <div class="chatlogs">
 
-                    <!--     presentation container that hold both chat box   -->
+                    <!--  presentation container that hold both chat box   -->
                     <?php
 //                this php code is just for msg insertion rightly
                 if(isset($_GET['id']))
@@ -285,8 +333,8 @@ $user=mysqli_fetch_array($user);
 
                     <!--            <form method="post">-->
                     <!--            <textarea id="msg" name="msg"></textarea>-->
-                    <textarea id="msg" name="msg"></textarea>
-                    <button id="send" name="sumbit" value="send" style="float:right">send</button>
+                    <textarea id="msg" name="msg" placeholder="Chat with us"></textarea>
+                    <button id="send" name="sumbit" value="send" style="float:right" class="btn btn-danger">Send</button>
                     <!--           </form>-->
 
                 </div>
@@ -425,7 +473,7 @@ $("#srch").click(function() {
     if (v == "")
         window.alert("please enter name or email")
     else
-        window.open('http://localhost/posigraph_new/search.php?a=' + v, '_self')
+        window.open('https://posigraph.com/ajit/search.php?a=' + v, '_self')
 
 });
 </script>
