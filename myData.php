@@ -16,7 +16,7 @@ else
     $result=mysqli_query($conn,$query);
     $user=mysqli_fetch_array($result);
     
-     $query="select * from user_details where userId='".$_SESSION['id']."'";
+    $query="select * from user_details where userId='".$_SESSION['id']."'";
     $result=mysqli_query($conn,$query);
     $userDetail=mysqli_fetch_array($result);
 
