@@ -207,8 +207,8 @@ session_start();
              <span class="msg"></span>
 
             <div class="other-links">
-                <span class="text-white"><a href="https://posigraph.com/ajit/forget.php" title="">Forget Password ?</a> /
-                    <a href="https://posigraph.com/ajit/signup.php">New User</a>
+                <span class="text-white"><a href="https://posigraph.com/app/posigraph/forget.php" title="">Forget Password ?</a> /
+                    <a href="https://posigraph.com/app/posigraph/signup.php">New User</a>
                     <!-- <a href="signup.php">New User</a> -->
 
                 </span>

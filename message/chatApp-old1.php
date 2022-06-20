@@ -262,10 +262,10 @@ $user=mysqli_fetch_array($user);
 
             <div class="user col-sm-5 col-xs-10 " id="online-div">
                 <!-- <a href="#" class="w3-bar-item w3-button w3-padding-large"></a>-->
-                <!-- <a href="https://posigraph.com/ajit/message/broadcastMsg.php"><button type="button"
+                <!-- <a href="https://posigraph.com/app/posigraph/message/broadcastMsg.php"><button type="button"
                         class="comment-btn w3-button w3-theme-d2 w3-margin-bottom"> &nbsp;Group Message</button></a> -->
 
-                <!-- <a href="https://posigraph.com/ajit/message/chatApp.php"><button type="button"
+                <!-- <a href="https://posigraph.com/app/posigraph/message/chatApp.php"><button type="button"
                         class="comment-btn w3-button w3-theme-d2 w3-margin-bottom"> &nbsp;Private Message</button></a> -->
                 <center>
                     <h3>People in your Posigraph</h3>
@@ -473,7 +473,7 @@ $("#srch").click(function() {
     if (v == "")
         window.alert("please enter name or email")
     else
-        window.open('https://posigraph.com/ajit/search.php?a=' + v, '_self')
+        window.open('https://posigraph.com/app/posigraph/search.php?a=' + v, '_self')
 
 });
 </script>

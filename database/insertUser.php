@@ -129,7 +129,7 @@ $mail->addReplyTo(EMAIL);
 $mail->Subject = 'verification code';
 $mail->Body    = "<p style='color:DodgerBlue;font-family:arial;font-size:35px'>Hi $name,</p>
 <span>Verify your Posigraph account , come togather and enjoy sharing <b>photo,video and have  some fun & chit chat through messanger and live video chat </b></span>
-<p style='font-family:arial;font-size:15px'> <a href='https://posigraph.com/ajit/verify.php?email=$email&code=$verCode'>click here to verify and Sign In</a></p>
+<p style='font-family:arial;font-size:15px'> <a href='https://posigraph.com/app/posigraph/verify.php?email=$email&code=$verCode'>click here to verify and Sign In</a></p>
  ";
 $mail->AltBody = "Hi $name";
 

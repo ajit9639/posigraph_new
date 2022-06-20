@@ -232,7 +232,7 @@ function meToUsers()
                         <div class='user-name-buttons'> 
                         
                              <div class='name'>
-                                  <a href='https://posigraph.com/ajit/profile/profile.php?id={$row['receiverId']}'>
+                                  <a href='https://posigraph.com/app/posigraph/profile/profile.php?id={$row['receiverId']}'>
                                   <p class='name-tilte'>{$receiverNameDp['firstName']}</p>
                                   </a>
                              </div>
@@ -280,7 +280,7 @@ function usersToMe()
                             <div class='user-name-buttons'>
                        
                                     <div class=' name'>
-                                      <a href='https://posigraph.com/ajit/profile/profile.php?id={$row['senderId']}'>
+                                      <a href='https://posigraph.com/app/posigraph/profile/profile.php?id={$row['senderId']}'>
                                       <p class='name-tilte'>{$senderNameDp['firstName']}</p>
                                        </a>
                                     </div>
@@ -342,7 +342,7 @@ function myFriends()
                                </div>
 
                               <div class=' user-name-buttons'> 
-                                  <div class='row name'><a href='https://posigraph.com/ajit/profile/profile.php?id={$friend['userId']}'>
+                                  <div class='row name'><a href='https://posigraph.com/app/posigraph/profile/profile.php?id={$friend['userId']}'>
                                   <p class='name-tilte'>{$friend['firstName']}</p></a></div>
                                  <div class='row btn'> <a href='#'>
                                   <button data-id='{$friend['userId']}'  data-name='{$friend['firstName']}' class='btn btn-success unfriend-btn'>Unfollow</button></a>
@@ -370,7 +370,7 @@ function myFriends()
                                  </div>
 
                                 <div class='user-name-buttons'> 
-                                    <div class='name'><a href='https://posigraph.com/ajit/profile/profile.php?id={$friend['userId']}'>
+                                    <div class='name'><a href='https://posigraph.com/app/posigraph/profile/profile.php?id={$friend['userId']}'>
                                     <p class='name-tilte'>{$friend['firstName']}</p>
                                     </a></div>
                                    <div class='btn'> <a href='#'>
@@ -422,7 +422,7 @@ function get_all_myFriends()
                                </div>
 
                               <div class=' user-name-buttons'> 
-                                  <div class='row name'><a href='https://posigraph.com/ajit/profile/profile.php?id={$friend['userId']}'>
+                                  <div class='row name'><a href='https://posigraph.com/app/posigraph/profile/profile.php?id={$friend['userId']}'>
                                   <p class='name-tilte'>{$friend['firstName']}</p></a></div>
                                  <div class='row btn'> <a href='#'>
                                   <button data-id='{$friend['userId']}'  data-name='{$friend['firstName']}' class='btn btn-success unfriend-btn'>Unfriend</button></a>
@@ -450,7 +450,7 @@ function get_all_myFriends()
                                  </div>
 
                                 <div class='user-name-buttons'> 
-                                    <div class='name'><a href='https://posigraph.com/ajit/profile/profile.php?id={$friend['userId']}'>
+                                    <div class='name'><a href='https://posigraph.com/app/posigraph/profile/profile.php?id={$friend['userId']}'>
                                     <p class='name-tilte'>{$friend['firstName']}</p>
                                     </a></div>
                                    <div class='btn'> <a href='#'>
@@ -601,7 +601,7 @@ $strr=implode(',', $strr);
                         <div class=' user-name-buttons'> 
                         
                              <div class='  name'>
-                                  <a href='https://posigraph.com/ajit/profile/profile.php?id={$row['userId']}'>
+                                  <a href='https://posigraph.com/app/posigraph/profile/profile.php?id={$row['userId']}'>
                                   <p class='name-tilte'>{$row['firstName']}</p></a>
                              </div>
                              
@@ -614,7 +614,7 @@ $strr=implode(',', $strr);
                   ";
             }
         }
-//         <a href='https://posigraph.com/ajit/profile/profile.php?id={$id}'> <p><button>View Profile</button></p></a>
+//         <a href='https://posigraph.com/app/posigraph/profile/profile.php?id={$id}'> <p><button>View Profile</button></p></a>
         
     }
     else
@@ -652,7 +652,7 @@ function moreSugg()
 
                               <div class='user-name-buttons'>                         
                              <div class='name'>
-                                  <a href='https://posigraph.com/ajit/profile/profile.php?id={$row['userId']}'>
+                                  <a href='https://posigraph.com/app/posigraph/profile/profile.php?id={$row['userId']}'>
                                   <p style='' class='name-tilte'>{$row['firstName']}</p>
                                   </a>
                              </div>  

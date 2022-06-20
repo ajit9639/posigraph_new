@@ -25,9 +25,6 @@ include "posi_header.php";
     </div>
 </div>
 
-
-<!-- // -->
-
 <script>
 $("#srch").click(function() {
 
@@ -35,7 +32,7 @@ $("#srch").click(function() {
     if (v == "")
         window.alert("please enter name or email")
     else
-        window.open('https://posigraph.com/ajit/search.php?a=' + v, '_self')
+        window.open('https://posigraph.com/app/posigraph/search.php?a=' + v, '_self')
 
 });
 </script>

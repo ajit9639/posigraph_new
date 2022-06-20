@@ -65,7 +65,7 @@
 
 
          <div class="col-2 col-xs-2 header-chat-icons">         
-           <a href="https://posigraph.com/ajit/message/chatApp.php"  title="">
+           <a href="https://posigraph.com/app/posigraph/message/chatApp.php"  title="">
              <!-- <i class="fa-solid fa-align-justify"></i> -->
              <i class="fa fa-envelope-o" aria-hidden="true"></i>
            </a>

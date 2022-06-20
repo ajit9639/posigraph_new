@@ -220,7 +220,7 @@ function meToUsers()
                 <div class='img-area'>
                     <img src=./dp/{$receiverNameDp['dp']} alt=''>
                 </div>
-                <a href='https://posigraph.com/ajit/profile/profile.php?id={$row['receiverId']}'>
+                <a href='https://posigraph.com/app/posigraph/profile/profile.php?id={$row['receiverId']}'>
                 <p class='name-tilte'>{$receiverNameDp['firstName']}</p>
                 </a>
             </div>
@@ -260,7 +260,7 @@ function usersToMe()
                             <img src='../proImg/pro.jgp' alt=''>
                             
                         </div>
-                        <a href='https://posigraph.com/ajit/profile/profile.php?id={$row['senderId']}'>
+                        <a href='https://posigraph.com/app/posigraph/profile/profile.php?id={$row['senderId']}'>
                         <p class='name-tilte'>{$senderNameDp['firstName']}</p>
                          </a>
                     </div>
@@ -309,7 +309,7 @@ function myFriends()
                       <div class='img-area'>
                           <img src='./proImg/pro.jpg' alt=''>
                       </div>
-                      <a href='https://posigraph.com/ajit/profile/profile.php?id={$friend['userId']}'>
+                      <a href='https://posigraph.com/app/posigraph/profile/profile.php?id={$friend['userId']}'>
                       <p class='name-tilte'>{$friend['firstName']}</p></a>
                   </div>
                                                                                             
@@ -329,7 +329,7 @@ function myFriends()
                       <div class='img-area'>
                           <img src='./proImg/pro.jpg' alt=''>
                       </div>
-                      <a href='https://posigraph.com/ajit/profile/profile.php?id={$friend['userId']}'>
+                      <a href='https://posigraph.com/app/posigraph/profile/profile.php?id={$friend['userId']}'>
                       <p class='name-tilte'>{$friend['firstName']}</p></a>
                   </div>
 
@@ -341,7 +341,7 @@ function myFriends()
                                        <div class='friend-pic round-pic'> 
                                              <img src='../proImg/pro.jpg'>    
                                         </div>
-                                        <a href='https://posigraph.com/ajit/profile/profile.php?id={$friend['userId']}'>
+                                        <a href='https://posigraph.com/app/posigraph/profile/profile.php?id={$friend['userId']}'>
                                     <p class='name-tilte'>{$friend['firstName']}</p>
                                     </a>
                                  </div>
@@ -490,7 +490,7 @@ $strr=implode(',', $strr);
                             <img src='./proImg/pro.jpg' alt=''>
                             
                         </div>
-                        <a href='https://posigraph.com/ajit/profile/profile.php?id={$row['userId']}'>
+                        <a href='https://posigraph.com/app/posigraph/profile/profile.php?id={$row['userId']}'>
                                   <p class='name-tilte'>{$row['firstName']}</p></a>
                     </div>
                                             
@@ -503,7 +503,7 @@ $strr=implode(',', $strr);
                   ";
             }
         }
-//         <a href='https://posigraph.com/ajit/profile/profile.php?id={$id}'> <p><button>View Profile</button></p></a>
+//         <a href='https://posigraph.com/app/posigraph/profile/profile.php?id={$id}'> <p><button>View Profile</button></p></a>
         
     }
     else
@@ -541,7 +541,7 @@ function moreSugg()
                             <img src='./proImg/pro.jpg' alt=''>
                             
                         </div>
-                        <a href='https://posigraph.com/ajit/profile/profile.php?id={$row['userId']}'>
+                        <a href='https://posigraph.com/app/posigraph/profile/profile.php?id={$row['userId']}'>
                                   <p style='' class='name-tilte'>{$row['firstName']}</p>
                                   </a>
                     </div>

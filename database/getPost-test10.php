@@ -258,6 +258,7 @@ $user=mysqli_fetch_array($result);
             class="like-btn w3-button w3-theme-d1 w3-margin-bottom btn btn-success"><i style="color:<?php echo $color?>"
                 id="<?php // echo $list['postId']?>" class="fa fa-thumbs-up"></i> &nbsp;<span
                 id="like<?php // echo $list['postId']?>"><?php totalLike($list['postId']);?></span></button>
+
         <button type="button" data-pid="<?php echo $list['postId']?>"
             class="comment-btn w3-button w3-theme-d2 w3-margin-bottom btn btn-info"><i class="fa fa-comment"></i>
             &nbsp;Comment</button>
