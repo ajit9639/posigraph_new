@@ -218,15 +218,9 @@ $user=mysqli_fetch_array($user);
 
 
                 <div class="list" id="all friends">
-                    <!--            ajax online users incllude page-->
+                    <!--ajax online users incllude page-->
                     <?php include("getUserData.php");?>
-
                 </div>
-
-
-
-
-
             </div>
 
 
