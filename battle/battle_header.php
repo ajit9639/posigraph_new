@@ -107,7 +107,7 @@
       </div>
       
       <div class="modal-footer">
-        <a href="logOut.php" type="button" class="text-center">Logout</a>
+        <a href="../logOut.php" type="button" class="text-center">Logout</a>
         <a type="button" class="text-center" data-dismiss="modal">Cancel</a>
       </div>
     </div>
