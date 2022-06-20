@@ -93,7 +93,7 @@ function insertNotifIntoSeen($id,$notifId){
 
 function isNotifSeen($id,$notifId){
     global $conn;
-    $query="select COUNT(*) from notifications_Seen where seenBy='$id' AND notificationId='$notifId'";
+    $query="select COUNT(*) from notifications_seen where seenBy='$id' AND notificationId='$notifId'";
     $result=mysqli_query($conn,$query);
     $total=mysqli_fetch_array($result);
     if($total[0]>=1)
