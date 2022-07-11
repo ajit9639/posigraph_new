@@ -8,9 +8,7 @@ include "posi_header.php";?>
         box-shadow: 2px 2px 3px #ccc;
     }
     .profile .profile-name{
-        
-
-        
+                
     }
 </style>
 <div class="container" style="margin-top:100px;">
