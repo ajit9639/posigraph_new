@@ -15,5 +15,3 @@ jobs:
         username: app@posigraph.com
         password: ${{ secrets.FTP_PASSWORD }}
         # 
-
-        

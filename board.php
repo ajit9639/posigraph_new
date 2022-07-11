@@ -22,6 +22,7 @@ include "posi_header.php";?>
                 <h3>Name of challanger</h3>
             </div>
         </div>
+        
         <div class="col-md-6 profile">
             <div class="profile-image">
                 <img src="proImg/pro.jpg" alt="">
