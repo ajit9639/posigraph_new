@@ -9,6 +9,8 @@ include "posi_header.php";?>
     }
     .profile .profile-name{
                 
+
+        
     }
 </style>
 <div class="container" style="margin-top:100px;">
