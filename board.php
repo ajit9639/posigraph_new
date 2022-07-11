@@ -7,7 +7,9 @@ include "posi_header.php";?>
     .profile .profile-image{
         box-shadow: 2px 2px 3px #ccc;
     }
-    .profile .profile-name{}
+    .profile .profile-name{
+        
+    }
 </style>
 <div class="container" style="margin-top:100px;">
     <!-- <h2 class="text-center">Onboarding</h2> -->
