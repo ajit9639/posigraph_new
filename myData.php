@@ -61,6 +61,11 @@ else
                     <br>
                     <div class="row r1">
 
+                    <!-- <div class="col-sm-4">
+                            <input disabled  type="text" class="form-control" id="firstName.lastName">
+                            <br>
+                        </div> -->
+
                         <div class="col-sm-4">
                             <input disabled id="firstName" type="text" class="form-control">
                             <br>
@@ -114,7 +119,7 @@ else
                         </div>
 
                         <div class="col-sm-3">
-                            <!--                             when button i click pop model is shown-->
+                            <!-- when button i click pop model is shown-->
                             <button type="button" id="show-detail-pop" class="form-control btn-success">Click to Update
                             </button>
 
@@ -126,7 +131,7 @@ else
 
                 </div>
             </div>
-            <!--  pop up model-->
+            <!--pop up model-->
 
             <!-- Modal -->
             <div id="myModal" class="modal fade" role="dialog">
@@ -172,7 +177,6 @@ else
                                     <label>Date Of Birth</label>
                                     <input id="M_dob" type="date" class="form-control">
                                 </div>
-
                             </div>
 
                             <div class="form-group">
@@ -184,8 +188,6 @@ else
                                 <label>About</label>
                                 <input id="M_about" type="text" class="form-control">
                             </div>
-
-
                         </div>
 
 

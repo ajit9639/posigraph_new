@@ -62,9 +62,9 @@ session_start();
     }
 
     .user-detail {
-        width: 270px;
+        /* width: 270px;
         height: auto;
-        margin: 5px;
+        margin: 5px; */
         /* padding: 0; */
     }
 
@@ -115,18 +115,22 @@ session_start();
             <div class="col-md-12 all-user" style="margin-top: 60px;">                
             <div class="col-md-12 friend-list">
                 <h3>Current Battle Competitors</h3>
+                <div class='row'>
                     <?php  battle();?>
                 </div>                
             </div>
+</div>
         </div>
 
         <div class="row">
             <div class="col-md-12 all-user" style="margin-top: 60px;">                
             <div class="col-md-12 friend-list">
                 <h3>Suggestion For Battle</h3>
+                <div class='row'>
                     <?php  myFriends();?>
                 </div>                
             </div>
+</div>
         </div>
 
         <div class="row">
@@ -134,12 +138,16 @@ session_start();
                 <div class="col-md-12 request-list">
                 
                 <h3>Battle Request Sent</h3>
+                <div class='row'>
                 <?php meToUsers();?>
+</div>
         </div>
         
         <div class="col-md-12 requested-user">
                 <h3>Battle Request Recived</h3>
+                <div class='row'>
                 <?php usersToMe();?><br><br>
+</div>
                 </div>
                 <br><br>
             </div>

@@ -13,7 +13,7 @@ if(basename($_SERVER['PHP_SELF']) == 'dashboard.php'){?>
                         </div>
 
                         <div class="tab-2">
-                        <a class="first-tab" href="https://posigraph.com/app/posigraph/home.php"> Posi </a>                            
+                        <a class="first-tab" href="https://posigraph.com/app/posigraph/battle/battle.php"> Story </a>                            
                             <input id="tab2-1" name="tabs-two" type="radio">                           
                         </div>
 
@@ -43,7 +43,7 @@ if(basename($_SERVER['PHP_SELF']) == 'dashboard.php'){?>
                     </div>
 
                     <div class="tab-2">
-                    <a class="first-tab" href="https://posigraph.com/app/posigraph/home.php"> Posi </a>                            
+                    <a class="first-tab" href="https://posigraph.com/app/posigraph/battle/battle.php"> Story </a>                            
                         <input id="tab2-1" name="tabs-two" type="radio" checked="checked">                           
                     </div>
 
@@ -73,7 +73,7 @@ if(basename($_SERVER['PHP_SELF']) == 'dashboard.php'){?>
                     </div>
 
                     <div class="tab-2">
-                    <a class="first-tab" href="https://posigraph.com/app/posigraph/home.php"> Posi </a>                            
+                    <a class="first-tab" href="https://posigraph.com/app/posigraph/battle/battle.php"> Story </a>                            
                         <input id="tab2-1" name="tabs-two" type="radio">                           
                     </div>
 

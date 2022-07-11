@@ -32,6 +32,10 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
       
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
     <title>Posigraph </title>
     <link rel="icon" type="image/x-icon" href="https://posigraph.com/posi_favicon.png">
     
@@ -129,7 +133,7 @@
           </div>
           <div class="col-3 col-xs-3 footer-icons">
             <a href="add_post.php" class="footer-single-icon btn" title="">
-              <i class="fa-solid fa-camera-retro"></i>
+              <i class="fa-solid fa-camera"></i>
               <!-- <div class="hover-display">
                 <span>Post</span>
               </div> -->

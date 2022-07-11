@@ -7,7 +7,7 @@
     display: block;
     background: #fff;
     color: #000;
-    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+    /* box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px; */
     margin: 15px 0;
 }
 
@@ -83,7 +83,7 @@ function newUsers()
             {
                 echo"
                     
-                    <div class='col-sm-12 user-detail'>
+                    <div class='col-6 col-md-4 user-detail'>
 
                                <div class='col-sm-4 user-pic'> 
                                <img src='../proImg/pro.jpg'> 
@@ -128,8 +128,9 @@ $strr=implode(',', $strr);
         {
             while($row=mysqli_fetch_array($newUser))
             {
-                echo"                    
-                    <div class='col-sm-12 user-detail'>
+                echo"                  
+                
+                    <div class='col-6 col-md-4 user-detail'>
 
                                <div class='col-sm-4 user-pic'>
                                 <img src='../proImg/pro.jpg'>
@@ -146,8 +147,8 @@ $strr=implode(',', $strr);
                             </div>
 
                         </div>
-
-                   </div>
+                        </div>
+                   
                  
                   ";
             }
@@ -224,7 +225,7 @@ function meToUsers()
                 //   print_r($receiverNameDp['dp']);exit();
                 echo"
                     
-                    <div class='col-sm-12 user-detail'>
+                    <div class='col-6 col-md-4 user-detail'>
 
                                <div class='user-pic'> 
                                <img src=../dp/{$receiverNameDp['dp']}> 
@@ -242,8 +243,8 @@ function meToUsers()
                             </div>
 
                         </div>
-
-                   </div>
+                        </div>
+                   
                  
                   ";
             }
@@ -271,10 +272,10 @@ function usersToMe()
                   $senderNameDp=mysqli_fetch_array($nameDp);
                 echo"
                     
-                     <div class='col-sm-12 user-detail'>
+                     <div class='col-6 col-md-4 user-detail'>
 
                            <div class='user-pic'> 
-                                 <img src='../proImg/pro.jpg'>    
+                                  <img src='../dp/{$friend['dp']}'>    
                             </div>
 
                             <div class='user-name-buttons'>
@@ -297,9 +298,9 @@ function usersToMe()
                                        </button>
                                      </a>
                                     </div>
-
+                                    </div>
                             </div> 
-                 </div>
+                 
                  
                   ";                                                  
             }
@@ -332,12 +333,12 @@ function myFriends()
                       $friend=mysqli_fetch_array($nameDp);
                       
                       echo"
-
-                        <div class='col-sm-12 user-detail'>
+                        
+                        <div class='col-6 col-md-4 user-detail'>
 
                                <div class=''>
                                      <div class='friend-pic round-pic'> 
-                                           <img src='../proImg/pro.jpg'>    
+                                           <img src='../dp/{$friend['dp']}'>    
                                       </div>
                                </div>
 
@@ -361,11 +362,12 @@ function myFriends()
                       $friend=mysqli_fetch_array($nameDp);
                       
                       echo"
-                          <div class='col-sm-12 user-detail'>
+                      
+                          <div class='col-sm-6 user-detail'>
 
                                  <div class=''>
                                        <div class='friend-pic round-pic'> 
-                                             <img src='../proImg/pro.jpg'>    
+                                              <img src='../dp/{$friend['dp']}'>    
                                         </div>
                                  </div>
 
@@ -378,8 +380,8 @@ function myFriends()
                                    </div>
 
                                 </div>
-
-                              </div> 
+                                </div>
+                              
                  
                         "; 
                  }
@@ -413,11 +415,11 @@ function get_all_myFriends()
                       
                       echo"
                         
-                        <div class='col-sm-12 user-detail'>
+                        <div class='col-6 col-md-4 user-detail'>
 
                                <div class=''>
                                      <div class='friend-pic round-pic'> 
-                                           <img src='../proImg/pro.jpg'>    
+                                            <img src='../dp/{$friend['dp']}'>    
                                       </div>
                                </div>
 
@@ -430,7 +432,7 @@ function get_all_myFriends()
 
                               </div>
                             </div>
-                    
+                            
                                         
                         ";                      
                   }
@@ -441,11 +443,11 @@ function get_all_myFriends()
                       $friend=mysqli_fetch_array($nameDp);
                       
                       echo"hello2
-                          <div class='col-sm-12 user-detail'>
+                          <div class='col-6 col-md-4 user-detail'>
 
                                  <div class=''>
                                        <div class='friend-pic round-pic'> 
-                                             <img src='../proImg/pro.jpg'>    
+                                              <img src='../dp/{$friend['dp']}'>    
                                         </div>
                                  </div>
 
@@ -567,7 +569,7 @@ function friendsOfFriend($id)
  {
   $FF=myF($my[$i]);
     $str=implode(',', $FF);
-     $FOF.=$str.",";
+     $FOF.=$str;
      
      
  }
@@ -593,7 +595,7 @@ $strr=implode(',', $strr);
             {
                 echo"
                     
-                    <div class='col-sm-12 user-detail'>
+                    <div class='col-6 col-md-4 user-detail'>
 
                                <div class=' user-pic'> 
                                <img src='../proImg/pro.jpg'>
@@ -645,7 +647,7 @@ function moreSugg()
                 // echo $row['userId'];
 
                 echo"                    
-                    <div class='col-sm-12 user-detail'>
+                    <div class='col-6 col-md-4 user-detail'>
                                <div class='user-pic'> 
                                <img src=../dp/{$row['dp']}> 
                                </div>

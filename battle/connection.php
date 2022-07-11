@@ -2,7 +2,7 @@
 
 // Checking connection
 
-session_start();
+// session_start();
 if($_SERVER['SERVER_NAME']=="localhost"){
     $conn = mysqli_connect("localhost", "root", "", "posigraph_socialplexus");
 }else{

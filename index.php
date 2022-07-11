@@ -32,7 +32,9 @@ session_start();
         padding: 0px;
         box-sizing: border-box;
     }
-
+    .logo-brand .brand-logo {
+    width: 140px;
+    }
     .logo-brand {
         text-align: center;
     }
@@ -57,7 +59,7 @@ session_start();
     .title {
         color: #eee;
         font-family: sans-serif;
-        font-size: 36px;
+        font-size: 14px;
         font-weight: 400;
         margin-top: 30px;
     }
@@ -170,15 +172,20 @@ session_start();
     .other-links a {
         color: #fff;
         text-align: center;
-        font-size: 14px;
+        font-size: 12px;
         text-decoration: none;
         /* text-transform: uppercase; */
-        font-weight: 800;
+        font-weight: 400;
     }
 
     #switch-links {
         margin-top: 30px;
     }
+    .posigraph_back{       
+    position: absolute!important;
+    bottom: 0px!important;
+    width: 100%!important;
+        }
     </style>
 </head>
 
@@ -187,11 +194,14 @@ session_start();
         <img class="brand-logo" src="posigraph_logo.png" alt="" />
         <!-- <img class="brand-name" src="brand name png.png" alt="" /> -->
     </div>
-    <div>
 
-   
+
+  <div class="posigraph_back">
         <form class="form form-group box" method="post">
-            <div class="title">Login</div>
+            <div class="title">Login   <?php 
+            
+           
+            ?></div>
             <div class="input-container ic1">
                 <input class="input" type="text" placeholder="username" id="mail" name="email" required="required"/>
                 <!-- <span id="nameerr" style="font-size:15; color:red; text-align:center;"></span> -->
@@ -207,10 +217,9 @@ session_start();
              <span class="msg"></span>
 
             <div class="other-links">
-                <span class="text-white"><a href="https://posigraph.com/app/posigraph/forget.php" title="">Forget Password ?</a> /
-                    <a href="https://posigraph.com/app/posigraph/signup.php">New User</a>
+                <span class="text-white"><a href="forget.php" title="">Forget Password ?</a> /
+                    <a href="signup.php">New User</a>
                     <!-- <a href="signup.php">New User</a> -->
-
                 </span>
             </div>
         </form>
@@ -251,9 +260,7 @@ $(document).ready(function() {
                 pass: pass
             });
         }
-
     });
-
 });
 </script>
 </html>

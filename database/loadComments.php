@@ -16,9 +16,9 @@ if(isset($_POST['comment-btn']))
     </div>
 
     <button type="button" data-pid='<?php echo $pid ?>' class="all-likes w3-button w3-theme-d1 w3-margin-bottom btn btn-info">
-        <i class="fa fa-thumbs-up"></i> &nbsp; All Likes1</button>
+        <i class="fa fa-thumbs-up"></i> &nbsp; All Likes</button>
     <button type="button" data-pid='<?php echo $pid ?>' class="all-comments w3-button w3-theme-d1 w3-margin-bottom btn btn-success">
-        <i class="fa fa-comment"></i> &nbsp; All comments1</button>
+        <i class="fa fa-comment"></i> &nbsp; All comments</button>
     <input type="text" name="comment-text" id="comment-text" placeholder="Write Your Comment Here">
     <button type="button" data-pid='<?php echo $pid ?>' class=" insert-comment w3-button w3-theme-d2 w3-margin-bottom btn btn-danger">
         <!-- <i class="fa fa-comment"></i>  -->
@@ -102,7 +102,7 @@ $(".all-likes").click(function() {
 
 
 $(".all-comments").click(function() {
-    //       load all like from likes atble using ajax
+    // load all like from likes atble using ajax
     var $this = $(this);
     pid = $this.data("pid");
     postId = new FormData();

@@ -32,7 +32,7 @@ else
     position: fixed;
     height: 100vh;
     overflow: hidden;
-    top: 60%;
+    top: 58%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;

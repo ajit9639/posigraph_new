@@ -7,7 +7,7 @@
     display: block;
     background: #fff;
     color: #000;
-    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+    /* box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px; */
     margin: 15px 0;
 }
 
@@ -83,7 +83,7 @@ function newUsers()
             {
                 echo"
                     
-                    <div class='col-sm-12 user-detail'>
+                    <div class='col-6 col-md-4 user-detail'>
 
                                <div class='col-sm-4 user-pic'> 
                                <img src='../proImg/pro.jpg'> 
@@ -128,8 +128,9 @@ $strr=implode(',', $strr);
         {
             while($row=mysqli_fetch_array($newUser))
             {
-                echo"                    
-                    <div class='col-sm-12 user-detail'>
+                echo"    
+                <div class= 'row'>                
+                    <div class='col-sm-6 user-detail'>
 
                                <div class='col-sm-4 user-pic'>
                                 <img src='../proImg/pro.jpg'>
@@ -148,7 +149,7 @@ $strr=implode(',', $strr);
                         </div>
 
                    </div>
-                 
+                 </div>
                   ";
             }
         }
@@ -224,8 +225,8 @@ function meToUsers()
                 //   print_r($receiverNameDp['dp']);exit();
                 // echo $row['receiverId'].'<br>';
                 echo"
-                    
-                    <div class='col-sm-12 user-detail'>
+                <div class= 'row'>  
+                    <div class='col-sm-6 user-detail'>
 
                                <div class='user-pic'> 
                                <img src=../dp/{$receiverNameDp['dp']}> 
@@ -245,13 +246,13 @@ function meToUsers()
                         </div>
 
                    </div>
-                 
+                 </div>
                   ";
             }
         }
         else
         echo "
-        <div class='col-sm-12 user-detail'>
+        <div class='col-6 col-md-4 user-detail'>
             <p class='name-tilte text-danger'>Currently, You not request battle to any friend!!</p>
         </div>";
         
@@ -277,7 +278,7 @@ function usersToMe()
                   $senderNameDp=mysqli_fetch_array($nameDp);
                 echo"
                     
-                     <div class='col-sm-12 user-detail'>
+                     <div class='col-6 col-md-4 user-detail'>
 
                            <div class='user-pic'> 
                                  <img src='../proImg/pro.jpg'>    
@@ -310,7 +311,7 @@ function usersToMe()
         }  
         else
         echo "
-        <div class='col-sm-12 user-detail'>
+        <div class='col-6 col-md-4 user-detail'>
             <p class='name-tilte text-danger'>Currently, No request for battle from any friend!!</p>
         </div>";
 
@@ -349,7 +350,7 @@ function myFriends()
                       {
                       echo"
 
-                        <div class='col-sm-12 user-detail'>
+                        <div class='col-6 col-md-4 user-detail'>
 
                                <div class=''>
                                      <div class='friend-pic round-pic'> 
@@ -372,7 +373,7 @@ function myFriends()
                   }
                   else
                   echo "
-                     <div class='col-sm-12 user-detail'>
+                     <div class='col-6 col-md-4 user-detail'>
                          <p class='name-tilte text-danger'>Currently no friend for battle!!</p>
                      </div>";
                     }
@@ -395,7 +396,7 @@ function myFriends()
                      if($count==0) 
                     {
                       echo"
-                          <div class='col-sm-12 user-detail'>
+                          <div class='col-6 col-md-4 user-detail'>
 
                                  <div class=''>
                                        <div class='friend-pic round-pic'> 
@@ -419,7 +420,7 @@ function myFriends()
                  }
                  else
                  echo "
-                    <div class='col-sm-12 user-detail'>
+                    <div class='col-6 col-md-4 user-detail'>
                         <p class='name-tilte text-danger'>Currently no friend for battle!!</p>
                     </div>";
                 }
@@ -456,7 +457,7 @@ function battle()
                         $but1 = "<a href='#'><button data-id='{$friend['userId']}' data-name='{$friend['firstName']}' class='battle-btn btn-sm btn-success' style='width:fit-content;'>Picture Uploaded</button></a>";
                           
                        echo"
-                        <div class='col-sm-12 user-detail'>
+                        <div class='col-6 col-md-4 user-detail'>
 
                                <div class=''>
                                      <div class='friend-pic round-pic'> 
@@ -492,7 +493,7 @@ function battle()
                         
                      
                       echo"
-                          <div class='col-sm-12 user-detail'>
+                          <div class='col-6 col-md-4 user-detail'>
 
                                  <div class=''>
                                        <div class='friend-pic round-pic'> 
@@ -519,7 +520,7 @@ function battle()
            }
            else
                  echo "
-                    <div class='col-sm-12 user-detail'>
+                    <div class='col-6 col-md-4 user-detail'>
                         <p class='name-tilte text-danger'>Currently no friend for battle!!</p>
                     </div>";             
      }
@@ -551,7 +552,7 @@ function get_all_myFriends()
                       
                       echo"
                         
-                        <div class='col-sm-12 user-detail'>
+                        <div class='col-6 col-md-4 user-detail'>
 
                                <div class=''>
                                      <div class='friend-pic round-pic'> 
@@ -579,7 +580,7 @@ function get_all_myFriends()
                       $friend=mysqli_fetch_array($nameDp);
                       
                       echo"hello2
-                          <div class='col-sm-12 user-detail'>
+                          <div class='col-6 col-md-4 user-detail'>
 
                                  <div class=''>
                                        <div class='friend-pic round-pic'> 
@@ -690,7 +691,7 @@ $strr=implode(',', $strr);
             {
                 echo"
                     
-                    <div class='col-sm-12 user-detail'>
+                    <div class='col-6 col-md-4 user-detail'>
 
                                <div class=' user-pic'> 
                                <img src='../proImg/pro.jpg'>
@@ -735,7 +736,7 @@ function moreSugg()
             while($row=mysqli_fetch_array($newUser))
             {
                 echo"                    
-                    <div class='col-sm-12 user-detail'>
+                    <div class='col-6 col-md-4 user-detail'>
                                <div class='user-pic'> 
                                <img src=../dp/{$row['dp']}> 
                                </div>

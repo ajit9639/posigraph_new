@@ -80,7 +80,7 @@ if(isset($_POST['submit'])){
         $mail->Subject = 'Posigraph Password';
         $mail->Body    = "<p style='color:DodgerBlue;font-family:arial;font-size:35px'>Hi $fName,</p>
         <p>Verify your Posigraph account , come togather and enjoy sharing <b>photo and have  some fun & chit chat through messanger </b></p>
-        <span><a href='https://posigraph.com/ajit/verify.php?email=$email&code=$verCode'>click here to verify and Sign In</a></span>";
+        <span><a href='https://posigraph.com/app/posigraph/verify.php?email=$email&code=$verCode'>click here to verify and Sign In</a></span>";
         $mail->AltBody = "your password : test";
         
         if(!$mail->send()){
@@ -138,13 +138,8 @@ if(isset($_POST['submit'])){
     }
 
     .logo-brand .brand-logo {
-        /* position: absolute;
-        top: 3%;
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
-        box-shadow: rgb(0 0 0 / 35%) 3px 3px 8px 3px; */
-    }
+    width: 140px;
+}
 
     .logo-brand .brand-name {
         position: absolute;
@@ -281,15 +276,20 @@ if(isset($_POST['submit'])){
     .other-links a {
         color: #fff;
         text-align: center;
-        font-size: 14px;
+        font-size: 12px;
         text-decoration: none;
         text-transform: uppercase;
-        font-weight: 800;
+        font-weight: 600;
     }
 
     #switch-links {
         margin-top: 30px;
     }
+    .posigraph_back{       
+    position: absolute!important;
+    bottom: 0px!important;
+    width: 100%!important;
+        }
     </style>
 </head>
 
@@ -298,7 +298,8 @@ if(isset($_POST['submit'])){
         <img class="brand-logo" src="posigraph_logo.png" alt="" />
         <!-- <img class="brand-name" src="brand name png.png" alt="" /> -->
     </div>
-    <div>
+
+    <div class="posigraph_back">
         <form class="form form-group" name="form" method="post" action="">
 
             <div class="title">Sign up</div>
@@ -329,22 +330,25 @@ if(isset($_POST['submit'])){
                 <span id="conpasserr" style="font-size:15; color:red; text-align:center;"></span>
             </div>
 
-            <div class="input-container ic4">
+            <!-- <div class="input-container ic4">
                 <select class="form-select" name="gender" required id="genderbox">
                     <option>choose Gender</option>
                     <option>Male</option>
                     <option>Female</option>
                 </select>
-            </div>
+            </div> -->
 
-            <div class="input-container ic4">
+            <!-- <div class="input-container ic4">
                 <input type="text" name="phone" placeholder="phone" class="input" id="phonebox" />
                 <span id="phoneerr" style="font-size:15; color:red; text-align:center;"></span>
-            </div>
+            </div> -->
 
-            <div class="form-check">
+            <div class="form-check" padding-left: 10px!important;>
                 <input type="checkbox" class="checkbox" required="required" />
-                <label class="form-check-label text-white" for="exampleCheck1">Agree</label>
+                <span class="text-light" >By creating an account you are agree our terms & conditions</span>
+                <label class="form-check-label text-white" for="exampleCheck1">
+                    
+                </label>
             </div>
 
             <input type="submit" value="Sign Up" name="submit" class="btn btn-primary btn-block btn-md" id="btn1" />

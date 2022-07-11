@@ -18,7 +18,9 @@ $table="user";
     $verCode=mt_rand();/// take a random number for verification code
     
     $dp="default_male.png";
-    $DOB=date('DD/MM/YYYY');
+    // $DOB=date('DD/MM/YYYY');
+    $DOB=date("Y/m/d");
+    $comm_nm = "ajit";    
     $status="";
    
         //echo "<br>".$fName."<br>".$lName."<br>".$email."<br>".$pass."<br>".$conPass."<br>".$phone."<br>".$gender."<br>";
@@ -58,7 +60,8 @@ $table="user";
 
  //prepare sql query and insert user data
     
-    $insert="insert into $table(firstName,lastName,email,gender,password,phone,regDate,verCode,verStatus,DOB,dp,status,lastLogIn,post,logInStatus) values('".$fName."','".$lName."','".$email."','".$gender."','".$pass."','".$phone."',NOW(),'".$verCode."','".$verStatus."','".$DOB."','".$dp."','".$status."',NOW(),'".$post."','Online')";        
+    $insert="insert into $table(common_name,firstName,lastName,email,gender,password,phone,regDate,verCode,verStatus,DOB,dp,status,lastLogIn,post,logInStatus) values('".$comm_nm."','".$fName."','".$lName."','".$email."','".$gender."','".$pass."','".$phone."',NOW(),'".$verCode."','".$verStatus."','".$DOB."','".$dp."','".$status."',NOW(),'".$post."','Online')";        
+   
     if (mysqli_query($conn, $insert))
     {
         $query="select userId ,email,FirstName,dp from user where email='$email'";
@@ -87,7 +90,8 @@ $table="user";
         if($mailSent)
         {            
            echo "<script>                       
-            alert('A verification link has been sent to your email, please check & verify');            
+            alert('A verification link has been sent to your email, please check & verify');  
+            window.location.replace('index.php');
             </script>"; 
         }
         else

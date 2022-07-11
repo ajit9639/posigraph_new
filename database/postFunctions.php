@@ -52,9 +52,11 @@ function loadComments($pid)
               $userName=mysqli_fetch_array($user);
               $date=date('F j,Y,g:i a',strtotime($row['commentDate']));
               $data=$row['comment'];
-            //   echo "<h4 style='color:#000'>".$userName['firstName']."   .... ".$date."</h4>";
-              echo "<h4 style='color:#000'>".$userName['firstName']." ". $userName['lastName']."</h4>";
-              echo "<span style='color:#000'>".$date." "."</span>";
+              $dp=$userName['dp'];
+
+            // echo "<h4 style='color:#000'>".$dp."</h4>";
+              echo" <h4> <img src='./dp/$dp' style='width:30px;border-radius:50px;margin-right:20px;'/>".  $userName['firstName']." ". $userName['lastName']."</h4>";
+            //   echo "<span style='color:#000'>".$date." "."</span>";
               echo"<p style='color:red'>$data</p>"."<hr>";
            } 
        }
@@ -85,8 +87,13 @@ function loadLikes($pid)
              $user=mysqli_query($conn,$query);
               $userName=mysqli_fetch_array($user);
               $date=date('F j,Y,g:i a',strtotime($row['likeDate']));
-             
-              echo "<h5 style='color:black'>".$userName['firstName']."   .... ".$date."</h5><hr>";
+              $dp=$userName['dp'];
+              echo "<h5 style='color:black'>".
+              "<img src='./dp/$dp' style='width: 30px;
+              border-radius: 50px;margin-right:20px'/>"
+              . $userName['firstName']." ". $userName['lastName']
+            //   .$date."</h5><hr>"
+            ;
              
            } 
        }

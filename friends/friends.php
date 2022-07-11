@@ -61,9 +61,9 @@ session_start();
     }
 
     .user-detail {
-        width: 270px;
+        /* width: 270px;
         height: auto;
-        margin: 5px;
+        margin: 5px; */
         /* padding: 0; */
     }
 
@@ -115,30 +115,36 @@ session_start();
             <div class="col-md-12 all-user" style="
     margin-top: 60px;
 ">                
-                <div class="col-md-12 new-user">
+                <div class="col-md-6 new-user">
+                    <div class='row'>
                 <h3>Suggested Friends</h3>
                     <?php friendsOfFriend($_SESSION['id']); 
                            moreSugg();?>
                 </div>
+</div>
                 <div class="col-md-12 friend-list">
+                    <div class='row'>
                 <h3>My Friends</h3>
                     <?php  myFriends();?>
                 </div>                
             </div>
+</div>
         </div>
 
         <div class="row">
             <div class="col-md-12 known-user">
                 <div class="col-md-12 request-list">
-                
-                <h3>Request Sent</h3>
+                    <h3>Request Sent</h3>
+                <div class='row'>
                 <?php meToUsers();?>
-                    
+</div>
                 </div>
                 <div class="col-md-12 requested-user">
                 <h3>Request Recived</h3>
+                <div class='row'>
                 <?php usersToMe();?><br><br>
                 </div>
+</div>
                 <br><br>
             </div>
         </div>

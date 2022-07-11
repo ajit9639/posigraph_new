@@ -44,14 +44,13 @@ if($friendList)
 
               <div class='online-user-name' style='display:inline-block'>
               <p style='color:cyan;font-size:18px'>
-              <a style='color:black;font-size:20px;display:block;' href='chatApp.php?id=$userId'> $userName </a>
+              <a style='color:black;font-size:20px;display:block;' href='chatApp_me.php?id=$userId'> $userName </a>
                             
-              <span style='float:right;width:35%;'> <a class='btn btn-xs btn-success' href='chatApp.php?id=$userId'>Click to chat</a>
-              </span>
-
               </p> </div> <hr>";          
            
     }
+    // <span style='float:right;width:35%;'> <a class='btn btn-xs btn-success' href='chatApp_me.php?id=$userId'>Click to chat</a>
+    // </span>
 }
 else
     echo mysqli_error($conn);

@@ -38,9 +38,12 @@ function getAllNotif($id){
     
     $query="select * from notifications where notificationFor='$id' ORDER BY date DESC";
     $all=mysqli_query($conn,$query);
-    while($row=mysqli_fetch_array($all))
+    while($row=mysqli_fetch_array($all)){
+      $post_idd = $row['postId'];
+    //   $get_post_id = mysqli_fetch_assoc(mysqli_query($conn , "SELECT * FROM `posts` where `postId`='$post_idd'"));
+
       
-    {    
+       
         if(($row['notificationType']=='like')||($row['notificationType']=='comment')||($row['notificationType']=='dislike'))
         {
             //echo "hello1";
@@ -56,7 +59,7 @@ function getAllNotif($id){
                 <button type='button' class='close' data-dismiss='alert'>&times;</button>
                 <img src='./dp/$my_img' style='width: 40px;
                 border-radius: 100px;' />
-                <span href='' class='w3-bar-item w3-button ' >{$row['notificationMessage']}</span>
+                <a href='./database/get_notifi_post.php?id=$post_idd' class='w3-bar-item w3-button ' >{$row['notificationMessage']}</a>
               </div>";
 
             // this is the url
@@ -69,7 +72,7 @@ function getAllNotif($id){
         {   //echo "hello2";
              if(isNotifSeen($id,$row['notificationId']))
             {
-               echo" <a href='#' class='w3-bar-item w3-button ' data-notifId='{$row['notificationId']}' style='background:darkGray'>{$row['notificationMessage']}</a>";
+               echo" <a href='./database/get_notifi_post.php?id=$post_idd' class='w3-bar-item w3-button ' data-notifId='{$row['notificationId']}' style='background:darkGray'>{$row['notificationMessage']}</a>";
             }
             else
             {
@@ -78,7 +81,7 @@ function getAllNotif($id){
                 <button type='button' class='close' data-dismiss='alert'>&times;</button>
                 <img src='./dp/$my_img' style='width: 40px;
                 border-radius: 100px;' />
-                <span href='' class='w3-bar-item w3-button ' >{$row['notificationMessage']}</span>
+                <a href='./database/get_notifi_post.php?id=$post_idd' class='w3-bar-item w3-button ' >{$row['notificationMessage']}</a>
               </div>";
             }       
         }                

@@ -22,9 +22,9 @@ $user=mysqli_fetch_array($user);
 
     <style>       
     .chatbox {
-        width: 500px;
+        width: 100%;
         max-width: 100%;
-        height: 550px;
+        height: 635px;
         background: #fff;
         margin-top: 20px;
         margin-left: 15px;
@@ -35,7 +35,7 @@ $user=mysqli_fetch_array($user);
     .chatlogs {
         padding: 10px;
         width: 100%;
-        height: 290px;
+        height: 460px;
         background: #fdfdfd;
         overflow-x: hidden;
         overflow-y: scroll;
@@ -90,7 +90,7 @@ $user=mysqli_fetch_array($user);
     }
 
     .chat-form {
-        margin-top: 15px;
+        margin-top: 25px;
         display: flex;
         align-items: flex-start;
     }
@@ -130,7 +130,7 @@ $user=mysqli_fetch_array($user);
     .user {
         margin-top: 20;
         margin-left: 10px;
-        /* height: 250px; */
+        height: 250px;
         background: #fff;
         padding: 20px;
         box-shadow: 10px 10px 100px 10px #ccc;
@@ -141,8 +141,7 @@ $user=mysqli_fetch_array($user);
     a{text-decoration:none!important;}
     .list {
         padding: 0px 20px;
-        /* height: 250px; */
-        margin-bottom: 50px;
+        height: 250px;
 
         overflow-x: hidden;
         overflow-y: scroll;
@@ -203,29 +202,71 @@ $user=mysqli_fetch_array($user);
 
     <div class="container">
 
-        <div class="row" style=" margin-top:35px;">
+        <div class="row" style=" margin-top:35px;">           
 
-            <div class="user col-sm-12 col-xs-12" id="online-div">
-                <!-- <a href="#" class="w3-bar-item w3-button w3-padding-large"></a>-->
-                <!-- <a href="http://localhost/posigraph_new/message/broadcastMsg.php"><button type="button"
-                        class="comment-btn w3-button w3-theme-d2 w3-margin-bottom"> &nbsp;broadcast</button></a>
-
-                <a href="http://localhost/posigraph_new/message/chatApp.php"><button type="button"
-                        class="comment-btn w3-button w3-theme-d2 w3-margin-bottom"> &nbsp;private Message</button></a> -->
-                <center>
-                    <h1>Online</h1>
-                    <hr>
-                </center>
-
-
-                <div class="list" id="all friends">
-                    <!--ajax online users incllude page-->
-                    <?php include("getUserData.php");?>
+            <div class="chatbox " style="float:right;">
+                <div class="chat-with-user" >
+                    <div class="user-photo" style="float:left;">
+                        <img id="chat-photo" style='width:100%'>
+                    </div>
+                    <div class="chat-name">
+                        <h4 id="name" style="color:#000"></h4>
+                    </div>
                 </div>
+                <div class="chatlogs">
+
+                    <!-- presentation container that hold both chat box   -->
+                    <?php
+//  this php code is just for msg insertion rightly
+                if(isset($_GET['id']))
+                    {
+                        $id=$_GET['id'];
+                        $query="select * from user where userId='$id'";
+                        $users=mysqli_query($conn,$query);
+                        if($users)
+                        {  
+                            $total=mysqli_num_rows($users);
+                            if($total >= 1)
+                            {   
+                                $validReceiver="yes";
+                                $userId=$id;
+                                $dp_Name=mysqli_fetch_array($users);
+                                                               
+                              echo "<script>$('#name').html('{$dp_Name['firstName']}')</script>";
+                              echo"<script>$('#chat-photo').attr('src','../dp/{$dp_Name['dp']}')</script>";
+                                
+                            }
+                            else
+                            {
+                                 $validReceiver="no";
+                                 $userId=0;
+                            }
+                               
+                        }}
+                else
+                {
+                     $validReceiver="no";
+                       $userId=0;
+                }
+                    
+
+      ?>
+                </div> <!-- presentation container ends here that hold both chat box   -->
+
+                <div class="chat-form">
+                    <!-- second row of chatbox div -->
+
+
+                    <!--            <form method="post">-->
+                    <!--            <textarea id="msg" name="msg"></textarea>-->
+                    <textarea id="msg" name="msg"></textarea>
+                    <button id="send" name="sumbit" value="send" class="btn btn-success" style="float:right">send</button>
+                    <!--           </form>-->
+
+                </div>
+
             </div>
-
-
-           
+            <!--    row close-->
         </div>
 
         <!--    container close-->

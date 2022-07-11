@@ -129,7 +129,7 @@
           </div>
           <div class="col-3 col-xs-3 footer-icons">
             <a href="../add_post.php" class="footer-single-icon btn" title="">
-              <i class="fa-solid fa-camera-retro"></i>
+              <i class="fa-solid fa-camera"></i>
               <!-- <div class="hover-display">
                 <span>Post</span>
               </div> -->

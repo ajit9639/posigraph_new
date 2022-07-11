@@ -29,13 +29,9 @@
         text-align: center;
     }
 
-    .logo-brand .brand-name {
-        position: absolute;
-        top: 20%;
-        width: 30%;
-        height: auto;
-        filter: brightness(0);
-    }
+    .logo-brand .brand-logo {
+    width: 140px;
+}
 
     .form {
         background-image: linear-gradient(325deg, #d11e7a, #5059a8);
@@ -49,7 +45,7 @@
     .title {
         color: #eee;
         font-family: sans-serif;
-        font-size: 36px;
+        font-size: 16px;
         font-weight: 400;
         margin-top: 30px;
     }
@@ -171,6 +167,11 @@
     #switch-links {
         margin-top: 30px;
     }
+    .posigraph_back{       
+    position: absolute!important;
+    bottom: 0px!important;
+    width: 100%!important;
+        }
     </style>
 </head>
 
@@ -179,7 +180,7 @@
         <img class="brand-logo" src="posigraph_logo.png" alt="" />
         <!-- <img class="brand-name" src="brand name png.png" alt="" /> -->
     </div>
-    <div>
+    <div class="posigraph_back">
         <form class="form form-group" method="post">
             <div class="title">Forget Password</div>
             <div class="input-container ic1">
