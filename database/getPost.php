@@ -53,6 +53,7 @@ $like_post_num=0;
 /* user comment css */
 .comment-section {
     display: flex;
+    margin: 0px 8px 15px 0px!important;
 }
 
 .comment-section .user-profile img {
@@ -62,10 +63,11 @@ $like_post_num=0;
 .comment-section .user-comment button {
     border-radius: 100px;
     width: 100% !important;
-    border: 1px solid #a4a4a4;
+    border: 1px solid #dcdcdc;
     padding: 7px;
     text-align: left;
-    color: #979797;
+    color: #dcdcdc;
+    background:#fff!important;
 }
 
 /* .comment-section .user-comment input::placeholder {
@@ -79,7 +81,7 @@ $like_post_num=0;
 
 @media(max-width:576px) {
     .post_image {
-        height: 280px;
+        height: auto;
     }
 }
 
@@ -93,12 +95,17 @@ p {
 }
 
 .w3-white .bios {
-    margin-bottom: 0px !important;
+    margin: 0 12px !important;
     font-size: 14px;
+    padding-top: 0px!important;
 }
 
 .dislike_base-graph .graph-heart{
     font-size: 22px!important;
+}
+
+a{
+    color:#000000!important;
 }
 </style>
 <?php 
@@ -184,30 +191,20 @@ function getPost($from,$count)
 
 <div class="w3-container w3-card w3-white w3-round w3-margin">
     <img src="dp/<?php echo $user['dp']?>" alt="Avatar4" class="w3-left w3-circle w3-margin-right"
-        style="width:37px;border-radius:50%;">
-    <a href="./profile/profile.php?id=<?php echo $list['userId']?>" style="line-height: 30px;">
+        style="width:37px;border-radius:50%;margin-bottom:8px;margin-left:12px!important;">
+    <a href="./profile/profile.php?id=<?php echo $list['userId']?>" style="line-height: 37px;">
         <span class="font-weight-bold"><?php echo  $user['firstName'].' ' .$user['lastName']?></span></a>
     <!-- <span class="w3-right w3-opacity font-weight-bold">Posted Date : <?php echo $postDate?></span> -->
 
 
     <!-- <hr class="w3-clear" style="margin-top: 25px;"> -->
     <!-- <p><?php echo $list['postContent']?></p> -->
-    <img src="<?php echo 'imagePost/'.$list['postImage']?>" style="width:100%;" class="w3-margin-bottom post_image">
+    <img src="<?php echo 'imagePost/'.$list['postImage']?>" style="width:100%;" class="post_image">
     <!-- <span class="w3-right w3-opacity font-weight-bold">Posted Date : <?php // echo $postDate; ?></span> -->
 
-    <p class="bios"><?php echo $list['postContent']?></p>
 
-    <!-- like dislike graph -->
-
-    <!-- comment button -->
-    <div class="comment-section">
-        <div class="user-profile"><img src="dp/<?php echo $user['dp'];?>"
-                style="width: 40px;height: 40px;margin: 5px;" /></div>
-        <div class="user-comment">
-            <button type="button" class="comment-btn" data-pid="<?php echo $list['postId']?>">comment</button>
-        </div>
-    </div>
-    <!-- //comment button -->
+    
+    
 
 <div style="position:relative;">
 <div style="position: absolute;
@@ -249,11 +246,13 @@ $user=mysqli_fetch_array($result);
         <div class="dislike_base-graph">
             <span>
                 <button type="button" data-pid="<?php echo $list['postId']?>"
-                    class="like-btn w3-theme-d1 " style="border: none;
+                    class="like-btn w3-theme-d1 " style="border: none;height:2px;
     background: #fff;"><i style="color:<?php echo $color?>" id="<?php echo $list['postId']?>"
                         class="fa fa-heart-o heart-graph text-danger graph-heart"></i> &nbsp;<span
                         id="like<?php echo $list['postId']?>"
-                        style="color:#000;"><?php totalLike($list['postId']);?></span></button>
+                        style="color:#000;">
+                        <?php // totalLike($list['postId']);?>
+                    </span></button>
                 <!-- <i class="fa fa-heart-o heart-graph"></i> -->
             </span>
 
@@ -261,17 +260,36 @@ $user=mysqli_fetch_array($result);
             <div class="dislike-graph" style="width:<?php echo $hate_percent; ?>%"><?php echo $hate_percent; ?>%</div>
 
             <button type="button" data-pid="<?php echo $list['postId']?>"
-                class="dislike-btn w3-theme-d1 " style="border: none;
+                class="dislike-btn w3-theme-d1 " style="border: none;height:2px;
     background: #fff;"><i style="color:<?php echo $color?>" id="<?php echo $list['postId']?>"
                     class="fa fa-heart heart-graph text-danger graph-heart"></i> &nbsp;<span
                     id="dislike<?php echo $list['postId']?>"
-                    style="color:#000;"><?php totaldisLike($list['postId']);?></span></button>
+                    style="color:#000;">
+                    <?php // totaldisLike($list['postId']);?>
+                </span></button>
 
             <!-- <span><i class="fa fa-heart heart-graph"></i></span> -->
         </div>
     </div>
     <!-- // like dislike graph -->
 
+<h6 style="font-size: 12px;text-align:center;color:#7c7c7c;margin-top:10px;">100 votes 20 comment </h6>
+    <p class="bios"><?php echo $list['postContent']?></p>
+
+    <!-- like dislike graph -->
+<!-- comment button -->
+<div class="comment-section">
+        <div class="user-profile"><img src="dp/<?php echo $user['dp'];?>"
+                style="width: 30px;
+    height: 30px;
+    margin: 5px;
+    margin-top: 12px;
+    margin-left: 14px;" /></div>
+        <div class="user-comment">
+            <button type="button" class="comment-btn" data-pid="<?php echo $list['postId']?>">comment</button>
+        </div>
+    </div>
+    <!-- //comment button -->
 
 
     <!-- <div class="mt-2">

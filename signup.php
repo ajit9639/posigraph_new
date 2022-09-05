@@ -138,8 +138,9 @@ if(isset($_POST['submit'])){
     }
 
     .logo-brand .brand-logo {
-    width: 140px;
-}
+        width: 140px;
+        margin-top: 40px;
+    }
 
     .logo-brand .brand-name {
         position: absolute;
@@ -163,9 +164,10 @@ if(isset($_POST['submit'])){
     .title {
         color: #eee;
         font-family: sans-serif;
-        font-size: 36px;
+        font-size: 24px;
         font-weight: 400;
         margin-top: 30px;
+        margin-left: 20px;
     }
 
     .subtitle {
@@ -201,6 +203,7 @@ if(isset($_POST['submit'])){
         outline: 0;
         padding: 0px 20px 0;
         width: 90%;
+        margin-left: 15px;
     }
 
     .cut {
@@ -225,6 +228,7 @@ if(isset($_POST['submit'])){
     }
 
     .placeholder {
+        font-size: 10px;
         color: #65657b;
         font-family: sans-serif;
         left: 20px;
@@ -278,18 +282,25 @@ if(isset($_POST['submit'])){
         text-align: center;
         font-size: 12px;
         text-decoration: none;
-        text-transform: uppercase;
+        
         font-weight: 600;
     }
 
     #switch-links {
         margin-top: 30px;
     }
-    .posigraph_back{       
-    position: absolute!important;
-    bottom: 0px!important;
-    width: 100%!important;
-        }
+
+    .posigraph_back {
+        position: absolute !important;
+        bottom: 0px !important;
+        width: 100% !important;
+    }
+
+    .signupp {
+        margin-left: 15px;
+        width: 90%;
+        height: 45px;
+    }
     </style>
 </head>
 
@@ -305,12 +316,12 @@ if(isset($_POST['submit'])){
             <div class="title">Sign up</div>
 
             <div class="input-container ic1">
-                <input class="input" type="text" placeholder="First Name" name="fname" placeholder="First Name"
+                <input class="input" type="text" placeholder="first name" name="fname" placeholder="First Name"
                     required="required" id="fnamebox" />
                 <span id="nameerr" style="font-size:15; color:red; text-align:center;"></span>
             </div>
             <div class="input-container ic3">
-                <input class="input" type="text" name="lname" placeholder="Last Name" id="lnamebox" />
+                <input class="input" type="text" name="lname" placeholder="last name" id="lnamebox" />
             </div>
             <div class="input-container ic2">
                 <input type="email" name="mail" class="input" placeholder="email@example.com" required="required"
@@ -345,17 +356,20 @@ if(isset($_POST['submit'])){
 
             <div class="form-check" padding-left: 10px!important;>
                 <input type="checkbox" class="checkbox" required="required" />
-                <span class="text-light" >By creating an account you are agree our terms & conditions</span>
+                <span class="text-light" style="font-size: small;">By creating an account you agree our terms</span>
                 <label class="form-check-label text-white" for="exampleCheck1">
-                    
+
                 </label>
             </div>
 
-            <input type="submit" value="Sign Up" name="submit" class="btn btn-primary btn-block btn-md" id="btn1" />
+            <input type="submit" value="Sign Up" name="submit" class="btn btn-primary btn-block btn-md signupp"
+                id="btn1" />
             <span class="msg"></span>
 
-            <div class="other-links text-center">
-                <span class="text-white">Already have an account? <a href="index.php" title="">login</a></span>
+            <div class="other-links text-center" style="
+    margin-top: 10px;
+">
+                <span class="text-white" style="font-size: 13px;">Already have an account? <a href="index.php" title="">Log In</a></span>
             </div>
         </form>
     </div>

@@ -75,7 +75,7 @@
          <div class="col-2 col-xs-2 header-chat-icons">         
            <a href="#"  data-toggle="modal" data-target="#exampleModal" title="">
              <!-- <i class="fa-solid fa-align-justify"></i> -->
-             <i class="fa fa-bars" aria-hidden="true"></i>
+             <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
            </a>
          </div>
 
@@ -85,29 +85,22 @@
     <!-- /header -->
     </div>
 
-<!-- popup modal -->
 <!-- Modal -->
 <div class="modal fade popup-modal " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog popup-modal-body" role="document">
     <div class="modal-content sidebar-popup-section">
-      <div class="modal-header">
-
-        <!-- <h5 class="modal-title text-center" id="exampleModalLabel">Setting</h5> -->
-        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button> -->
-      </div>
+     
       <div class="modal-body">
-        <a href="../myData.php" class="text-center modal-links">Edit Profile</a>
-        <a href="../notification.php" class="text-center modal-links">Push Notifications</a>
-        <a href="../friends/friends.php" class="text-center modal-links">Search For Friend</a>
-        <a href="../battle/battle.php" class="text-center modal-links">Battle With Friend</a>
-        <a href="../terms.php" class="text-center modal-links">Terms of use</a>
-        <a href="../help.php" class="text-center modal-links">Help</a>
+        <a href="./myData.php" class="text-center modal-links">Edit Profile</a>
+        
+        <a href="./friends/friends.php" class="text-center modal-links">Search For Friend</a>
+        <a href="./battle/battle.php" class="text-center modal-links">Battle With Friend</a>
+        <a href="terms.php" class="text-center modal-links">Terms of use</a>
+
       </div>
       
       <div class="modal-footer">
-        <a href="../logOut.php" type="button" class="text-center">Logout</a>
+        <a href="logOut.php" type="button" class="text-center">Logout</a>
         <a type="button" class="text-center" data-dismiss="modal">Cancel</a>
       </div>
     </div>

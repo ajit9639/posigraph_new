@@ -20,7 +20,7 @@ $user=mysqli_fetch_array($user);
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="../style/emojionearea.min.js"></script>
 
-    <style>       
+    <style>
     .chatbox {
         width: 500px;
         max-width: 100%;
@@ -29,7 +29,7 @@ $user=mysqli_fetch_array($user);
         margin-top: 20px;
         margin-left: 15px;
         padding: 20px;
-        box-shadow: -50px 5px 100px 10px #ccc;       
+        box-shadow: -50px 5px 100px 10px #ccc;
     }
 
     .chatlogs {
@@ -85,7 +85,7 @@ $user=mysqli_fetch_array($user);
     }
 
     .self .chat-message {
-        background: #0088a9 ;
+        background: #0088a9;
         order: -1;
     }
 
@@ -112,7 +112,7 @@ $user=mysqli_fetch_array($user);
     }
 
     .chat-form button {
-       
+
         padding: 8px 20px;
 
         font-size: 20px;
@@ -128,24 +128,26 @@ $user=mysqli_fetch_array($user);
     }
 
     .user {
-        margin-top: 20;
-        margin-left: 10px;
+        /* margin-top: 20; */
+        /* margin-left: 10px; */
         /* height: 250px; */
         background: #fff;
         padding: 20px;
-        box-shadow: 10px 10px 100px 10px #ccc;
+        /* box-shadow: 10px 10px 100px 10px #ccc; */
         float: left;
         border-radius: 10px;
         overflow-x: hidden;
     }
-    a{text-decoration:none!important;}
-    .list {
-        padding: 0px 20px;
-        /* height: 250px; */
-        margin-bottom: 50px;
 
-        overflow-x: hidden;
-        overflow-y: scroll;
+    a {
+        text-decoration: none !important;
+    }
+
+    .list {
+        margin-top: 20px;
+    margin-bottom: 50px;
+    overflow-x: hidden;
+    overflow-y: scroll;
     }
 
     .list::-webkit-scrollbar {
@@ -158,8 +160,8 @@ $user=mysqli_fetch_array($user);
     }
 
     .online-user-img {
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
         background: #AAA;
         border-radius: 50%;
         overflow: hidden;
@@ -195,7 +197,7 @@ $user=mysqli_fetch_array($user);
         overflow: hidden;
     }
     </style>
-    
+
 
 </head>
 
@@ -213,8 +215,10 @@ $user=mysqli_fetch_array($user);
                 <a href="http://localhost/posigraph_new/message/chatApp.php"><button type="button"
                         class="comment-btn w3-button w3-theme-d2 w3-margin-bottom"> &nbsp;private Message</button></a> -->
                 <center>
-                    <h1>Online</h1>
-                    <hr>
+                    <h1 class="text-left" style="font-size: 15px;
+    margin-top: 20px;
+    font-weight: 600;">Recent Chats</h1>
+                    <!-- <hr> -->
                 </center>
 
 
@@ -225,7 +229,7 @@ $user=mysqli_fetch_array($user);
             </div>
 
 
-           
+
         </div>
 
         <!--    container close-->
@@ -242,6 +246,7 @@ $("#msg").emojioneArea({
     pickerPosition: "top",
 });
 var d = setTimeout(bottom, 2000);
+
 function ajax() {
     var userId = "<?php echo $userId ?>";
     if (userId != 0) {

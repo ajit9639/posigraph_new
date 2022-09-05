@@ -22,7 +22,7 @@ if($friendList)
                     else
                     {
                       $flag="Ofline";
-                        $color="#ee4342";
+                        $color="#ee434200";
 
                     }
          $total=unseen($_SESSION['id'],$userId);
@@ -33,24 +33,40 @@ if($friendList)
 
             echo "
                <div class='online-user-img' style='display:inline-block'>
+
+               <p style='color:cyan;font-size:18px;margin: 0px;'>
+               <a style='style=color:black;font-size: 18px;display:block;font-weight: 600;color:#000;position: absolute;
+               left: 100px;' href='chatApp_me.php?id=$userId'> $userName </a>    
+              
+              
+               </p> 
+               
+
                 <img src='../dp/{$dp}'>
               </div>
               <span style='color: black;
-              font-weight: 800;' id='unreadOf{$userId}'>$read</span>
+              font-weight: 800;margin-left: -15px;' id='unreadOf{$userId}'>$read</span>
+              
+              
+
               </a> 
               <span>
-              <i style='color: $color;font-size: 20px;' class='fa fa-circle' aria-hidden='true'></i>        
+              <i style='color: $color;font-size: 12px;' class='fa fa-circle' aria-hidden='true'></i>        
               </span>
 
               <div class='online-user-name' style='display:inline-block'>
-              <p style='color:cyan;font-size:18px'>
-              <a style='color:black;font-size:20px;display:block;' href='chatApp_me.php?id=$userId'> $userName </a>
-                            
-              </p> </div> <hr>";          
+              </div> <hr>";          
            
     }
-    // <span style='float:right;width:35%;'> <a class='btn btn-xs btn-success' href='chatApp_me.php?id=$userId'>Click to chat</a>
+
+    // <p style='color:cyan;font-size:18px'>
+    // <a style='style=color:black;font-size: 18px;display:block;font-weight: 600;color:#000;' href='chatApp_me.php?id=$userId'> $userName </a>
+                  
+    // </p>
+    // <span style='float:right;width:35%;'> <a class='' href='chatApp_me.php?id=$userId'>Click to chat</a>
     // </span>
+
+    
 }
 else
     echo mysqli_error($conn);

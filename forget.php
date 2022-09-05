@@ -31,6 +31,7 @@
 
     .logo-brand .brand-logo {
     width: 140px;
+    margin-top:40px;
 }
 
     .form {
@@ -45,9 +46,10 @@
     .title {
         color: #eee;
         font-family: sans-serif;
-        font-size: 16px;
+        font-size: 24px;
         font-weight: 400;
         margin-top: 30px;
+        margin-left: 20px;
     }
 
     .subtitle {
@@ -83,6 +85,8 @@
         outline: 0;
         padding: 0px 20px 0;
         width: 90%;
+        height: 40px;
+        margin-left: 20px;
     }
 
     .cut {
@@ -116,6 +120,7 @@
         transform-origin: 0 50%;
         transition: transform 200ms, color 200ms;
         top: 20px;
+        
     }
 
     .input:focus~.placeholder,
@@ -172,6 +177,11 @@
     bottom: 0px!important;
     width: 100%!important;
         }
+        .btn-frgt{
+            width: 90%;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
     </style>
 </head>
 
@@ -187,7 +197,7 @@
                 <input class="input" name="email" type="email" placeholder="Enter Email" required="required"
                     id="fnamebox" />               
             </div>
-            <input type="submit" value="Send" name="submit" class="btn btn-primary btn-block btn-md" />
+            <input type="submit" value="Send" name="submit" class="btn btn-primary btn-block btn-md btn-frgt" />
             <!-- <button type="submit"  class="btn form-control btn-success">Send</button> -->
             <p id="msg"></p>
         </form>

@@ -25,8 +25,8 @@ else
 
 <style>
 #pop-up-div {
-    width:94%;
-    margin:0 auto;
+    width: 94%;
+    margin: 0 auto;
     background: #fff;
     display: none;
     position: fixed;
@@ -62,7 +62,13 @@ else
     border-radius: 5px;
 }
 
-
+.badge {
+    font-weight: 100 !important;
+    color: #d5d5d5 !important;
+    display: block;
+    text-align: center;
+    font-size: 12px;
+}
 </style>
 <!--// html code-->
 
@@ -72,30 +78,99 @@ else
 <?php //include "./slider.php";?>
 
 
+
+
 <div class="container-fluid" style="margin-top:90px;">
     <div class="row">
-           
-    <div id='pop-up-div' class="col-sm-10 col-xs-11 "><br>
-                    </div>                   
-        <div class="col-md-12">          
-            <h6 class="h4"> Welcome <?php echo $_SESSION['name']?></h6>
+
+        <div id='pop-up-div' class="col-sm-10 col-xs-11 "><br>
+        </div>
+        <div class="col-md-12" style="
+    margin-left: 15px;
+    margin-right: 15px;
+">
+            <br>
+            <br>
+            <div style="text-align:center;">
+                <h6 class="h4" style="
+    font-size: 18px;
+    text-align:center;
+"> Posi Battle
+                    <?php // echo $_SESSION['name']?>
+                </h6>
+                <span id="fileName" class="badge  mt-1"> Challange your friends for posi battle</span>
+                <button id="postbtn" style="
+    border-radius: 20px;
+    background: #fff;
+    border:1px solid #5076ff;
+    color: #5076ff;
+    padding: 6px 30px;
+" type="button" class="btn mt-2">
+                    &nbsp;Challange a friend</button>
+            </div>
+
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <h6 class="h4" style="
+    font-size: 18px;
+    text-align:center;
+"> Solo Post
+                <?php // echo $_SESSION['name']?>
+            </h6>
             <div class="">
                 <form>
-            <textarea id="content" class="form-control" placeholder="write something here or photo/video description" style="resize:none"></textarea>
-            <input type="file" id="file" style="display:none" accept=".png,.jpg,.gif,.bmp,.jpeg,.mp4,.3gp,.mvk,.mov">
-            <span id="fileName" class="badge bg-warning mt-1"> png / gif / jpg / jpeg / video(5MB)</span><br>
-            <button id="cstmbtn" type="button" class="btn btn-danger mt-2">
-                <i class="fa fa-camera" aria-hidden="true"></i>
-                &nbsp;photo/video</button>
-               
-                <button id="postbtn" style="float:right" type="button" class="btn btn-success mt-2">
-                <i class="fa fa-pencil"></i> &nbsp;Post</button>
+                    <!-- <button id="cstmbtn" type="button" class="btn mt-2" style="
+    border-radius: 20px;
+">
+                        <i class="fa fa-camera" aria-hidden="true"></i>
+                        &nbsp;Select photo</button><br> -->
+
+                    <input accept="image/*" type='file' id="cstmbtn" />
+
+                    <img id="blah" src="#" style="
+    width: 100%;
+    margin: 0 auto;
+" />
+
+                    <script>
+                    cstmbtn.onchange = evt => {
+                        const [file] = cstmbtn.files
+                        if (file) {
+                            blah.src = URL.createObjectURL(file)
+                        }
+                    }
+                    </script>
+
+                    <textarea id="content" class="form-control" placeholder="Caption..."
+                        style="resize:none;border:none;"></textarea>
+                    <input type="file" id="file" style="display:none"
+                        accept=".png,.jpg,.gif,.bmp,.jpeg,.mp4,.3gp,.mvk,.mov">
+                    <!-- <span id="fileName" class="badge bg-warning mt-1"> png / gif / jpg / jpeg / video(5MB)</span> -->
+                    <span id="fileName" class="badge  mt-1"> Crop your image in 1:1 ratio before posting</span>
+
+
+                    <br>
+                    <div style="text-align:center;">
+                        <button id="postbtn" style="
+    border-radius: 20px;
+    background: #5076ff;
+    color: #fff;
+    padding: 6px 145px;
+" type="button" class="btn mt-2">
+                            &nbsp;Post</button>
+                    </div>
                 </form>
             </div>
-           
+
+            <br><br><br><br>
+
+
+
         </div>
-       
-       
+
     </div>
     <!-- End Page Container -->
 </div>
@@ -212,65 +287,65 @@ $(".like-btn").click(function() {
 
 //dislike
 $(".dislike-btn").click(function() {
-var $this = $(this);
-pid = $this.data("pid");
-$("#dislike1" + pid).css("color", "orange");
-postId = new FormData();
-postId.append("pid", pid);
-postId.append("me", "<?php echo $_SESSION['id']?>");
-postId.append("name", "<?php echo $_SESSION['name']?>");
-postId.append("dislike-btn", "dislike");
+    var $this = $(this);
+    pid = $this.data("pid");
+    $("#dislike1" + pid).css("color", "orange");
+    postId = new FormData();
+    postId.append("pid", pid);
+    postId.append("me", "<?php echo $_SESSION['id']?>");
+    postId.append("name", "<?php echo $_SESSION['name']?>");
+    postId.append("dislike-btn", "dislike");
 
-$.ajax({
-    method: 'post',
-    url: "database/dislike.php",
-    cache: false,
-    data: postId,
-    contentType: false,
-    processData: false,
-    success: function(loadData) {
-        if (loadData == "yes") {
-            $("#" + pid).css("color", ""); // remove icon color
-            //                                     get total like after deletion
-            postId = new FormData();
-            postId.append("pid", pid);
-            postId.append("totaldisLikes", "totaldisLikes");
+    $.ajax({
+        method: 'post',
+        url: "database/dislike.php",
+        cache: false,
+        data: postId,
+        contentType: false,
+        processData: false,
+        success: function(loadData) {
+            if (loadData == "yes") {
+                $("#" + pid).css("color", ""); // remove icon color
+                //                                     get total like after deletion
+                postId = new FormData();
+                postId.append("pid", pid);
+                postId.append("totaldisLikes", "totaldisLikes");
 
-            $.ajax({
-                method: 'post',
-                url: "database/dislike.php",
-                cache: false,
-                data: postId,
-                contentType: false,
-                processData: false,
-                success: function(loadData) {
-                    $("#dislike" + pid).html(loadData);
-                }
-            });
+                $.ajax({
+                    method: 'post',
+                    url: "database/dislike.php",
+                    cache: false,
+                    data: postId,
+                    contentType: false,
+                    processData: false,
+                    success: function(loadData) {
+                        $("#dislike" + pid).html(loadData);
+                    }
+                });
 
 
-        } else {
+            } else {
 
-            $("#dislike1" + pid).css("color", "orange");
-            //           get total like after insertion of like
-            postId = new FormData();
-            postId.append("pid", pid);
-            postId.append("totaldisLikes", "totalLikes");
+                $("#dislike1" + pid).css("color", "orange");
+                //           get total like after insertion of like
+                postId = new FormData();
+                postId.append("pid", pid);
+                postId.append("totaldisLikes", "totalLikes");
 
-            $.ajax({
-                method: 'post',
-                url: "database/dislike.php",
-                cache: false,
-                data: postId,
-                contentType: false,
-                processData: false,
-                success: function(loadData) {
-                    $("#dislike" + pid).html(loadData);
-                }
-            });
+                $.ajax({
+                    method: 'post',
+                    url: "database/dislike.php",
+                    cache: false,
+                    data: postId,
+                    contentType: false,
+                    processData: false,
+                    success: function(loadData) {
+                        $("#dislike" + pid).html(loadData);
+                    }
+                });
+            }
         }
-    }
-});
+    });
 });
 
 
@@ -442,8 +517,8 @@ $("#srch").click(function() {
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
 </script>
 
- <!-- jQuery library -->
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>

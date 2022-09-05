@@ -64,10 +64,11 @@ $like_post_num=0;
 .comment-section .user-comment button {
     border-radius: 100px;
     width: 100% !important;
-    border: 1px solid #a4a4a4;
+    border: 1px solid #dcdcdc;
     padding: 7px;
     text-align: left;
-    color: #979797;
+    color: #dcdcdc;
+    background:#fff!important;
 }
 
 /* .comment-section .user-comment input::placeholder {
@@ -131,8 +132,8 @@ function getPost($from,$count)
                         $buList1=mysqli_query($conn,$bu1);
                         $dbu1=mysqli_fetch_array($buList1);
                         ?>
-            <img src="dp/<?php echo $dbu1['dp']; ?>" alt="Avatar4" class="w3-left w3-circle w3-margin-right"  style="width:37px;border-radius:50%;">
-            <a href="./profile/profile.php?id=84" style="line-height: 30px;">
+            <img src="dp/<?php echo $dbu1['dp']; ?>" alt="Avatar4" class="w3-left w3-circle w3-margin-right"  style="width:37px;border-radius:50%;margin-bottom:8px;">
+            <a href="./profile/profile.php?id=84" style="line-height: 37px;">
                 <span class="font-weight-bold"><?php echo $dbu1['firstName'].' '.$dbu1['lastName']; ?></span></a>
             <hr class="w3-clear" style="margin-top: 25px;">
             <!-- <img src="imagePost/844490865profile3.jpg" style="width:100%;" class="w3-margin-bottom post_image"> -->
@@ -154,8 +155,8 @@ function getPost($from,$count)
                         $dbu2=mysqli_fetch_array($buList2);
                         ?>
             <img src="dp/<?php echo $dbu2['dp']; ?>" alt="Avatar4" class="w3-left w3-circle w3-margin-right"
-                style="width:37px;border-radius:50%;">
-            <a href="./profile/profile.php?id=84" style="line-height: 30px;">
+                style="width:37px;border-radius:50%;margin-bottom:8px;">
+            <a href="./profile/profile.php?id=84" style="line-height: 37px;">
                 <span class="font-weight-bold"><?php echo $dbu2['firstName'].' '.$dbu2['lastName']; ?></span></a>
             <hr class="w3-clear" style="margin-top: 25px;">
             <!-- <img src="imagePost/7454192751904775.jpg" style="width:100%;" class="w3-margin-bottom post_image"> -->
@@ -287,8 +288,8 @@ function getPost($from,$count)
 
 <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
     <img src="dp/<?php echo $user['dp']?>" alt="Avatar4" class="w3-left w3-circle w3-margin-right"
-        style="width:37px;border-radius:50%;">
-    <a href="./profile/profile.php?id=<?php echo $list['userId']?>" style="line-height: 30px;">
+        style="width:37px;border-radius:50%;margin-bottom:8px;">
+    <a href="./profile/profile.php?id=<?php echo $list['userId']?>" style="line-height: 37px;">
         <span class="font-weight-bold"><?php echo  $user['firstName'].' ' .$user['lastName']?></span></a>
     <!-- <span class="w3-right w3-opacity font-weight-bold">Posted Date : <?php echo $postDate?></span> -->
 
@@ -358,7 +359,11 @@ $user=mysqli_fetch_array($result);
     <!-- comment button -->
     <div class="comment-section">
         <div class="user-profile"><img src="dp/<?php echo $user['dp'];?>"
-                style="width: 40px;height: 40px;margin: 5px;" /></div>
+                style="width: 30px;
+    height: 30px;
+    margin: 5px;
+    margin-top: 12px;
+    margin-left: 14px;" /></div>
         <div class="user-comment">
             <button type="button" class="comment-btn" data-pid="<?php echo $list['postId']?>">comment</button>
         </div>

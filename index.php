@@ -32,9 +32,12 @@ session_start();
         padding: 0px;
         box-sizing: border-box;
     }
+
     .logo-brand .brand-logo {
-    width: 140px;
+        width: 140px;
+        margin-top: 40px;
     }
+
     .logo-brand {
         text-align: center;
     }
@@ -59,9 +62,10 @@ session_start();
     .title {
         color: #eee;
         font-family: sans-serif;
-        font-size: 14px;
+        font-size: 24px;
         font-weight: 400;
         margin-top: 30px;
+        margin-left: 20px;
     }
 
     .subtitle {
@@ -97,6 +101,8 @@ session_start();
         outline: 0;
         padding: 0px 20px 0;
         width: 90%;
+        height: 40px;
+        margin-left: 15px;
     }
 
     .cut {
@@ -167,6 +173,8 @@ session_start();
 
     .other-links {
         /* text-align: center; */
+        text-align: center;
+    margin-top: 30px;
     }
 
     .other-links a {
@@ -181,11 +189,18 @@ session_start();
     #switch-links {
         margin-top: 30px;
     }
-    .posigraph_back{       
-    position: absolute!important;
-    bottom: 0px!important;
-    width: 100%!important;
-        }
+
+    .posigraph_back {
+        position: absolute !important;
+        bottom: 0px !important;
+        width: 100% !important;
+    }
+
+    .lgn_btn {
+        margin-left: 16px;
+        width: 90%;
+        margin-top: 18px;
+    }
     </style>
 </head>
 
@@ -196,35 +211,35 @@ session_start();
     </div>
 
 
-  <div class="posigraph_back">
+    <div class="posigraph_back">
         <form class="form form-group box" method="post">
-            <div class="title">Login   <?php 
+            <div class="title">Login <?php 
             
            
             ?></div>
             <div class="input-container ic1">
-                <input class="input" type="text" placeholder="username" id="mail" name="email" required="required"/>
+                <input class="input" type="text" placeholder="username" id="mail" name="email" required="required" />
                 <!-- <span id="nameerr" style="font-size:15; color:red; text-align:center;"></span> -->
             </div>
 
             <div class="input-container ic4">
-                <input type="password" id="pass" name="pass" placeholder="password" class="input" required/>
+                <input type="password" id="pass" name="pass" placeholder="password" class="input" required />
                 <!-- <span id="conpasserr" style="font-size:15; color:red; text-align:center;"></span> -->
             </div>
 
-            <input type="button" value="Login" class="btn btn-primary btn-block btn-md"
-             id="btn" required name="submit"/>
-             <span class="msg"></span>
+            <input type="button" value="Login" class="btn btn-primary btn-block btn-md lgn_btn" id="btn" required
+                name="submit" />
+            <span class="msg"></span>
 
             <div class="other-links">
-                <span class="text-white"><a href="forget.php" title="">Forget Password ?</a> /
-                    <a href="signup.php">New User</a>
+                <span class="text-white"><a href="forget.php" title="">Forget Password ?</a> 
+                    <a href="signup.php">Signup</a>
                     <!-- <a href="signup.php">New User</a> -->
                 </span>
             </div>
         </form>
     </div>
-    
+
 </body>
 
 <script>
@@ -263,4 +278,5 @@ $(document).ready(function() {
     });
 });
 </script>
+
 </html>

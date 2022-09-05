@@ -7,23 +7,48 @@ if(isset($_POST['comment-btn']))
 
 <div id="dynamic">
     <br>
+    <h4>Votes & Comments</h4>
+    <hr style="background: #dcdcdc;">
     <span class="w3-right w3-opacity"><button id="close-popUp" style="
     border: none;
+    position: absolute;
+    top: 23px;
+    right: 2%;
+    background: white;font-size: 16px;
+    color: #d1d1d1;
 "><i class="fa fa-times"></i></button></span>
 
 
-<div id="comment-like-div" style="background:#fff; box-shadow:0px 0px 100px 5px white">
+    <div id="comment-like-div" style="background:#fff; box-shadow:0px 0px 100px 5px white;">
     </div>
 
-    <button type="button" data-pid='<?php echo $pid ?>' class="all-likes w3-button w3-theme-d1 w3-margin-bottom btn btn-info">
-        <i class="fa fa-thumbs-up"></i> &nbsp; All Likes</button>
-    <button type="button" data-pid='<?php echo $pid ?>' class="all-comments w3-button w3-theme-d1 w3-margin-bottom btn btn-success">
-        <i class="fa fa-comment"></i> &nbsp; All comments</button>
-    <input type="text" name="comment-text" id="comment-text" placeholder="Write Your Comment Here">
-    <button type="button" data-pid='<?php echo $pid ?>' class=" insert-comment w3-button w3-theme-d2 w3-margin-bottom btn btn-danger">
+    <button type="button" data-pid='<?php echo $pid ?>'
+        class="all-likes w3-button w3-theme-d1 w3-margin-bottom btn" style="color: #8d8d8d!important;
+    background-color: #f1f1f1!important;
+    border-radius: 20px;font-size: 14px;">
+        <!-- <i class="fa fa-thumbs-up"></i>  -->
+        All Votes</button>
+    <button type="button" data-pid='<?php echo $pid ?>'
+        class="all-comments w3-button w3-theme-d1 w3-margin-bottom btn" style="color: #8d8d8d!important;
+    background-color: #f1f1f1!important;
+    border-radius: 20px;font-size: 14px;">
         <!-- <i class="fa fa-comment"></i>  -->
-        <i class="fa fa-sign-in"></i>
-        &nbsp; Submit</button>
+        All Comments</button>
+
+    <div>
+        <input type="text" name="comment-text" id="comment-text" placeholder="Write Your Comment Here" style="border:1px solid #57707d26!important;border-radius: 20px!important;">
+        <button type="button" data-pid='<?php echo $pid ?>'
+            class=" insert-comment w3-button w3-theme-d2 w3-margin-bottom btn" style="
+    color: #5076ff!important;
+    font-weight: 500;
+">
+            <!-- <i class="fa fa-comment"></i>  -->
+            <!-- <i class="fa fa-sign-in"></i> -->
+            &nbsp; Send
+        </button>
+    </div>
+
+
     <hr class="w3-clear">
 
     <!-- <div id="comment-like-div" style="background:#fff; box-shadow:0px 0px 100px 5px white">

@@ -128,8 +128,8 @@ $user=mysqli_fetch_array($user);
     }
 
     .user {
-        margin-top: 20;
-        margin-left: 10px;
+        /* margin-top: 20; */
+        /* margin-left: 10px; */
         height: 250px;
         background: #fff;
         padding: 20px;
