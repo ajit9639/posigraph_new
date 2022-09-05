@@ -78,8 +78,6 @@ else
 <?php //include "./slider.php";?>
 
 
-
-
 <div class="container-fluid" style="margin-top:90px;">
     <div class="row">
 

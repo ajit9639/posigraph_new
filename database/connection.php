@@ -1,6 +1,5 @@
 <?php
 
-// Checking connection
 
 
 if($_SERVER['SERVER_NAME']=="localhost"){
