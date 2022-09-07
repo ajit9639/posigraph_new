@@ -1,0 +1,8 @@
+[26-Mar-2022 08:30:48 UTC] PHP Notice:  Undefined variable: user in /home/hlw885grukdy/public_html/Demo/Social/friends/friends.php on line 194
+[26-Mar-2022 08:30:48 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/friends/friends.php on line 194
+[26-Mar-2022 08:30:48 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/hlw885grukdy/public_html/Demo/Social/friends/showUsers.php on line 490
+[26-Mar-2022 08:30:48 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/hlw885grukdy/public_html/Demo/Social/friends/showUsers.php on line 508
+[26-Mar-2022 08:38:05 UTC] PHP Notice:  Undefined variable: user in /home/hlw885grukdy/public_html/Demo/Social/friends/friends.php on line 194
+[26-Mar-2022 08:38:05 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/hlw885grukdy/public_html/Demo/Social/friends/friends.php on line 194
+[26-Mar-2022 08:38:05 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/hlw885grukdy/public_html/Demo/Social/friends/showUsers.php on line 490
+[26-Mar-2022 08:38:05 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/hlw885grukdy/public_html/Demo/Social/friends/showUsers.php on line 508

@@ -24,7 +24,7 @@
 
 <?php
 // session_start();
-include("connection.php");
+include "./connection.php";
 $database="posigraph_socialplexus";
 mysqli_select_db($conn,$database);
 
@@ -33,11 +33,9 @@ $me=$_SESSION['id'];
 function newUsers()
 {     global $conn ,$me;
       $i=0;
-      $j=0;
       $friendId[]=0;
-      $batId[]=0;
  //when someone sent rqst to me get Id from userTwo
- $id="select senderId from battle_request where receiverId=$me";
+ $id="select senderId from friend_request where receiverId=$me";
      $sender=mysqli_query($conn,$id);
     if($sender)
     {
@@ -53,8 +51,8 @@ function newUsers()
  else
       mysqli_error($conn);
  
- //when someone get rqst from me get Id of user
- $id="select receiverId from battle_request where senderId=$me";
+ //when someone sent rqst to me get Id from userTwo
+ $id="select receiverId from friend_request where senderId=$me";
      $receiver=mysqli_query($conn,$id);
     if($receiver)
     {
@@ -71,85 +69,11 @@ function newUsers()
     }
  else
       mysqli_error($conn);
-
-//when someone's rqst received by me get Id from userTwo
-$id="select player1_id from battle where player2_id=$me";
-$sender=mysqli_query($conn,$id);
-if($sender)
-{
-if(mysqli_num_rows($sender)>= 1)
-{  
-      while($row=mysqli_fetch_array($sender))
-      {               
-                $friendId[$i]=$row['player1_id'];               
-                $i++;  
-      }             
-}
-}
-else
- mysqli_error($conn);
-
- //when someone receive my battle get Id of user
-$id="select player2_id from battle where player1_id=$me";
-$receiver=mysqli_query($conn,$id);
-if($receiver)
-{
-if(mysqli_num_rows($receiver)>= 1)
-{  
-      while($row=mysqli_fetch_array($receiver))
-      {
-          
-                $friendId[$i]=$row['player2_id'];
-          
-                $i++;  
-      }             
-}
-}
-else
- mysqli_error($conn);
     
         $str =implode(',', $friendId);
-//  echo$str; 
+ 
 /////////////////////////////////////////////////////////////////////////////////////////
-// friend without any scenario
- // friend not requested 
-$id="select * from friends where userOne=$me && userTwo NOT IN($str)";
-$sender=mysqli_query($conn,$id);
-if($sender)
-{
-if(mysqli_num_rows($sender)>= 1)
-{  
-      while($row=mysqli_fetch_array($sender))
-      {               
-                $batId[$j]=$row['userTwo'];               
-                $j++;  
-      }             
-}
-}
-else
- mysqli_error($conn);
-
- //friend not received
-$id="select * from friends where userTwo=$me && userOne NOT IN($str)";
-$receiver=mysqli_query($conn,$id);
-if($receiver)
-{
-if(mysqli_num_rows($receiver)>= 1)
-{  
-      while($row=mysqli_fetch_array($receiver))
-      {
-          
-                $batId[$j]=$row['userOne'];
-                 $j++;  
-      }             
-}
-}
-else
- mysqli_error($conn);
- $str11 =implode(',', $batId);
-//  echo $str11;
- /////////////////////////////////////////////////////////////////////////////////////////
- $query=" select userId ,firstName ,dp from user where userId IN($str11)";
+    $query=" select userId ,firstName ,dp from user where userId NOT IN($str,$me)";
     $newUser=mysqli_query($conn,$query);
     if($newUser)
     {
@@ -242,7 +166,7 @@ function rqstdAndRqstng($me)
       $friendId[]=0;
 // 
  
- $id="select senderId from battle_request where receiverId=$me";//when someone sent rqst to me get Id from userTwo
+ $id="select senderId from friend_request where receiverId=$me";//when someone sent rqst to me get Id from userTwo
      $sender=mysqli_query($conn,$id);
     if($sender)
     {
@@ -261,7 +185,7 @@ function rqstdAndRqstng($me)
       mysqli_error($conn);
  
  
- $id="select receiverId from battle_request where senderId=$me";//when someone sent rqst to me get Id from userTwo
+ $id="select receiverId from friend_request where senderId=$me";//when someone sent rqst to me get Id from userTwo
      $receiver=mysqli_query($conn,$id);
     if($receiver)
     {
@@ -285,7 +209,7 @@ return $friendId;
 function meToUsers()
 {
     global $conn,$me;
-    $query="select receiverId from battle_request where senderId='$me'";
+    $query="select receiverId from friend_request where senderId='$me'";
     $requestedUser=mysqli_query($conn,$query);
     if($requestedUser)
     {
@@ -294,23 +218,21 @@ function meToUsers()
            
             while($row=mysqli_fetch_array($requestedUser))
             {     
-                $query="select userId, firstName ,dp from user where userId={$row['receiverId']}";
+                 $query="select userId, firstName ,dp from user where userId={$row['receiverId']}";
                   $nameDp=mysqli_query($conn,$query);
                   $receiverNameDp=mysqli_fetch_array($nameDp);
-                  $rimg = $receiverNameDp['dp'];
                 //   print_r($receiverNameDp['dp']);exit();
-                // echo $row['receiverId'].'<br>';
                 echo"
                     
                     <div class='col-sm-12 user-detail'>
 
                                <div class='user-pic'> 
-                               <img src='../dp/{$rimg}'> 
+                               <img src=../dp/{$receiverNameDp['dp']}> 
                                </div>
                         <div class='user-name-buttons'> 
                         
                              <div class='name'>
-                                  <a href='https://posigraph.com/ajit/profile/profile.php?id={$row['receiverId']}'>
+                                  <a href='https://posigraph.com/app/posigraph/profile/profile.php?id={$row['receiverId']}'>
                                   <p class='name-tilte'>{$receiverNameDp['firstName']}</p>
                                   </a>
                              </div>
@@ -326,11 +248,6 @@ function meToUsers()
                   ";
             }
         }
-        else
-        echo "
-        <div class='col-sm-12 user-detail'>
-            <p class='name-tilte text-danger'>Currently, You not request battle to any friend!!</p>
-        </div>";
         
     }
     else
@@ -341,7 +258,7 @@ function meToUsers()
 function usersToMe()
 {
     global $conn,$me;
-    $query="select senderId  from battle_request where receiverId='$me'";
+    $query="select senderId  from friend_request where receiverId='$me'";
     $requestedUser=mysqli_query($conn,$query);
     if($requestedUser)
     {
@@ -363,7 +280,7 @@ function usersToMe()
                             <div class='user-name-buttons'>
                        
                                     <div class=' name'>
-                                      <a href='https://posigraph.com/ajit/profile/profile.php?id={$row['senderId']}'>
+                                      <a href='https://posigraph.com/app/posigraph/profile/profile.php?id={$row['senderId']}'>
                                       <p class='name-tilte'>{$senderNameDp['firstName']}</p>
                                        </a>
                                     </div>
@@ -371,26 +288,22 @@ function usersToMe()
                                     <div class=' btn'>
 
                                      <a href='#'>
-                                    <button data-id='{$row['senderId']}'  data-name='{$senderNameDp['firstName']}' class='btn btn-success accept-btn'>accept</button>
-                                     </a>
-                                     <a href='#'>
-                                    <button data-id='{$row['senderId']}'  data-name='{$senderNameDp['firstName']}' class='btn btn-danger ignore-btn'>ignore</button>
+                                    <button data-id='{$row['senderId']}'  data-name='{$senderNameDp['firstName']}' class='btn btn-success accept-btn' >accept
+                                       </button>
                                      </a>
                        
-                                    
+                                       <a href='#'>
+                                    <button data-id='{$row['senderId']}'     data-name='{$senderNameDp['firstName']}' class='ignore-btn btn btn-danger'>     ignore
+                                       </button>
+                                     </a>
+                                    </div>
 
                             </div> 
                  </div>
                  
                   ";                                                  
             }
-        }  
-        else
-        echo "
-        <div class='col-sm-12 user-detail'>
-            <p class='name-tilte text-danger'>Currently, No request for battle from any friend!!</p>
-        </div>";
-
+        }        
     }
     else
         mysqli_error($conn);    
@@ -404,8 +317,7 @@ function myFriends()
 
     global $conn,$me;
     // when i'am 1st col,get friend Id from userTwo
-  $query="select userOne,userTwo from friends where userOne=$me or userTwo=$me";
-  //echo $me;
+     $query="select userOne,userTwo from friends where userOne=$me or userTwo=$me";
      $friends=mysqli_query($conn,$query);
     if($friends)
     {
@@ -415,16 +327,10 @@ function myFriends()
            {               
                   if($row['userOne']==$me)
                   {
-                    $query="select userId,firstName ,dp from user where userId={$row['userTwo']}";
-                    $nameDp=mysqli_query($conn,$query);
-                    $friend=mysqli_fetch_array($nameDp);
-
-                    $query2="select * from battle_request";
-                    $nameDp2=mysqli_query($conn,$query2);
-                    while($battle=mysqli_fetch_array($nameDp2))
-                      {
-                    if($friend['userId']==$battle['senderId'] || $friend['userId']==$battle['receiverId'])
-                      {
+                     $query="select userId,firstName ,dp from user where userId={$row['userTwo']}";
+                      $nameDp=mysqli_query($conn,$query);
+                      $friend=mysqli_fetch_array($nameDp);
+                      
                       echo"
 
                         <div class='col-sm-12 user-detail'>
@@ -436,10 +342,10 @@ function myFriends()
                                </div>
 
                               <div class=' user-name-buttons'> 
-                                  <div class='row name'><a href='https://posigraph.com/posigraph.com/ajit/profile/profile.php?id={$friend['userId']}'>
+                                  <div class='row name'><a href='https://posigraph.com/app/posigraph/profile/profile.php?id={$friend['userId']}'>
                                   <p class='name-tilte'>{$friend['firstName']}</p></a></div>
                                  <div class='row btn'> <a href='#'>
-                                 <button data-id='{$friend['userId']}' data-name='{$friend['firstName']}' class='battle-btn btn-sm btn-success'>Start Battle</button></a>
+                                  <button data-id='{$friend['userId']}'  data-name='{$friend['firstName']}' class='btn btn-success unfriend-btn'>Unfollow</button></a>
                                   </div>
 
                               </div>
@@ -448,31 +354,12 @@ function myFriends()
                                         
                         ";                      
                   }
-                }
-                //   else
-                //   echo "
-                //      <div class='col-sm-12 user-detail'>
-                //          <p class='name-tilte text-danger'>Currently no friend for battle!!</p>
-                //      </div>";
-                    }
                  else
                  {
                     $query="select userId,firstName ,dp from user where userId={$row['userOne']}";
                       $nameDp=mysqli_query($conn,$query);
-                      $friend=mysqli_fetch_assoc($nameDp);                     
-                    
-                      $query2="select * from battle_request";
-                      $nameDp2=mysqli_query($conn,$query2);
-                    //   $count= 0;
-                      while($battle=mysqli_fetch_array($nameDp2))
-                      {
-                        if($friend['userId']==$battle['senderId'] || $friend['userId']==$battle['receiverId'])
-                        {
-                            // $count=1;
-                        // }
-                    //   }
-                    //  if($count==0) 
-                    // {
+                      $friend=mysqli_fetch_array($nameDp);
+                      
                       echo"
                           <div class='col-sm-12 user-detail'>
 
@@ -483,11 +370,11 @@ function myFriends()
                                  </div>
 
                                 <div class='user-name-buttons'> 
-                                    <div class='name'><a href='https://posigraph.com/ajit/profile/profile.php?id={$friend['userId']}'>
+                                    <div class='name'><a href='https://posigraph.com/app/posigraph/profile/profile.php?id={$friend['userId']}'>
                                     <p class='name-tilte'>{$friend['firstName']}</p>
                                     </a></div>
                                    <div class='btn'> <a href='#'>
-                                   <button data-id='{$friend['userId']}' data-name='{$friend['firstName']}' class='battle-btn btn-sm btn-success'>Start Battle</button></a>
+                                   <button data-id='{$friend['userId']}' data-name='{$friend['firstName']}' class='unfriend-btn btn-sm btn-success'>Unfollow</button></a>
                                    </div>
 
                                 </div>
@@ -496,115 +383,10 @@ function myFriends()
                  
                         "; 
                  }
-                }
-                //  else
-                //  echo "
-                //     <div class='col-sm-12 user-detail'>
-                //         <p class='name-tilte text-danger'>Currently no friend for battle!!</p>
-                //     </div>";
-                }
            }             
      }
 
     }
- else
-      mysqli_error($conn);
-}
-
-function battle()
-{
-    global $conn,$me;
-    $type='';
-    $query="select * from battle where player1_id=$me or player2_id=$me";
-     $friends=mysqli_query($conn,$query);
-    if($friends)
-    {
-     if(mysqli_num_rows($friends)>= 1)
-     {  
-           while($row=mysqli_fetch_array($friends))
-           {       
-             
-                  if($row['player1_id']==$me)
-                  {
-                     $query="select userId,firstName ,dp from user where userId={$row['player2_id']}";
-                      $nameDp=mysqli_query($conn,$query);
-                      $friend=mysqli_fetch_array($nameDp);
-                        $type= 'p2';
-                      if($row['player1_post']=='')
-                        $but1 = "<a href='../add_battle.php?bid=".$row['battle_id']."&&pid=".$friend['userId']."&&type=".$type."'><button data-id='{$friend['userId']}' data-name='{$friend['firstName']}' class='battle-btn btn-sm btn-success' style='width:fit-content;'>Upload Picture</button></a>";
-                      else
-                        $but1 = "<a href='#'><button data-id='{$friend['userId']}' data-name='{$friend['firstName']}' class='battle-btn btn-sm btn-success' style='width:fit-content;'>Picture Uploaded</button></a>";
-                          
-                       echo"
-                        <div class='col-sm-12 user-detail'>
-
-                               <div class=''>
-                                     <div class='friend-pic round-pic'> 
-                                           <img src='../proImg/pro.jpg'>    
-                                      </div>
-                               </div>
-
-                            <div class=' user-name-buttons'> 
-                                <div class='row name'><a href='https://posigraph.com/posigraph.com/ajit/profile/profile.php?id={$friend['userId']}'>
-                                 <p class='name-tilte'>{$friend['firstName']}</p></a>
-                                </div>
-                                <div class='row btn'> 
-                                $but1 
-                                </div>
-
-                              </div>
-                            </div>
-                    
-                                        
-                        ";                      
-                  }
-                  
-                 else
-                 {
-                    $query="select userId,firstName ,dp from user where userId={$row['player1_id']}";
-                    $nameDp=mysqli_query($conn,$query);
-                    $friend=mysqli_fetch_assoc($nameDp);                     
-                    $type= 'p1';
-                    if($row['player2_post']=='')
-                    $but2 = "<a href='../add_battle.php?bid=".$row['battle_id']."&&pid=".$friend['userId']."&&type=".$type."'><button data-id='{$friend['userId']}' data-name='{$friend['firstName']}' class='upload-btn btn-sm btn-success' style='width:fit-content;'>Upload Picture</button></a>";
-                    else
-                    $but2 = "<a href='#'><button data-id='{$friend['userId']}' data-name='{$friend['firstName']}' class=' btn-sm btn-success' style='width:fit-content;'>Picture Uploaded</button></a>";
-                        
-                     
-                      echo"
-                          <div class='col-sm-12 user-detail'>
-
-                                 <div class=''>
-                                       <div class='friend-pic round-pic'> 
-                                             <img src='../proImg/pro.jpg'>    
-                                        </div>
-                                 </div>
-
-                                <div class='user-name-buttons'> 
-                                    <div class='name'><a href='https://posigraph.com/ajit/profile/profile.php?id={$friend['userId']}'>
-                                    <p class='name-tilte'>{$friend['firstName']}</p>
-                                    </a></div>
-                                   <div class='btn'> 
-                                   $but2
-                                   </div>
-
-                                </div>
-
-                              </div> 
-                 
-                        "; 
-                 }
-                 
-                }
-           }
-           else
-                 echo "
-                    <div class='col-sm-12 user-detail'>
-                        <p class='name-tilte text-danger'>Currently no friend for battle!!</p>
-                    </div>";             
-     }
-
-    
  else
       mysqli_error($conn);
 }
@@ -615,7 +397,7 @@ function get_all_myFriends()
 {
     global $conn,$me;
     
-  $query="select userOne,userTwo from battle_request_accepted where userOne=$me or userTwo=$me";// when i'am 1st col,get friend Id from userTwo
+  $query="select userOne,userTwo from friends where userOne=$me or userTwo=$me";// when i'am 1st col,get friend Id from userTwo
      $friends=mysqli_query($conn,$query);
     if($friends)
     {
@@ -640,7 +422,7 @@ function get_all_myFriends()
                                </div>
 
                               <div class=' user-name-buttons'> 
-                                  <div class='row name'><a href='https://posigraph.com/posigraph.com/ajit/profile/profile.php?id={$friend['userId']}'>
+                                  <div class='row name'><a href='https://posigraph.com/app/posigraph/profile/profile.php?id={$friend['userId']}'>
                                   <p class='name-tilte'>{$friend['firstName']}</p></a></div>
                                  <div class='row btn'> <a href='#'>
                                   <button data-id='{$friend['userId']}'  data-name='{$friend['firstName']}' class='btn btn-success unfriend-btn'>Unfriend</button></a>
@@ -668,7 +450,7 @@ function get_all_myFriends()
                                  </div>
 
                                 <div class='user-name-buttons'> 
-                                    <div class='name'><a href='https://posigraph.com/ajit/profile/profile.php?id={$friend['userId']}'>
+                                    <div class='name'><a href='https://posigraph.com/app/posigraph/profile/profile.php?id={$friend['userId']}'>
                                     <p class='name-tilte'>{$friend['firstName']}</p>
                                     </a></div>
                                    <div class='btn'> <a href='#'>
@@ -689,12 +471,53 @@ function get_all_myFriends()
       mysqli_error($conn);
 }
 
+//
+//function getFriends($id)
+//{ global $conn;
+//    $i=0;
+//      $friendId[]=0;
+//    $query="select userOne,userTwo from friends where userOne=$id or userTwo=$id";// when i'am 1st col,get friend Id from userTwo
+//     $friends=mysqli_query($conn,$query);
+//    if($friends)
+//    {
+//     if(mysqli_num_rows($friends)>= 1)
+//     {  
+//           while($row=mysqli_fetch_array($friends))
+//           {
+//               
+//                  if($row['userOne']==$id)
+//                  {
+//                     $friendId[$i]=$row['userTwo'];
+//               
+//                     $i++;                       
+//                  }
+//                 else
+//                 {
+//                     $friendId[$i]=$row['userOne'];
+//               
+//                     $i++;
+//                      
+//                 }
+//           }
+//        
+//     
+//     $str =implode(',', $friendId);
+//         return $str;
+//     }
+//        else
+//            return 0;
+//
+//    }
+// else
+//      mysqli_error($conn);
+// 
+//}
 
 function myF($id)
 { global $conn;
     $i=0;
       $friendId[]=0;
-    $query="select userOne,userTwo from battle_request_accepted where userOne=$id or userTwo=$id";// when i'am 1st col,get friend Id from userTwo
+    $query="select userOne,userTwo from friends where userOne=$id or userTwo=$id";// when i'am 1st col,get friend Id from userTwo
      $friends=mysqli_query($conn,$query);
     if($friends)
     {
@@ -739,18 +562,19 @@ function friendsOfFriend($id)
     $FOF="";
  $ONE_OR_MORE="";
  $my=myF($id);
+//  print_r($my);
  $m=count($my);
  for($i=0;$i<$m;$i++)
  {
   $FF=myF($my[$i]);
-    $str=implode(',', $FF);
-     $FOF.=$str.",";
-     
+  $str=implode(',', $FF);
+  $FOF.=$str;
+    //  $FOF.=$str.",";
      
  }
  $FOF.='0';
  $GFOF=$FOF;
- 
+//  echo $GFOF;
  
  $rqstd_rqstng_id=rqstdAndRqstng($id);    
     $str =implode(',', $rqstd_rqstng_id);
@@ -778,7 +602,7 @@ $strr=implode(',', $strr);
                         <div class=' user-name-buttons'> 
                         
                              <div class='  name'>
-                                  <a href='https://posigraph.com/ajit/profile/profile.php?id={$row['userId']}'>
+                                  <a href='https://posigraph.com/app/posigraph/profile/profile.php?id={$row['userId']}'>
                                   <p class='name-tilte'>{$row['firstName']}</p></a>
                              </div>
                              
@@ -791,14 +615,19 @@ $strr=implode(',', $strr);
                   ";
             }
         }
-//         <a href='https://posigraph.com/ajit/profile/profile.php?id={$id}'> <p><button>View Profile</button></p></a>
+//         <a href='https://posigraph.com/app/posigraph/profile/profile.php?id={$id}'> <p><button>View Profile</button></p></a>
         
     }
     else
         mysqli_error($conn);
     
-
+//  echo"<script>window.alert('{$str},{$strr}')</script>";
+ 
+//  echo"<script>window.alert('{$FOF}')</script>";
 }
+
+
+
 
 
 function moreSugg()
@@ -814,6 +643,8 @@ function moreSugg()
         {
             while($row=mysqli_fetch_array($newUser))
             {
+                // echo $row['userId'];
+
                 echo"                    
                     <div class='col-sm-12 user-detail'>
                                <div class='user-pic'> 
@@ -822,7 +653,7 @@ function moreSugg()
 
                               <div class='user-name-buttons'>                         
                              <div class='name'>
-                                  <a href='https://posigraph.com/ajit/profile/profile.php?id={$row['userId']}'>
+                                  <a href='https://posigraph.com/app/posigraph/profile/profile.php?id={$row['userId']}'>
                                   <p style='' class='name-tilte'>{$row['firstName']}</p>
                                   </a>
                              </div>  

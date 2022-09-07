@@ -56,10 +56,7 @@ mysqli_select_db($conn,"posigraph_socialplexus");
 //      mysqli_error($conn);
 // 
 //}
-
-
  getUnreadMsg($me,$id);
- 
  function getUnreadMsg($me,$id)
 {
    global $conn;

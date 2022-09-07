@@ -28,7 +28,7 @@ include("connection.php");
 $database="posigraph_socialplexus";
 mysqli_select_db($conn,$database);
 
-$me=$_SESSION['id'];
+$me = $_SESSION['id'];
 
 function newUsers()
 {     global $conn ,$me;

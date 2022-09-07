@@ -7,7 +7,7 @@
     display: block;
     background: #fff;
     color: #000;
-    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+    /* box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px; */
     margin: 15px 0;
 }
 
@@ -33,9 +33,7 @@ $me=$_SESSION['id'];
 function newUsers()
 {     global $conn ,$me;
       $i=0;
-      $j=0;
       $friendId[]=0;
-      $batId[]=0;
  //when someone sent rqst to me get Id from userTwo
  $id="select senderId from battle_request where receiverId=$me";
      $sender=mysqli_query($conn,$id);
@@ -53,7 +51,7 @@ function newUsers()
  else
       mysqli_error($conn);
  
- //when someone get rqst from me get Id of user
+ //when someone sent rqst to me get Id from userTwo
  $id="select receiverId from battle_request where senderId=$me";
      $receiver=mysqli_query($conn,$id);
     if($receiver)
@@ -71,85 +69,11 @@ function newUsers()
     }
  else
       mysqli_error($conn);
-
-//when someone's rqst received by me get Id from userTwo
-$id="select player1_id from battle where player2_id=$me";
-$sender=mysqli_query($conn,$id);
-if($sender)
-{
-if(mysqli_num_rows($sender)>= 1)
-{  
-      while($row=mysqli_fetch_array($sender))
-      {               
-                $friendId[$i]=$row['player1_id'];               
-                $i++;  
-      }             
-}
-}
-else
- mysqli_error($conn);
-
- //when someone receive my battle get Id of user
-$id="select player2_id from battle where player1_id=$me";
-$receiver=mysqli_query($conn,$id);
-if($receiver)
-{
-if(mysqli_num_rows($receiver)>= 1)
-{  
-      while($row=mysqli_fetch_array($receiver))
-      {
-          
-                $friendId[$i]=$row['player2_id'];
-          
-                $i++;  
-      }             
-}
-}
-else
- mysqli_error($conn);
     
         $str =implode(',', $friendId);
-//  echo$str; 
+ 
 /////////////////////////////////////////////////////////////////////////////////////////
-// friend without any scenario
- // friend not requested 
-$id="select * from friends where userOne=$me && userTwo NOT IN($str)";
-$sender=mysqli_query($conn,$id);
-if($sender)
-{
-if(mysqli_num_rows($sender)>= 1)
-{  
-      while($row=mysqli_fetch_array($sender))
-      {               
-                $batId[$j]=$row['userTwo'];               
-                $j++;  
-      }             
-}
-}
-else
- mysqli_error($conn);
-
- //friend not received
-$id="select * from friends where userTwo=$me && userOne NOT IN($str)";
-$receiver=mysqli_query($conn,$id);
-if($receiver)
-{
-if(mysqli_num_rows($receiver)>= 1)
-{  
-      while($row=mysqli_fetch_array($receiver))
-      {
-          
-                $batId[$j]=$row['userOne'];
-                 $j++;  
-      }             
-}
-}
-else
- mysqli_error($conn);
- $str11 =implode(',', $batId);
-//  echo $str11;
- /////////////////////////////////////////////////////////////////////////////////////////
- $query=" select userId ,firstName ,dp from user where userId IN($str11)";
+    $query=" select userId ,firstName ,dp from user where userId NOT IN($str,$me)";
     $newUser=mysqli_query($conn,$query);
     if($newUser)
     {
@@ -159,7 +83,7 @@ else
             {
                 echo"
                     
-                    <div class='col-sm-12 user-detail'>
+                    <div class='col-6 col-md-4 user-detail'>
 
                                <div class='col-sm-4 user-pic'> 
                                <img src='../proImg/pro.jpg'> 
@@ -204,8 +128,9 @@ $strr=implode(',', $strr);
         {
             while($row=mysqli_fetch_array($newUser))
             {
-                echo"                    
-                    <div class='col-sm-12 user-detail'>
+                echo"    
+                <div class= 'row'>                
+                    <div class='col-sm-6 user-detail'>
 
                                <div class='col-sm-4 user-pic'>
                                 <img src='../proImg/pro.jpg'>
@@ -224,7 +149,7 @@ $strr=implode(',', $strr);
                         </div>
 
                    </div>
-                 
+                 </div>
                   ";
             }
         }
@@ -294,18 +219,17 @@ function meToUsers()
            
             while($row=mysqli_fetch_array($requestedUser))
             {     
-                $query="select userId, firstName ,dp from user where userId={$row['receiverId']}";
+                 $query="select userId, firstName ,dp from user where userId={$row['receiverId']}";
                   $nameDp=mysqli_query($conn,$query);
                   $receiverNameDp=mysqli_fetch_array($nameDp);
-                  $rimg = $receiverNameDp['dp'];
                 //   print_r($receiverNameDp['dp']);exit();
                 // echo $row['receiverId'].'<br>';
                 echo"
-                    
-                    <div class='col-sm-12 user-detail'>
+                <div class= 'row'>  
+                    <div class='col-sm-6 user-detail'>
 
                                <div class='user-pic'> 
-                               <img src='../dp/{$rimg}'> 
+                               <img src=../dp/{$receiverNameDp['dp']}> 
                                </div>
                         <div class='user-name-buttons'> 
                         
@@ -322,13 +246,13 @@ function meToUsers()
                         </div>
 
                    </div>
-                 
+                 </div>
                   ";
             }
         }
         else
         echo "
-        <div class='col-sm-12 user-detail'>
+        <div class='col-6 col-md-4 user-detail'>
             <p class='name-tilte text-danger'>Currently, You not request battle to any friend!!</p>
         </div>";
         
@@ -354,7 +278,7 @@ function usersToMe()
                   $senderNameDp=mysqli_fetch_array($nameDp);
                 echo"
                     
-                     <div class='col-sm-12 user-detail'>
+                     <div class='col-6 col-md-4 user-detail'>
 
                            <div class='user-pic'> 
                                  <img src='../proImg/pro.jpg'>    
@@ -387,7 +311,7 @@ function usersToMe()
         }  
         else
         echo "
-        <div class='col-sm-12 user-detail'>
+        <div class='col-6 col-md-4 user-detail'>
             <p class='name-tilte text-danger'>Currently, No request for battle from any friend!!</p>
         </div>";
 
@@ -405,7 +329,6 @@ function myFriends()
     global $conn,$me;
     // when i'am 1st col,get friend Id from userTwo
   $query="select userOne,userTwo from friends where userOne=$me or userTwo=$me";
-  //echo $me;
      $friends=mysqli_query($conn,$query);
     if($friends)
     {
@@ -421,13 +344,13 @@ function myFriends()
 
                     $query2="select * from battle_request";
                     $nameDp2=mysqli_query($conn,$query2);
-                    while($battle=mysqli_fetch_array($nameDp2))
-                      {
+                    $battle=mysqli_fetch_array($nameDp2);
+                      
                     if($friend['userId']==$battle['senderId'] || $friend['userId']==$battle['receiverId'])
                       {
                       echo"
 
-                        <div class='col-sm-12 user-detail'>
+                        <div class='col-6 col-md-4 user-detail'>
 
                                <div class=''>
                                      <div class='friend-pic round-pic'> 
@@ -448,12 +371,11 @@ function myFriends()
                                         
                         ";                      
                   }
-                }
-                //   else
-                //   echo "
-                //      <div class='col-sm-12 user-detail'>
-                //          <p class='name-tilte text-danger'>Currently no friend for battle!!</p>
-                //      </div>";
+                  else
+                  echo "
+                     <div class='col-6 col-md-4 user-detail'>
+                         <p class='name-tilte text-danger'>Currently no friend for battle!!</p>
+                     </div>";
                     }
                  else
                  {
@@ -463,18 +385,18 @@ function myFriends()
                     
                       $query2="select * from battle_request";
                       $nameDp2=mysqli_query($conn,$query2);
-                    //   $count= 0;
+                      $count= 0;
                       while($battle=mysqli_fetch_array($nameDp2))
                       {
                         if($friend['userId']==$battle['senderId'] || $friend['userId']==$battle['receiverId'])
                         {
-                            // $count=1;
-                        // }
-                    //   }
-                    //  if($count==0) 
-                    // {
+                            $count=1;
+                        }
+                      }
+                     if($count==0) 
+                    {
                       echo"
-                          <div class='col-sm-12 user-detail'>
+                          <div class='col-6 col-md-4 user-detail'>
 
                                  <div class=''>
                                        <div class='friend-pic round-pic'> 
@@ -496,12 +418,11 @@ function myFriends()
                  
                         "; 
                  }
-                }
-                //  else
-                //  echo "
-                //     <div class='col-sm-12 user-detail'>
-                //         <p class='name-tilte text-danger'>Currently no friend for battle!!</p>
-                //     </div>";
+                 else
+                 echo "
+                    <div class='col-6 col-md-4 user-detail'>
+                        <p class='name-tilte text-danger'>Currently no friend for battle!!</p>
+                    </div>";
                 }
            }             
      }
@@ -536,7 +457,7 @@ function battle()
                         $but1 = "<a href='#'><button data-id='{$friend['userId']}' data-name='{$friend['firstName']}' class='battle-btn btn-sm btn-success' style='width:fit-content;'>Picture Uploaded</button></a>";
                           
                        echo"
-                        <div class='col-sm-12 user-detail'>
+                        <div class='col-6 col-md-4 user-detail'>
 
                                <div class=''>
                                      <div class='friend-pic round-pic'> 
@@ -572,7 +493,7 @@ function battle()
                         
                      
                       echo"
-                          <div class='col-sm-12 user-detail'>
+                          <div class='col-6 col-md-4 user-detail'>
 
                                  <div class=''>
                                        <div class='friend-pic round-pic'> 
@@ -599,7 +520,7 @@ function battle()
            }
            else
                  echo "
-                    <div class='col-sm-12 user-detail'>
+                    <div class='col-6 col-md-4 user-detail'>
                         <p class='name-tilte text-danger'>Currently no friend for battle!!</p>
                     </div>";             
      }
@@ -631,7 +552,7 @@ function get_all_myFriends()
                       
                       echo"
                         
-                        <div class='col-sm-12 user-detail'>
+                        <div class='col-6 col-md-4 user-detail'>
 
                                <div class=''>
                                      <div class='friend-pic round-pic'> 
@@ -659,7 +580,7 @@ function get_all_myFriends()
                       $friend=mysqli_fetch_array($nameDp);
                       
                       echo"hello2
-                          <div class='col-sm-12 user-detail'>
+                          <div class='col-6 col-md-4 user-detail'>
 
                                  <div class=''>
                                        <div class='friend-pic round-pic'> 
@@ -770,7 +691,7 @@ $strr=implode(',', $strr);
             {
                 echo"
                     
-                    <div class='col-sm-12 user-detail'>
+                    <div class='col-6 col-md-4 user-detail'>
 
                                <div class=' user-pic'> 
                                <img src='../proImg/pro.jpg'>
@@ -815,7 +736,7 @@ function moreSugg()
             while($row=mysqli_fetch_array($newUser))
             {
                 echo"                    
-                    <div class='col-sm-12 user-detail'>
+                    <div class='col-6 col-md-4 user-detail'>
                                <div class='user-pic'> 
                                <img src=../dp/{$row['dp']}> 
                                </div>

@@ -262,11 +262,11 @@ $mail->Host='mail.posigraph.com';                       // Specify main and back
 $mail->SMTPAuth = true;                                // Enable SMTP authentication
 $mail->Username = EMAIL;                              // SMTP username
 $mail->Password = PASS;                              // SMTP password
-$mail->SMTPSecure='ssl';                          // Enable TLS encryption, `ssl` also accepted
-$mail->Port=465;                               // TCP port to connect to
+$mail->SMTPSecure='ssl';                            // Enable TLS encryption, `ssl` also accepted
+$mail->Port=465;                                   // TCP port to connect to
 
 $mail->setFrom(EMAIL, 'info@posigraph.com');
-$mail->addAddress($email,$name);     // Add a recipient
+$mail->addAddress($email,$name);                 // Add a recipient
 $mail->addReplyTo(EMAIL);
 
 $mail->Subject = 'Posigraph Password';

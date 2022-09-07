@@ -1,5 +1,5 @@
 <?php 
-// session_start();
+session_start();
 
     include("showUsers.php");
     include "battle_header.php";
@@ -22,7 +22,8 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-
+    <title>Posigraph </title>
+    <link rel="icon" type="image/x-icon" href="https://posigraph.com/posi_favicon.png">
     <style>
     .new-user {
         /* height: 280px; */
@@ -61,9 +62,9 @@
     }
 
     .user-detail {
-        width: 270px;
+        /* width: 270px;
         height: auto;
-        margin: 5px;
+        margin: 5px; */
         /* padding: 0; */
     }
 
@@ -114,19 +115,22 @@
             <div class="col-md-12 all-user" style="margin-top: 60px;">                
             <div class="col-md-12 friend-list">
                 <h3>Current Battle Competitors</h3>
-                    <?php  //newUsers();?>
+                <div class='row'>
                     <?php  battle();?>
                 </div>                
             </div>
+</div>
         </div>
 
         <div class="row">
             <div class="col-md-12 all-user" style="margin-top: 60px;">                
             <div class="col-md-12 friend-list">
                 <h3>Suggestion For Battle</h3>
-                    <?php  newUsers();?>
+                <div class='row'>
+                    <?php  myFriends();?>
                 </div>                
             </div>
+</div>
         </div>
 
         <div class="row">
@@ -134,12 +138,16 @@
                 <div class="col-md-12 request-list">
                 
                 <h3>Battle Request Sent</h3>
+                <div class='row'>
                 <?php meToUsers();?>
+</div>
         </div>
         
         <div class="col-md-12 requested-user">
                 <h3>Battle Request Recived</h3>
+                <div class='row'>
                 <?php usersToMe();?><br><br>
+</div>
                 </div>
                 <br><br>
             </div>
