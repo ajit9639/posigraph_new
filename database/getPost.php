@@ -53,7 +53,7 @@ $like_post_num=0;
 /* user comment css */
 .comment-section {
     display: flex;
-    margin: 0px 8px 15px 0px!important;
+    margin: 0px 8px 15px 0px !important;
 }
 
 .comment-section .user-profile img {
@@ -67,7 +67,7 @@ $like_post_num=0;
     padding: 7px;
     text-align: left;
     color: #dcdcdc;
-    background:#fff!important;
+    background: #fff !important;
 }
 
 /* .comment-section .user-comment input::placeholder {
@@ -97,15 +97,15 @@ p {
 .w3-white .bios {
     margin: 0 12px !important;
     font-size: 14px;
-    padding-top: 0px!important;
+    padding-top: 0px !important;
 }
 
-.dislike_base-graph .graph-heart{
-    font-size: 22px!important;
+.dislike_base-graph .graph-heart {
+    font-size: 22px !important;
 }
 
-a{
-    color:#000000!important;
+a {
+    color: #000000 !important;
 }
 </style>
 <?php 
@@ -203,18 +203,19 @@ function getPost($from,$count)
     <!-- <span class="w3-right w3-opacity font-weight-bold">Posted Date : <?php // echo $postDate; ?></span> -->
 
 
-    
-    
 
-<div style="position:relative;">
-<div style="position: absolute;
+
+
+    <div style="position:relative;">
+        <div style="position: absolute;
     top: 5px;
     width: 100%;
     background: #fff;
     color: #fff;
     height: 11px;">
-hello world
-</div></div>
+            hello world
+        </div>
+    </div>
 
     <?php
  $like_post_num = totalLike($list['postId']);
@@ -245,12 +246,10 @@ $user=mysqli_fetch_array($result);
     <div style="position:relative">
         <div class="dislike_base-graph">
             <span>
-                <button type="button" data-pid="<?php echo $list['postId']?>"
-                    class="like-btn w3-theme-d1 " style="border: none;height:2px;
+                <button type="button" data-pid="<?php echo $list['postId']?>" class="like-btn w3-theme-d1 " style="border: none;height:2px;
     background: #fff;"><i style="color:<?php echo $color?>" id="<?php echo $list['postId']?>"
                         class="fa fa-heart-o heart-graph text-danger graph-heart"></i> &nbsp;<span
-                        id="like<?php echo $list['postId']?>"
-                        style="color:#000;">
+                        id="like<?php echo $list['postId']?>" style="color:#000;">
                         <?php // totalLike($list['postId']);?>
                     </span></button>
                 <!-- <i class="fa fa-heart-o heart-graph"></i> -->
@@ -259,12 +258,10 @@ $user=mysqli_fetch_array($result);
             <div class="like-graph" style="width:<?php echo $like_percent; ?>%"><?php echo $like_percent; ?>%</div>
             <div class="dislike-graph" style="width:<?php echo $hate_percent; ?>%"><?php echo $hate_percent; ?>%</div>
 
-            <button type="button" data-pid="<?php echo $list['postId']?>"
-                class="dislike-btn w3-theme-d1 " style="border: none;height:2px;
+            <button type="button" data-pid="<?php echo $list['postId']?>" class="dislike-btn w3-theme-d1 " style="border: none;height:2px;
     background: #fff;"><i style="color:<?php echo $color?>" id="<?php echo $list['postId']?>"
                     class="fa fa-heart heart-graph text-danger graph-heart"></i> &nbsp;<span
-                    id="dislike<?php echo $list['postId']?>"
-                    style="color:#000;">
+                    id="dislike<?php echo $list['postId']?>" style="color:#000;">
                     <?php // totaldisLike($list['postId']);?>
                 </span></button>
 
@@ -273,14 +270,14 @@ $user=mysqli_fetch_array($result);
     </div>
     <!-- // like dislike graph -->
 
-<h6 style="font-size: 12px;text-align:center;color:#7c7c7c;margin-top:10px;">100 votes 20 comment </h6>
+    <h6 style="font-size: 12px;text-align:center;color:#7c7c7c;margin-top:10px;"><?php totalLike($list['postId']);?>
+        votes </h6>
     <p class="bios"><?php echo $list['postContent']?></p>
 
     <!-- like dislike graph -->
-<!-- comment button -->
-<div class="comment-section">
-        <div class="user-profile"><img src="dp/<?php echo $user['dp'];?>"
-                style="width: 30px;
+    <!-- comment button -->
+    <div class="comment-section">
+        <div class="user-profile"><img src="dp/<?php echo $user['dp'];?>" style="width: 30px;
     height: 30px;
     margin: 5px;
     margin-top: 12px;

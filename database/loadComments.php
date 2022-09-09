@@ -106,7 +106,7 @@ $(".insert-comment").click(function() {
 
 
 $(".all-likes").click(function() {
-    //       load all like from likes atble using ajax
+    //load all like from likes atble using ajax
     var $this = $(this);
     pid = $this.data("pid");
     postId = new FormData();

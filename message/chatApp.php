@@ -145,9 +145,9 @@ $user=mysqli_fetch_array($user);
 
     .list {
         margin-top: 20px;
-    margin-bottom: 50px;
-    overflow-x: hidden;
-    overflow-y: scroll;
+        margin-bottom: 50px;
+        overflow-x: hidden;
+        overflow-y: scroll;
     }
 
     .list::-webkit-scrollbar {
@@ -160,15 +160,27 @@ $user=mysqli_fetch_array($user);
     }
 
     .online-user-img {
-        width: 60px;
+        /* width: 60px;
         height: 60px;
         background: #AAA;
         border-radius: 50%;
-        overflow: hidden;
+        overflow: hidden; */
+
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        position: relative;
+    }
+
+    .online-user-img a {
+        font-size: 20px;
+        font-weight: 600;
     }
 
     .online-user-img img {
-        width: 100%;
+        width: 100px;
+        margin-right: 15px;
+        border-radius: 50%;
     }
 
     .online-user-name {
@@ -208,35 +220,33 @@ $user=mysqli_fetch_array($user);
         <div class="row" style=" margin-top:35px;">
 
             <div class="user col-sm-12 col-xs-12" id="online-div">
+
+
                 <!-- <a href="#" class="w3-bar-item w3-button w3-padding-large"></a>-->
                 <!-- <a href="http://localhost/posigraph_new/message/broadcastMsg.php"><button type="button"
                         class="comment-btn w3-button w3-theme-d2 w3-margin-bottom"> &nbsp;broadcast</button></a>
 
                 <a href="http://localhost/posigraph_new/message/chatApp.php"><button type="button"
                         class="comment-btn w3-button w3-theme-d2 w3-margin-bottom"> &nbsp;private Message</button></a> -->
+
+
                 <center>
-                    <h1 class="text-left" style="font-size: 15px;
-    margin-top: 20px;
-    font-weight: 600;">Recent Chats</h1>
+                    <h1 class="text-left" style="font-size: 15px;margin-top: 20px;font-weight: 600;">Recent Chats</h1>
                     <!-- <hr> -->
                 </center>
-
-
                 <div class="list" id="all friends">
                     <!--ajax online users incllude page-->
                     <?php include("getUserData.php");?>
                 </div>
             </div>
 
-
-
         </div>
 
-        <!--    container close-->
+        <!--container close-->
     </div>
 
-
 </body>
+
 
 
 <script>
@@ -261,13 +271,11 @@ function ajax() {
             contentType: false,
             processData: false,
             success: function(result) {
-                //                                appned chat list in div
+                                                      //appned chat list in div
                 $(".chatlogs").html(result);
                 $("#" + "unreadOf" + userId).html(""); // empty unread msg span
-
             }
         });
-
     }
 }
 
@@ -285,7 +293,7 @@ $("#send").click(function() {
             window.alert("write ur msg");
         } else {
 
-            //                  $v=$("#msg").val();
+            // $v=$("#msg").val();
             $("#disp").html(msg);
             var insertMsg = new FormData();
             insertMsg.append("me", <?php echo $_SESSION['id']?>);

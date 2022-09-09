@@ -214,10 +214,9 @@ $user=mysqli_fetch_array($user);
                     </div>
                 </div>
                 <div class="chatlogs">
-
                     <!-- presentation container that hold both chat box   -->
                     <?php
-//  this php code is just for msg insertion rightly
+                    //  this php code is just for msg insertion rightly
                 if(isset($_GET['id']))
                     {
                         $id=$_GET['id'];
@@ -240,36 +239,28 @@ $user=mysqli_fetch_array($user);
                             {
                                  $validReceiver="no";
                                  $userId=0;
-                            }
-                               
+                            }                               
                         }}
                 else
                 {
                      $validReceiver="no";
                        $userId=0;
                 }
-                    
-
-      ?>
+                 ?>
                 </div> <!-- presentation container ends here that hold both chat box   -->
 
                 <div class="chat-form">
                     <!-- second row of chatbox div -->
-
-
-                    <!--            <form method="post">-->
-                    <!--            <textarea id="msg" name="msg"></textarea>-->
+                    <!--<form method="post">-->
+                    <!--<textarea id="msg" name="msg"></textarea>-->
                     <textarea id="msg" name="msg"></textarea>
                     <button id="send" name="sumbit" value="send" class="btn btn-success" style="float:right">send</button>
-                    <!--           </form>-->
-
+                    <!--</form>-->
                 </div>
-
             </div>
-            <!--    row close-->
+            <!--row close-->
         </div>
-
-        <!--    container close-->
+        <!--container close-->
     </div>
 
 
@@ -309,19 +300,17 @@ function ajax() {
 
 $("#send").click(function() {
 
-    var v = "<?php echo $validReceiver ?>"; // very important
+    var v = "<?php echo $validReceiver ?>";  // very important
     var userId = "<?php echo $userId ?>";
     if (v == "yes") {
         // prepare ajax code for msg insertion
 
 
         var msg = $("#msg").val();
-
         if (msg == '') {
             window.alert("write ur msg");
         } else {
-
-            //                  $v=$("#msg").val();
+            // $v=$("#msg").val();
             $("#disp").html(msg);
             var insertMsg = new FormData();
             insertMsg.append("me", <?php echo $_SESSION['id']?>);
@@ -342,15 +331,14 @@ $("#send").click(function() {
         }
         bottom();
         empty[0].emojioneArea.setText('');
-
     }
 });
 
 
 
 function bottom() {
-    //            window.alert("hello");
-    document.getElementsByClassName("chatlogs")[0].scrollTo(0, 9999999);
+    //window.alert("hello");
+     document.getElementsByClassName("chatlogs")[0].scrollTo(0, 9999999);
 }
 $(document).ready(function() {
     setInterval(function() {
@@ -381,6 +369,7 @@ function openNav() {
     }
 }
 </script>
+
 <script>
 $("#srch").click(function() {
 
@@ -399,6 +388,7 @@ $("#srch").click(function() {
 
 <?php
     
+
 //
 //    if(isset($validReceiver))
 //    {
@@ -415,24 +405,17 @@ $("#srch").click(function() {
 //            }
 //            else
 //            {
-//
-//                
+//               
 //                $nsertMsg="insert into message(senderId,receiverId,messageContent,messageDate,messageStatus) values('$me','$id','$msg',NOW(),'0')";
 //                 if(mysqli_query($conn,$nsertMsg)){
 //                     
 //                 }
 //                else
 //                    echo mysqli_error($conn);
-//                
-//                
-//             
 //              }
 //            }
 //        else
 //            echo "<script>window.alert('sorry')</script>";
-//            
-//
-//        
 //    }
 //    else
 //         echo "<script>window.alert('not')</script>";

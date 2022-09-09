@@ -76,7 +76,7 @@
 
 
                     <div class="col-2 col-xs-2 header-chat-icons">
-                        <a href="https://posigraph.com/app/posigraph/message/chatApp.php" title="">
+                        <a href="../message/chatApp.php" title="">
                             <!-- <i class="fa-solid fa-align-justify"></i> -->
                             <i class="fa fa-envelope-o" aria-hidden="true"></i>
                         </a>
@@ -102,16 +102,16 @@
     <div class="modal-content sidebar-popup-section">
      
       <div class="modal-body">
-        <a href="./myData.php" class="text-center modal-links">Edit Profile</a>
+        <a href="../myData.php" class="text-center modal-links">Edit Profile</a>
         
-        <a href="./friends/friends.php" class="text-center modal-links">Search For Friend</a>
-        <a href="./battle/battle.php" class="text-center modal-links">Battle With Friend</a>
-        <a href="terms.php" class="text-center modal-links">Terms of use</a>
+        <a href="../friends/friends.php" class="text-center modal-links">Search For Friend</a>
+        <a href="../battle/battle.php" class="text-center modal-links">Battle With Friend</a>
+        <a href="../terms.php" class="text-center modal-links">Terms of use</a>
 
       </div>
       
       <div class="modal-footer">
-        <a href="logOut.php" type="button" class="text-center">Logout</a>
+        <a href="../logOut.php" type="button" class="text-center">Logout</a>
         <a type="button" class="text-center" data-dismiss="modal">Cancel</a>
       </div>
     </div>

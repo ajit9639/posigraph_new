@@ -6,12 +6,36 @@
   }
 else
 {
-
     include_once("database/connection.php");
     include_once("database/getPost.php");
     include("database/getMyImagePost.php");
     include("database/getMsgNotif.php");
     
+    $bid = $_GET['bid'];
+    $pid = $_GET['pid'];
+    $type = $_GET['type'];
+
+    if (isset($_POST['submit'])) 
+    {
+        if (count($_FILES) > 0) {
+                if (is_uploaded_file($_FILES['pic']['tmp_name'])) {
+    
+                    $imgData = addslashes(file_get_contents($_FILES['pic']['tmp_name']));
+                    
+                    if($type == 'p1')
+                    $sql = "UPDATE `battle` SET `player1_post`='$imgData' WHERE `battle_id`='$bid'";
+                    else
+                    $sql = "UPDATE `battle` SET `player2_post`='$imgData' WHERE `battle_id`='$bid'";
+                    if(mysqli_query($conn,$sql))
+                    {
+                        echo "<script>alert('Your battle Picture uploaded!!');
+                        window.location.href = '././battle/battle.php';</script>";
+                    }
+                }
+            }
+    }
+//////////////////////////////////
+
     $query="select * from user where userId=".$_SESSION['id'];
     $result=mysqli_query($conn,$query);
     $user=mysqli_fetch_array($result);
@@ -25,14 +49,14 @@ else
 
 <style>
 #pop-up-div {
-    width: 100%;
-    margin: 0 auto;
+    width:94%;
+    margin:0 auto;
     background: #fff;
     display: none;
     position: fixed;
     height: 100vh;
     overflow: hidden;
-    top: 58%;
+    top: 56%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
@@ -43,7 +67,7 @@ else
 
 #comment-like-div {
     background-color: white;
-    height: 58vh;
+    height: 70vh;
     overflow-x: hidden;
     overflow-y: scroll;
     padding: 10px;
@@ -52,7 +76,7 @@ else
 
 #comment-text {
     border: 2px solid #57707d;
-    width: 75%;
+    width: 60%;
     padding-top: 13px;
     padding-left: 10px;
     box-sizing: border-box;
@@ -61,77 +85,47 @@ else
     /* border: none; */
     border-radius: 5px;
 }
+
+
 </style>
 <!--// html code-->
 
-<?php include "feed.php" ?>
+<?php // include "feed.php" ?>
 <!-- post start -->
 
-<?php // include "dash-testing.php";?>
+<?php //include "./slider.php";?>
 
-<div class="container-fluid">
+
+<div class="container-fluid" style="margin-top: 100px;">
     <div class="row">
-
-        <div id='pop-up-div' class="col-sm-10 col-xs-11 "><br>
+           
+    <div id='pop-up-div' class="col-sm-10 col-xs-11 "><br>
+                    </div>                   
+        <div class="col-md-12">          
+            <h6 class="h4"> Welcome <?php echo $_SESSION['name']?> Upload Image for battle</h6>
+            <div class="">
+            <form method="POST" enctype="multipart/form-data">
+            <!-- <textarea id="content" class="form-control" placeholder="write something here or photo/video description" style="resize:none"></textarea> -->
+            <input type="file" id="file" name="pic" style="display:none" accept=".png,.jpg,.gif,.bmp,.jpeg">
+            <span id="fileName" class="badge bg-warning mt-1"> png / gif / jpg / jpeg </span><br>
+            <button id="cstmbtn" type="button" class="btn btn-danger mt-2"><i class="fa fa-camera" aria-hidden="true"></i>&nbsp;photo</button>
+               
+            <button id="postbtn" style="float:right" type="submit" name="submit" class="btn btn-success mt-2">
+                <i class="fa fa-pencil"></i> &nbsp;Post</button>
+                </form>
+            </div>
+           
         </div>
-
-        <div class="col-md-12">
-
-            <!-- <div class="w3-row-padding ">
-                 <div class="w3-col m12">
-                 <div class="w3-card w3-round w3-white">
-                 <div class="w3-container w3-padding"> -->
-            <!-- <h6 class="h4"> Welcome <?php //echo $_SESSION['name']?></h6> -->
-            <!-- <div class="">                
-            </div> -->
-            <!-- </div>
-             </div>
-             </div>
-             </div> -->
-
-        </div>
-
-
-        <div class="col-md-12">
-            <!--End Middle Column post area-->
-
-            <?php         
-        if(isset($_GET['pn']))  //when pagination started
-        {    $pn=$_GET['pn'];
-                if($pn=="" || $pn=="1")
-            {
-                getPost(0,10) ;// for 
-            }
-            else
-            {
-                $from=($pn*10)-10;
-                 getPost($from,10) ;
-            }
-        }
-        else
-        getPost(0,10); // for the very first time when pagination is not started                    
-        ?>
-        </div>
-        <!--   pagination div-->
-        <div class="w3-col m7" style="float:right;margin-right:30px;padding:10px 20px;" id="pagination">
-            <?php include("database/pagination.php");?>
-        </div>
-        <!--      end of pagination-->
-        <!-- End Grid -->
+       
+       
     </div>
     <!-- End Page Container -->
 </div>
-<br>
+<hr>
 </div>
 </div>
 </div>
 <!-- //post end -->
-
-
-
-
-
-
 
 
 
@@ -234,65 +228,65 @@ $(".like-btn").click(function() {
 
 //dislike
 $(".dislike-btn").click(function() {
-    var $this = $(this);
-    pid = $this.data("pid");
-    $("#dislike1" + pid).css("color", "orange");
-    postId = new FormData();
-    postId.append("pid", pid);
-    postId.append("me", "<?php echo $_SESSION['id']?>");
-    postId.append("name", "<?php echo $_SESSION['name']?>");
-    postId.append("dislike-btn", "dislike");
+var $this = $(this);
+pid = $this.data("pid");
+$("#dislike1" + pid).css("color", "orange");
+postId = new FormData();
+postId.append("pid", pid);
+postId.append("me", "<?php echo $_SESSION['id']?>");
+postId.append("name", "<?php echo $_SESSION['name']?>");
+postId.append("dislike-btn", "dislike");
 
-    $.ajax({
-        method: 'post',
-        url: "database/dislike.php",
-        cache: false,
-        data: postId,
-        contentType: false,
-        processData: false,
-        success: function(loadData) {
-            if (loadData == "yes") {
-                $("#" + pid).css("color", ""); // remove icon color
-                //                                     get total like after deletion
-                postId = new FormData();
-                postId.append("pid", pid);
-                postId.append("totaldisLikes", "totaldisLikes");
+$.ajax({
+    method: 'post',
+    url: "database/dislike.php",
+    cache: false,
+    data: postId,
+    contentType: false,
+    processData: false,
+    success: function(loadData) {
+        if (loadData == "yes") {
+            $("#" + pid).css("color", ""); // remove icon color
+            //                                     get total like after deletion
+            postId = new FormData();
+            postId.append("pid", pid);
+            postId.append("totaldisLikes", "totaldisLikes");
 
-                $.ajax({
-                    method: 'post',
-                    url: "database/dislike.php",
-                    cache: false,
-                    data: postId,
-                    contentType: false,
-                    processData: false,
-                    success: function(loadData) {
-                        $("#dislike" + pid).html(loadData);
-                    }
-                });
+            $.ajax({
+                method: 'post',
+                url: "database/dislike.php",
+                cache: false,
+                data: postId,
+                contentType: false,
+                processData: false,
+                success: function(loadData) {
+                    $("#dislike" + pid).html(loadData);
+                }
+            });
 
 
-            } else {
+        } else {
 
-                $("#dislike1" + pid).css("color", "orange");
-                //           get total like after insertion of like
-                postId = new FormData();
-                postId.append("pid", pid);
-                postId.append("totaldisLikes", "totalLikes");
+            $("#dislike1" + pid).css("color", "orange");
+            //           get total like after insertion of like
+            postId = new FormData();
+            postId.append("pid", pid);
+            postId.append("totaldisLikes", "totalLikes");
 
-                $.ajax({
-                    method: 'post',
-                    url: "database/dislike.php",
-                    cache: false,
-                    data: postId,
-                    contentType: false,
-                    processData: false,
-                    success: function(loadData) {
-                        $("#dislike" + pid).html(loadData);
-                    }
-                });
-            }
+            $.ajax({
+                method: 'post',
+                url: "database/dislike.php",
+                cache: false,
+                data: postId,
+                contentType: false,
+                processData: false,
+                success: function(loadData) {
+                    $("#dislike" + pid).html(loadData);
+                }
+            });
         }
-    });
+    }
+});
 });
 
 
@@ -343,78 +337,78 @@ $("#cstmbtn").click(function() {
 
 
 
-$("#postbtn").click(function() {
-    var checkFile = $("#file");
-    var Length = checkFile[0].files.length;
-    var data = checkFile[0].files;
-    var check;
-    if (Length > 0) {
-        ext = data[0].name.substring(data[0].name.lastIndexOf(".") + 1);
-        check = validatePost(ext, data[0].size);
-        if (check == true) {
-            var post = new FormData();
-            post.append("file", data[0]);
-            post.append("id", <?php echo $_SESSION['id']?>);
-            <?php  $d=rand(1,1000000000000); ?>
-            //                             if img is selected yhen test content
-            var con = $("#content").val();
-            if (con.length > 0) {
-                post.append("text", con);
-                $.ajax({
-                    method: 'post',
-                    url: "database/insertPost.php",
-                    cache: false,
-                    data: post,
-                    contentType: false,
-                    processData: false,
-                    success: function(result) {
-                        window.open('home.php', '_self');
-                    }
-                });
-            } else {
-                //                                          send only img
-                post.append("text", "");
-                $.ajax({
-                    method: 'post',
-                    url: "database/insertPost.php",
-                    cache: false,
-                    data: post,
-                    contentType: false,
-                    processData: false,
-                    success: function(result) {
-                        window.open('home.php', '_self');
-                    }
-                });
-            }
+// $("#postbtn").click(function() {
+//     var checkFile = $("#file");
+//     var Length = checkFile[0].files.length;
+//     var data = checkFile[0].files;
+//     var check;
+//     if (Length > 0) {
+//         ext = data[0].name.substring(data[0].name.lastIndexOf(".") + 1);
+//         check = validatePost(ext, data[0].size);
+//         if (check == true) {
+//             var post = new FormData();
+//             post.append("file", data[0]);
+//             post.append("id", <?php echo $_SESSION['id']?>);
+//             <?php  $d=rand(1,1000000000000); ?>
+//             //                             if img is selected yhen test content
+//             var con = $("#content").val();
+//             if (con.length > 0) {
+//                 post.append("text", con);
+//                 $.ajax({
+//                     method: 'post',
+//                     url: "database/insertBattle.php",
+//                     cache: false,
+//                     data: post,
+//                     contentType: false,
+//                     processData: false,
+//                     success: function(result) {
+//                         window.open('battle.php', '_self');
+//                     }
+//                 });
+//             } else {
+//                 //                                          send only img
+//                 post.append("text", "");
+//                 $.ajax({
+//                     method: 'post',
+//                     url: "database/insertPost.php",
+//                     cache: false,
+//                     data: post,
+//                     contentType: false,
+//                     processData: false,
+//                     success: function(result) {
+//                         window.open('home.php', '_self');
+//                     }
+//                 });
+//             }
 
 
-        } else
-            window.alert("invalid");
+//         } else
+//             window.alert("invalid");
 
 
-    } else {
+//     } else {
 
-        var con = $("#content").val();
-        if (con.length > 0) {
-            //                                   window.alert("only content");
-            var post = new FormData();
-            post.append("file", data[0]);
-            post.append("id", <?php echo $_SESSION['id']?>);
-            post.append("text", con);
-            $.ajax({
-                method: 'post',
-                url: "database/insertPost.php",
-                cache: false,
-                data: post,
-                contentType: false,
-                processData: false,
-                success: function(result) {
-                    window.open('home.php', '_self');
-                }
-            });
-        }
-    }
-});
+//         var con = $("#content").val();
+//         if (con.length > 0) {
+//             //                                   window.alert("only content");
+//             var post = new FormData();
+//             post.append("file", data[0]);
+//             post.append("id", <?php echo $_SESSION['id']?>);
+//             post.append("text", con);
+//             $.ajax({
+//                 method: 'post',
+//                 url: "database/insertPost.php",
+//                 cache: false,
+//                 data: post,
+//                 contentType: false,
+//                 processData: false,
+//                 success: function(result) {
+//                     window.open('home.php', '_self');
+//                 }
+//             });
+//         }
+//     }
+// });
 
 function validatePost(ext, size) {
     extension = new Array("png", "jpg", "jpeg", "gif", "bmp", "mp4", "3gp", "mvk", "mov");
@@ -464,30 +458,12 @@ $("#srch").click(function() {
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
 </script>
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <!-- jQuery library -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-
-
-<script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript">
-$(document).on('ready', function() {
-
-    $(".center").slick({
-        dots: true,
-        infinite: true,
-        centerMode: true,
-        slidesToShow: 3,
-        slidesToScroll: 3,
-
-    });
-
-
-});
-</script>
 
 </body>
 
